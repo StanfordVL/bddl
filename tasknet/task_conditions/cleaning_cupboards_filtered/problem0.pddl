@@ -17,31 +17,16 @@
     	towel_rack1 - towel_rack
     )
 
-    ;####################################### TAKARA TEST ########################################################################################################
-
-
     (:init
-        (or
-            (not
-                (scrubbed cabinet1)
-            )
-            (dusty cabinet1)
-        )
-        (or
-            (not
-                (scrubbed cabinet2)
-            )
-            (dusty cabinet2)
-        )
+        (dusty cabinet1)
+        (dusty cabinet2)
         (inside towel1 cabinet1)
         (inside towel2 cabinet1)
-        (and
-            (not
-                (scrubbed towel1)
-            )
-            (not
-                (scrubbed towel2)
-            )
+        (not
+            (scrubbed towel1)
+        )
+        (not
+            (scrubbed towel2)
         )
         (ontop atomizer1 counter1)
         (nextto soap1 sink1)
@@ -49,58 +34,39 @@
         (under bucket1 sink1)
         (ontop rag1 sink1)
         (ontop rag2 sink1)
-        (and
-            (not
-                (soaked rag1)
-            )
-            (not
-                (soaked rag2)
-            )
+        (not
+            (soaked rag1)
         )
-        (or
-            (not
-                (scrubbed cabinet3)
-            )
-            (dusty cabinet3)
+
+        (not
+            (soaked rag2)
         )
-        (or
-            (not
-                (scrubbed cabinet4)
-            )
-            (dusty cabinet4)
-        )
+        (dusty cabinet3)
+        (dusty cabinet4)
         (inside porcelain1 cabinet3)
         (inside porcelain2 cabinet3)
-        (and
-            (not
-                (scrubbed porcelain1)
-            )
-            (not
-                (scrubbed porcelain2)
-            )
+        (not
+            (scrubbed porcelain1)
+        )
+        (not
+            (scrubbed porcelain2)
         )
         (inside photograph1 cabinet3)
         (inside photograph2 cabinet3)
-        (and
-            (dusty photograph1)
-            (dusty photograph2)
-        )
+        (dusty photograph1)
+        (dusty photograph2)
         (dusty console_table1)
         (ontop atomizer2 console_table1)
         (ontop scrub_brush2 console_table1)
         (under bucket2 console_table1)
         (inside soap2 cabinet4)
-        (and
-            (inside rag3 cabinet4)
-            (inside rag4 cabinet4)
+        (inside rag3 cabinet4)
+        (inside rag4 cabinet4)
+        (not
+            (soaked rag3)
         )
-        (and
-            (not
-                (soaked rag3)
-            )
-            (not
-                (soaked rag4)
-            )
+        (not
+            (soaked rag4)
         )
         (inroom console_table1 diningroom)
         (inroom counter1 bathroom)
@@ -128,13 +94,12 @@
                 (?rag - rag)
                 (soaked ?rag)
             )
-            (and
-                (inside ?rag1 ?bucket1)
-                (inside ?rag2 ?bucket1)
-            )
-            (and
-                (inside ?rag3 ?bucket2)
-                (inside ?rag4 ?bucket2)
+            (forall
+                (?rag - rag)
+                (or
+                    (inside ?rag ?bucket1)
+                    (inside ?rag ?bucket2)
+                )
             )
             (forall
                 (?towel - towel)
@@ -143,33 +108,92 @@
             (forn
                 (2)
                 (?towel - towel)
-                (ontop ?towel ?towel_rack1)
+                (nextto ?towel ?towel_rack1) ; original: ontop, can only be sampled next to
             )
-            (inside ?atomizer1 ?cabinet1)
-            (inside ?soap1 ?cabinet1)
-            (inside ?scrub_brush1 ?cabinet2)
-            (inside ?bucket1 ?cabinet2)
+            (or
+                (inside ?atomizer1 ?cabinet1)
+                (inside ?atomizer1 ?cabinet2)
+                (inside ?atomizer1 ?cabinet3)
+                (inside ?atomizer1 ?cabinet4)
+            )
+            (or
+                (inside ?soap1 ?cabinet1)
+                (inside ?soap1 ?cabinet2)
+                (inside ?soap1 ?cabinet3)
+                (inside ?soap1 ?cabinet4)
+            )
+            (or
+                (inside ?scrub_brush1 ?cabinet1)
+                (inside ?scrub_brush1 ?cabinet2)
+                (inside ?scrub_brush1 ?cabinet3)
+                (inside ?scrub_brush1 ?cabinet4)
+            )
+            (or
+                (inside ?bucket1 ?cabinet1)
+                (inside ?bucket1 ?cabinet2)
+                (inside ?bucket1 ?cabinet3)
+                (inside ?bucket1 ?cabinet4)
+            )
             (forall
                 (?porcelain - porcelain)
                 (scrubbed ?porcelain)
             )
-            (inside ?porcelain1 ?cabinet3)
-            (inside ?porcelain2 ?cabinet3)
+            (or
+                (inside ?porcelain1 ?cabinet1)
+                (inside ?porcelain1 ?cabinet2)
+                (inside ?porcelain1 ?cabinet3)
+                (inside ?porcelain1 ?cabinet4)
+
+            )
+            (or
+                (inside ?porcelain2 ?cabinet1)
+                (inside ?porcelain2 ?cabinet2)
+                (inside ?porcelain2 ?cabinet3)
+                (inside ?porcelain2 ?cabinet4)
+            )
             (forall
                 (?photograph - photograph)
                 (not
                     (dusty ?photograph)
                 )
             )
-            (inside ?photograph1 ?cabinet3)
-            (inside ?photograph2 ?cabinet3)
+            (forall
+                (?photograph - photograph)
+                (or
+                    (inside ?photograph ?cabinet1)
+                    (inside ?photograph ?cabinet2)
+                    (inside ?photograph ?cabinet3)
+                    (inside ?photograph ?cabinet4)
+                )
+            )
             (not
                 (dusty ?console_table1)
             )
-            (inside ?atomizer2 ?cabinet4)
-            (inside ?scrub_brush2 ?cabinet4)
-            (inside ?soap2 ?cabinet4)
-            (inside ?bucket2 ?cabinet4)
+            (or
+                (inside ?atomizer2 ?cabinet1)
+                (inside ?atomizer2 ?cabinet2)
+                (inside ?atomizer2 ?cabinet3)
+                (inside ?atomizer2 ?cabinet4)
+            )
+            (or
+                (inside ?scrub_brush2 ?cabinet1)
+                (inside ?scrub_brush2 ?cabinet2)
+                (inside ?scrub_brush2 ?cabinet3)
+                (inside ?scrub_brush2 ?cabinet4)
+            )
+            (or
+                (inside ?soap2 ?cabinet1)
+                (inside ?soap2 ?cabinet2)
+                (inside ?soap2 ?cabinet3)
+                (inside ?soap2 ?cabinet4)
+            )
+            (or
+                (inside ?bucket2 ?cabinet1)
+                (inside ?bucket2 ?cabinet2)
+                (inside ?bucket2 ?cabinet3)
+                (inside ?bucket2 ?cabinet4)
+            )
+
         )
     )
 )
