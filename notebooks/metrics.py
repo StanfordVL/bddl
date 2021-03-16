@@ -32,6 +32,8 @@ ax.plot(np.sum(f['goal_status']['satisfied'][:], axis=1))
 ax.plot(np.sum(f['goal_status']['unsatisfied'][:], axis=1))
 
 # +
+clip = 0.2
+
 left_position = f['vr']['vr_device_data']['left_controller'][:, 1:4]
 right_position = f['vr']['vr_device_data']['right_controller'][:, 1:4]
 body_position = f['vr']['vr_device_data']['vr_position_data'][:, 0:3]
@@ -40,9 +42,9 @@ left_delta_position = np.linalg.norm(left_position[1:-1] - left_position[0:-2], 
 right_delta_position = np.linalg.norm(right_position[1:-1] - right_position[0:-2], axis=1)
 body_delta_position = np.linalg.norm(body_position[1:-1] - body_position[0:-2], axis=1)
 
-left_delta_position = np.clip(-0.2, 0.2, left_delta_position)
-right_delta_position = np.clip(-0.2, 0.2, right_delta_position)
-body_delta_position = np.clip(-0.2, 0.2, body_delta_position)
+left_delta_position = np.clip(left_delta_position, -clip, clip)
+right_delta_position = np.clip(right_delta_position, -clip, clip)
+body_delta_position = np.clip(body_delta_position, -clip, clip)
 # -
 
 # # Cumulative distance traveled
