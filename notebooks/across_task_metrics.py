@@ -68,6 +68,9 @@ columns = [
     "left_total_dist",
     "right_total_dist",
     "body_total_dist",
+    "left_total_force",
+    "right_total_force",
+    "body_total_force",
     "left_total_work",
     "right_total_work",
     "body_total_work"
@@ -102,6 +105,10 @@ for demo in raw_data:
     left_force = demo['vr']['vr_device_data']['left_controller'][2:, 17:20]
     right_force = demo['vr']['vr_device_data']['right_controller'][2:, 17:20]
     body_force = demo['vr']['vr_device_data']['vr_position_data'][2:, 6:9]
+
+    record.append(np.sum(left_force))
+    record.append(np.sum(right_force))
+    record.append(np.sum(body_force))
     
     left_force = np.linalg.norm(left_force, axis=1)
     right_force = np.linalg.norm(right_force, axis=1)
@@ -402,85 +409,53 @@ success_dist_plotting_data = pd.merge(dist_plotting_data, success_plotting_data_
 # ### Frames to success vs. total work
 
 # +
-fig, ((ax1, ax2, ax3), (ax4, ax5, ax6), (ax7, ax8, ax9)) = plt.subplots(3, 3, figsize=(30, 24))
-
-# no normalization
+fig1 = plt.figure(figsize=(10, 8))
 sns.regplot(
-    x="left_total_work",
+    x="right_total_work",
     y="frames_to_success",
     data=success_dist_plotting_data,
-    ax=ax1
 )
+plt.savefig("duration_vs_right_work.pdf")
+
+
+fig2 = plt.figure(figsize=(10, 8))
+sns.regplot(
+    x="body_total_work",
+    y="frames_to_success",
+    data=success_dist_plotting_data,
+)
+plt.savefig("duration_vs_body_work.pdf")
+                  
+fig3 = plt.figure(figsize=(10, 8))
+sns.regplot(
+    x="right_total_work",
+    y="frames_to_success_normalized_ground",
+    data=success_dist_plotting_data,
+)
+plt.savefig("normalized_duration_vs_right_work.pdf")
+
+
+fig4 = plt.figure(figsize=(10, 8))
+sns.regplot(
+    x="body_total_work",
+    y="frames_to_success_normalized_ground",
+    data=success_dist_plotting_data,
+)
+plt.savefig("normalized_duration_vs_body_work.pdf")
+                  
+print()
 print(success_dist_plotting_data["left_total_work"].corr(success_dist_plotting_data["frames_to_success"]))
-
-sns.regplot(
-    x="right_total_work",
-    y="frames_to_success",
-    data=success_dist_plotting_data,
-    ax=ax2
-)
 print(success_dist_plotting_data["right_total_work"].corr(success_dist_plotting_data["frames_to_success"]))
-
-sns.regplot(
-    x="body_total_work",
-    y="frames_to_success",
-    data=success_dist_plotting_data,
-    ax=ax3
-)
 print(success_dist_plotting_data["body_total_work"].corr(success_dist_plotting_data["frames_to_success"]))
-
-# goal cond normalization
-sns.regplot(
-    x="left_total_work",
-    y="frames_to_success_normalized_goal",
-    data=success_dist_plotting_data,
-    ax=ax4
-)
-print(success_dist_plotting_data["left_total_work"].corr(success_dist_plotting_data["frames_to_success_normalized_goal"]))
-
-sns.regplot(
-    x="right_total_work",
-    y="frames_to_success_normalized_goal",
-    data=success_dist_plotting_data,
-    ax=ax5
-)
-print(success_dist_plotting_data["right_total_work"].corr(success_dist_plotting_data["frames_to_success_normalized_goal"]))
-
-sns.regplot(
-    x="body_total_work",
-    y="frames_to_success_normalized_goal",
-    data=success_dist_plotting_data,
-    ax=ax6
-)
-print(success_dist_plotting_data["body_total_work"].corr(success_dist_plotting_data["frames_to_success_normalized_goal"]))
-
-# ground goal normalization
-sns.regplot(
-    x="left_total_work",
-    y="frames_to_success_normalized_ground",
-    data=success_dist_plotting_data,
-    ax=ax7
-)
+print()
 print(success_dist_plotting_data["left_total_work"].corr(success_dist_plotting_data["frames_to_success_normalized_ground"]))
-
-sns.regplot(
-    x="right_total_work",
-    y="frames_to_success_normalized_ground",
-    data=success_dist_plotting_data,
-    ax=ax8
-)
 print(success_dist_plotting_data["right_total_work"].corr(success_dist_plotting_data["frames_to_success_normalized_ground"]))
-
-sns.regplot(
-    x="body_total_work",
-    y="frames_to_success_normalized_ground",
-    data=success_dist_plotting_data,
-    ax=ax9
-)
 print(success_dist_plotting_data["body_total_work"].corr(success_dist_plotting_data["frames_to_success_normalized_ground"]))
 
-plt.savefig("duration_vs_work.pdf")
-
+print()
+print('FORCE AND FRAMES TO SUCCESS') 
+print(success_dist_plotting_data["left_total_force"].corr(success_dist_plotting_data["frames_to_success"]))
+print(success_dist_plotting_data["left_total_force"].corr(success_dist_plotting_data["frames_to_success_normalized_ground"]))
 # -
 
 # # Correlation of grasps + work
@@ -488,15 +463,15 @@ plt.savefig("duration_vs_work.pdf")
 # ### Total grasps vs. total work 
 
 # +
-fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(30, 8))
+fig, (ax2, ax3) = plt.subplots(1, 2, figsize=(20, 8))
 
 # no normalization
-sns.regplot(
-    x="left_total_work",
-    y="total_grasps",
-    data=success_dist_plotting_data,
-    ax=ax1
-)
+# sns.regplot(
+#     x="left_total_work",
+#     y="total_grasps",
+#     data=success_dist_plotting_data,
+#     ax=ax1
+# )
 print(success_dist_plotting_data["left_total_work"].corr(success_dist_plotting_data["total_grasps"]))
 
 sns.regplot(
@@ -527,29 +502,39 @@ task_label_success_data = success_plotting_data[["task_label", "success"]].group
 scene_id_success_data = success_plotting_data[["scene_id", "success"]].groupby("scene_id", as_index=False).agg(np.mean)
 
 # +
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+fig, plt.figure(figsize=(10, 5))
+# sns.barplot(
+#     x="task_label",
+#     y="success",
+#     data=task_label_success_data,
+# )
 sns.barplot(
     x="task_label",
     y="success",
     data=task_label_success_data,
-    ax=ax1
+#     color="blue",
+#     saturation=.5
+    palette="muted"
 )
-# plt.xticks(rotation=90)
-ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90)
+plt.xticks(rotation=90)
+# ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90)
+plt.savefig("failure_rate_by_task.pdf")
 
+
+fig, plt.figure(figsize=(8, 10))
 sns.barplot(
     x="scene_id",
     y="success",
     data=scene_id_success_data,
-    ax=ax2
+#     ax=ax2
 )
-# plt.xticks(rotation=90)
-ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90)
-plt.savefig("failure_rate.pdf")
+plt.xticks(rotation=90)
+# ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90)
+plt.savefig("failure_rate_by_scene.pdf")
 
 # -
 
-
+success_dist_plotting_data
 
 
 
