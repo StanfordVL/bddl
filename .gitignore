@@ -4,6 +4,7 @@
 **/*.ipynb
 .github
 **/*.ipynb_checkpoints
+notebooks/*.pdf
 
 tasknet/task_conditions/parsing_tests/sample.pddl
 tasknet/sample_natural_condition.txt

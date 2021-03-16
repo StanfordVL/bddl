@@ -30,6 +30,30 @@ for demo_file in os.listdir(demos_filepath):
     if "mp4" in demo_file: 
         continue
     raw_data.append(h5py.File(os.path.join(demos_filepath, demo_file), "r"))
+    
+def convert_name(name):
+    if name == "assembling_gift_baskets_filtered":
+        return "gift_baskets"
+    elif name == "organizing_school_stuff_filtered":
+        return "school_stuff"
+    elif name == "packing_lunches_filtered":
+        return "lunches"
+    elif name == "putting_away_toys_filtered":
+        return "toys"
+    elif name == "serving_hors_d_oeuvres_filtered":
+        return "serving"
+    elif name == "cleaning_out_drawers_filtered":
+        return "drawers"
+    elif name == "putting_away_dishes_after_cleaning_filtered":
+        return "dishes"
+    elif name == "putting_away_Christmas_decorations_filtered":
+        return "decorations"
+    elif name == "re-shelving_library_books_filtered":
+        return "books"
+    else:
+        return name
+
+
 # -
 
 
@@ -50,9 +74,9 @@ clip = .2
 
 for demo in raw_data: 
     record = []
-    record.append(demo.attrs["/metadata/task_name"])
+    record.append(convert_name(demo.attrs["/metadata/task_name"]))
     record.append(demo.attrs["/metadata/task_instance"])
-    record.append(demo.attrs["/metadata/scene_id"])
+    record.append(demo.attrs["/metadata/scene_id"][:-4])
     
     # total distance 
     left_position = demo["vr"]["vr_device_data"]["left_controller"][:, 1:4]
@@ -94,7 +118,7 @@ hued_dfs[1]["device"] = "right"
 hued_dfs[2]["device"] = "body"
 
 hued_dist_data_randomscenes = pd.concat(hued_dfs)
-hued_dist_data_randomscenes["task_label"] = hued_dist_data_randomscenes["task_name"] + hued_dist_data_randomscenes["task_instance"].astype(str)
+hued_dist_data_randomscenes["task_label"] = hued_dist_data_randomscenes["task_name"] + "_" + hued_dist_data_randomscenes["task_instance"].astype(str)
 # -
 
 fig = plt.figure()
@@ -171,9 +195,9 @@ columns = [
 
 for demo in raw_data: 
     record = []
-    record.append(demo.attrs["/metadata/task_name"])
+    record.append(convert_name(demo.attrs["/metadata/task_name"]))
     record.append(demo.attrs["/metadata/task_instance"])
-    record.append(demo.attrs["/metadata/scene_id"])
+    record.append(demo.attrs["/metadata/scene_id"][:-4])
     
     # distance 
     left_position = demo["vr"]["vr_device_data"]["left_controller"][:, 1:4]
@@ -219,18 +243,19 @@ columns = [
     "num_goal_conditions",
     "frames_to_success_normalized_goal",
     "num_ground_goal_conditions",
-    "frames_to_success_normalized_ground"
+    "frames_to_success_normalized_ground",
+    "total_grasps"
 ]
 
 for demo in raw_data: 
     record = []
-    task_name = demo.attrs["/metadata/task_name"]
+    task_name = (demo.attrs["/metadata/task_name"])
     task_instance = demo.attrs["/metadata/task_instance"]
-    record.append(task_name)
+    record.append(convert_name(task_name))
     record.append(task_instance)
-    record.append(demo.attrs["/metadata/scene_id"])
+    record.append(demo.attrs["/metadata/scene_id"][:-4])
     
-    # reached success or not 
+    # frames to reach success 
     satisfied = demo["goal_status"]["satisfied"][:]
     total_frames, total_goal_conds = satisfied.shape
     satisfied_goal_conds_by_frame = np.sum(satisfied, axis=1)
@@ -245,6 +270,7 @@ for demo in raw_data:
     frames_to_success_normalized_goal = frames_to_success / float(total_goal_conds) if success else -1
     record.append(frames_to_success_normalized_goal)
     
+    # normalized frames to reach success 
     task = TaskNetTask(task_name, int(task_instance))
     task.gen_goal_conditions()
     task.gen_ground_goal_conditions()
@@ -253,11 +279,25 @@ for demo in raw_data:
     frames_to_success_normalized_ground = frames_to_success / float(avg_ground_goal_conditions) if success else -1
     record.append(frames_to_success_normalized_ground)
     
+    # grasps
+    left_grasp = demo["vr"]["vr_button_data"]["left_controller"][:, 0]
+    right_grasp = demo["vr"]["vr_button_data"]["right_controller"][:, 0]
+    
+    left_grasp_engaged = left_grasp * (left_grasp > 0.8)
+    right_grasp_engaged = right_grasp * (right_grasp > 0.8)
+    
+    left_grasp_on_filter = np.convolve(left_grasp_engaged, np.array([1, -1]))
+    left_grasp_on = np.where(np.isclose(left_grasp_on_filter, 1, 0.2))
+    
+    right_grasp_on_filter = np.convolve(right_grasp_engaged, np.array([1, -1]))
+    right_grasp_on = np.where(np.isclose(right_grasp_on_filter, 1, 0.2))
+    
+    record.append(np.size(left_grasp_on) + np.size(right_grasp_on))
+    
     records.append(record)
     
-
 success_plotting_data = pd.DataFrame.from_records(records, columns=columns)
-success_plotting_data["task_label"] = success_plotting_data["task_name"] + success_plotting_data["task_instance"].astype(str)
+success_plotting_data["task_label"] = success_plotting_data["task_name"] + "_" + success_plotting_data["task_instance"].astype(str)
 success_plotting_data_nofailure = success_plotting_data[success_plotting_data["success"] == 1]
 # -
 
@@ -280,7 +320,7 @@ plt.savefig('frames_to_success_randomscenes.pdf')
 
 # average distances across different scenes 
 success_data_avg = success_plotting_data_nofailure.groupby(['task_name', 'task_instance'], as_index=False).agg(np.mean)
-success_data_avg["task_label"] = success_data_avg["task_name"] + success_data_avg["task_instance"].astype(str)
+success_data_avg["task_label"] = success_data_avg["task_name"] + "_" + success_data_avg["task_instance"].astype(str)
 
 # +
 fig = plt.figure()
@@ -323,3 +363,60 @@ ax = sns.barplot(
 
 plt.xticks(rotation=90)
 plt.savefig('frames_to_success_avgacrossscenes.pdf')
+# -
+
+# # Correlation of grasps + time to reach success
+
+# ### Total grasps vs. frames to success
+
+fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(16, 8))
+sns.regplot(
+    x="frames_to_success",
+    y="total_grasps",
+    data=success_plotting_data_nofailure,
+    ax=ax1
+)
+sns.regplot(
+    x="frames_to_success_normalized_goal",
+    y="total_grasps",
+    data=success_plotting_data_nofailure,
+    ax=ax2
+)
+sns.regplot(
+    x="frames_to_success_normalized_ground",
+    y="total_grasps",
+    data=success_plotting_data_nofailure,
+    ax=ax3
+)
+
+
+# # Failure rates
+
+# ### Failure rate by task, scene_id 
+
+task_label_success_data = success_plotting_data[["task_label", "success"]].groupby("task_label", as_index=False).agg(np.mean)
+scene_id_success_data = success_plotting_data[["scene_id", "success"]].groupby("scene_id", as_index=False).agg(np.mean)
+
+# +
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+sns.barplot(
+    x="task_label",
+    y="success",
+    data=task_label_success_data,
+    ax=ax1
+)
+# plt.xticks(rotation=90)
+ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90)
+
+sns.barplot(
+    x="scene_id",
+    y="success",
+    data=scene_id_success_data,
+    ax=ax2
+)
+# plt.xticks(rotation=90)
+ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90)
+
+# -
+
+

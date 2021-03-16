@@ -75,21 +75,14 @@ fig, ax = plt.subplots()
 ax.plot(left_grasp_engaged)
 ax.plot(right_grasp_engaged)
 
-# +
 right_grasp_on_filter = np.convolve(right_grasp_engaged, np.array([1,-1]))
 right_grasp_on = np.where(np.isclose(right_grasp_on_filter, 1, 0.2))
-
-right_grasp_off_filter = np.convolve(right_grasp_engaged, np.array([-1,1]))
 right_grasp_off = np.where(np.isclose(right_grasp_off_filter, -1, 0.2))
 
 
-# +
 left_grasp_on_filter = np.convolve(left_grasp_engaged, np.array([1,-1]))
 left_grasp_on = np.where(np.isclose(left_grasp_on_filter, 1, 0.2))
-
-left_grasp_off_filter = np.convolve(left_grasp_engaged, np.array([-1,1]))
 left_grasp_off = np.where(np.isclose(left_grasp_off_filter, -1, 0.2))
-# -
 # # Force/Work
 
 
