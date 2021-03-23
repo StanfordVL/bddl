@@ -22,24 +22,27 @@ import pandas as pd
 import seaborn as sns
 import pprint
 import matplotlib as mpl
+from pathlib import *
 
 
 sns.set_context("paper")
 
-scene_id = 'Rs_int'
+scene_id = 'Wainscott_0_int'
 
-demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/Rs_int_demos')
+# demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/Rs_int_demos')
+files = list(Path("d:/new_demo_data").rglob('*.hdf5'))
 
 
 raw_data = []
 demo_files = []
-for demo_file in os.listdir(demos_filepath):
-    if ".hdf5" not in demo_file: 
+# for demo_file in os.listdir(demos_filepath):
+for demo_file in files: 
+    if ".hdf5" not in str(demo_file): 
         continue
-    if scene_id not in demo_file:
+    if scene_id not in str(demo_file):
         continue
-    raw_data.append(h5py.File(os.path.join(demos_filepath, demo_file), "r"))
-    demo_files.append(demo_file)
+    raw_data.append(h5py.File(str(demo_file), "r"))
+    demo_files.append(str(demo_file))
     
 def convert_name(name):
     if name == "assembling_gift_baskets_filtered":
@@ -65,7 +68,7 @@ def convert_name(name):
 
 
 
-
+print(raw_data)
 
 # -
 
@@ -82,7 +85,8 @@ def world_to_map(xy):
 plt.figure(figsize=(20,20))
 skip = 5
 
-floorplan_file = '/cvgl2/u/chengshu/TaskNet/data/floorplan/{}.png'.format(scene_id)
+# floorplan_file = '/cvgl2/u/chengshu/TaskNet/data/floorplan/{}.png'.format(scene_id)
+floorplan_file = f"c:/Users/igibs/TaskNet/data/floorplan/{scene_id}.png"
 floorplan = plt.imread(floorplan_file)
 colors = ['#004D40', '#D81B60', '#FFC107', '#1E88E5', '#FE6100']
 task_done = set()
@@ -104,11 +108,13 @@ for i, (demo, demo_file) in enumerate(zip(raw_data[::-1], demo_files[::-1])):
     satisfied = demo["goal_status"]["satisfied"]
     total_frames, total_goal_conds = satisfied.shape
     satisfied_goal_conds_by_frame = np.sum(satisfied, axis=1)
-    success_trace = np.nonzero(satisfied_goal_conds_by_frame == float(total_goal_conds))
+    success_trace = np.nonzero(satisfied_goal_conds_by_frame == float(total_goal_conds))[0]
+#     print(success_trace)
     success = bool(len(success_trace))
 
     if success:
-        end_idx = np.min(success_trace)
+        print(success_trace)
+        end_idx = np.min(success_trace) + 1
     else:
         end_idx = total_frames
 
@@ -127,10 +133,14 @@ plt.axis('off')
 plt.legend(fontsize=30, loc='lower left', bbox_to_anchor=(0.07, 0.06))
 plt.imshow(floorplan)
 plt.savefig('task_heatmap_{}.pdf'.format(scene_id), bbox_inches='tight', pad_inches=0, transparent=True)
-    
+
+print(raw_data)
+
 
 # +
-demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/examples_pre_hand')
+# demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/examples_pre_hand')
+demos_filepath = f"c:/Users/igibs/TaskNet/data/examples_pre_hand"
+
 
 raw_data = []
 demo_files = []
@@ -145,9 +155,12 @@ for demo_file in os.listdir(demos_filepath):
 
 plt.clf()
 selected_colors = ['#D81B60', '#1E88E5', '#FFC107', '#004D40']
+print(raw_data)
+print(demo_files)
 for i, (demo, demo_file) in enumerate(zip(raw_data, demo_files)):
+    print(i)
     task = demo_file[:(demo_file.index(scene_id) - 1)]
-    if task != 'assembling_gift_baskets_filtered_0':
+    if task != 'packing_lunches_1':
         continue
     start_idx = max(
         min(np.where(demo['vr']['vr_event_data']['left_controller'])[0]),
@@ -239,4 +252,6 @@ for i, (demo, demo_file) in enumerate(zip(raw_data, demo_files)):
     plt.show()
     print('task_seg_{}.png'.format(task))
     plt.clf()
+
+
 

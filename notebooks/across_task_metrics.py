@@ -21,15 +21,42 @@ import os
 import pandas as pd 
 import seaborn as sns
 import pprint
+from pathlib import *
 
-sns.set_context("paper")
+sns.set_context("poster")
+selected_colors = ['#D81B60', '#1E88E5', '#FFC107', '#004D40']
+sns.set_palette(sns.color_palette(selected_colors))
 
-demos_filepath = os.path.join("d:", "examples_pre_hand")
+# demos_filepath = os.path.join("d:", "external_demos_data")
+# raw_data = []
+# for demo_file in os.listdir(demos_filepath):
+#     if "mp4" in demo_file: 
+#         continue
+#     raw_data.append(h5py.File(os.path.join(demos_filepath, demo_file), "r"))
+
+files = list(Path("d:/new_demo_data").rglob('*.hdf5'))
+good_files = []
+bad_files = []
 raw_data = []
-for demo_file in os.listdir(demos_filepath):
-    if "mp4" in demo_file: 
+for file in files:
+#     print(str(file))
+    if "OLD" in str(file):
+        bad_files.append(file)
         continue
-    raw_data.append(h5py.File(os.path.join(demos_filepath, demo_file), "r"))
+    f = h5py.File(file, 'r')
+    if min(np.sum(f['goal_status']['unsatisfied'], axis=1)) != 0:
+        bad_files.append(file)
+        continue
+    if "cleaning_out_drawers_filtered_0_Wainscott" in str(file) and '16-10-50' in str(file):
+        bad_files.append(file)
+        continue
+    if "organizing_school_stuff_filtered_0_Pomaria_1_int_2021-03-15_17-24-01" in str(file):
+        bad_files.append(file)
+        continue
+    good_files.append(file)
+    raw_data.append(f)
+print(len(raw_data))
+
     
 def convert_name(name):
     if name == "assembling_gift_baskets_filtered":
@@ -44,7 +71,7 @@ def convert_name(name):
         return "serving"
     elif name == "cleaning_out_drawers_filtered":
         return "drawers"
-    elif name == "putting_away_dishes_after_cleaning_filtered":
+    elif name == "putting_dishes_away_after_cleaning_filtered":
         return "dishes"
     elif name == "putting_away_Christmas_decorations_filtered":
         return "decorations"
@@ -84,10 +111,23 @@ for demo in raw_data:
     record.append(demo.attrs["/metadata/task_instance"])
     record.append(demo.attrs["/metadata/scene_id"][:-4])
     
+    # frame boundaries 
+    start_idx = max(min(np.where(demo['vr']['vr_event_data']['left_controller'])[0]), min(np.where(demo['vr']['vr_event_data']['right_controller'])[0]))
+    start_idx += 50
+    satisfied = demo["goal_status"]["satisfied"]
+    total_frames, total_goal_conds = satisfied.shape
+    satisfied_goal_conds_by_frame = np.sum(satisfied, axis=1)
+    success_trace = np.nonzero(satisfied_goal_conds_by_frame == float(total_goal_conds))
+    success = bool(len(success_trace))
+    if success:
+        end_idx = np.min(success_trace) + 1
+    else:
+        end_idx = total_frames
+    
     # total distance 
-    left_position = demo["vr"]["vr_device_data"]["left_controller"][:, 1:4]
-    right_position = demo["vr"]["vr_device_data"]["right_controller"][:, 1:4]
-    body_position = demo["vr"]["vr_device_data"]["vr_position_data"][:, 0:3]
+    left_position = demo["vr"]["vr_device_data"]["left_controller"][start_idx:end_idx, 1:4]
+    right_position = demo["vr"]["vr_device_data"]["right_controller"][start_idx:end_idx, 1:4]
+    body_position = demo["vr"]["vr_device_data"]["vr_position_data"][start_idx:end_idx, 0:3]
     
     left_delta_position = np.linalg.norm(left_position[1:-1] - left_position[0:-2], axis=1)
     right_delta_position = np.linalg.norm(right_position[1:-1] - right_position[0:-2], axis=1)
@@ -102,9 +142,9 @@ for demo in raw_data:
     record.append(np.sum(body_delta_position))
     
     # work (only translational forces)
-    left_force = demo['vr']['vr_device_data']['left_controller'][2:, 17:20]
-    right_force = demo['vr']['vr_device_data']['right_controller'][2:, 17:20]
-    body_force = demo['vr']['vr_device_data']['vr_position_data'][2:, 6:9]
+    left_force = demo['vr']['vr_device_data']['left_controller'][start_idx + 2:end_idx, 17:20]
+    right_force = demo['vr']['vr_device_data']['right_controller'][start_idx + 2:end_idx, 17:20]
+    body_force = demo['vr']['vr_device_data']['vr_position_data'][start_idx + 2:end_idx, 6:9]
 
     record.append(np.sum(left_force))
     record.append(np.sum(right_force))
@@ -127,7 +167,7 @@ for demo in raw_data:
 
 dist_plotting_data = pd.DataFrame.from_records(records, columns=columns)
 dist_plotting_data["task_label"] = dist_plotting_data["task_name"] + "_" + dist_plotting_data["task_instance"].astype(str)
-
+dist_plotting_data
 # -
 
 # ### Total distance traveled by task - randomly selected scene
@@ -300,7 +340,7 @@ for demo in raw_data:
     success = bool(len(success_trace))
     
     record.append(int(success))
-    frames_to_success = success_trace[0] if success else -1
+    frames_to_success = np.min(success_trace) + 1 if success else -1
     record.append(frames_to_success)
     
     record.append(total_goal_conds)
@@ -336,6 +376,7 @@ for demo in raw_data:
 success_plotting_data = pd.DataFrame.from_records(records, columns=columns)
 success_plotting_data["task_label"] = success_plotting_data["task_name"] + "_" + success_plotting_data["task_instance"].astype(str)
 success_plotting_data_nofailure = success_plotting_data[success_plotting_data["success"] == 1]
+success_plotting_data_nofailure
 # -
 
 # ### Total frames to reach success ONLY FOR SUCCESSFUL DEMOS - randomly selected scene
@@ -379,12 +420,14 @@ success_data_avgacrossscenes = success_plotting_data_nofailure.groupby(['task_la
 # ### Total frames to reach success ONLY FOR SUCCESSFUL DEMOS - range
 
 fig = plt.figure(figsize=(10, 6))
-ax = sns.violinplot(
+ax = sns.boxplot(
     x="task_label",
     y="frames_to_success",
-    data=success_plotting_data_nofailure
+    data=success_plotting_data_nofailure,
+    palette="flare"
 )
-plt.xticks(rotation=90)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=60, ha="right", fontsize=15)
+plt.yticks(fontsize=15)
 plt.savefig('frames_to_success_range.pdf')
 
 # # Time to success, normalized by num ground goal conditions
@@ -405,6 +448,7 @@ plt.savefig('frames_to_success_avg_groundnorm.pdf')
 # # Correlation of task duration and efficiency
 
 success_dist_plotting_data = pd.merge(dist_plotting_data, success_plotting_data_nofailure, on=["task_label", "scene_id"], how="inner")
+success_dist_plotting_data
 
 # ### Frames to success vs. total work
 
@@ -502,42 +546,72 @@ task_label_success_data = success_plotting_data[["task_label", "success"]].group
 scene_id_success_data = success_plotting_data[["scene_id", "success"]].groupby("scene_id", as_index=False).agg(np.mean)
 
 # +
-fig, plt.figure(figsize=(10, 5))
+fig, plt.figure(figsize=(10, 6))
 # sns.barplot(
 #     x="task_label",
 #     y="success",
 #     data=task_label_success_data,
 # )
-sns.barplot(
+ax = sns.barplot(
     x="task_label",
     y="success",
     data=task_label_success_data,
 #     color="blue",
 #     saturation=.5
-    palette="muted"
 )
-plt.xticks(rotation=90)
-# ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90)
-plt.savefig("failure_rate_by_task.pdf")
+ax.set_xticklabels(ax.get_xticklabels(), rotation=60, ha="right", fontsize=15)
+plt.yticks(fontsize=15)
+plt.savefig("failure_rate_by_task.pdf", bbox_inches="tight")
 
 
-fig, plt.figure(figsize=(8, 10))
-sns.barplot(
+fig, plt.figure(figsize=(10, 6))
+ax1 = sns.barplot(
     x="scene_id",
     y="success",
     data=scene_id_success_data,
 #     ax=ax2
 )
-plt.xticks(rotation=90)
-# ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90)
-plt.savefig("failure_rate_by_scene.pdf")
+ax1.set_xticklabels(ax1.get_xticklabels(), rotation=60, ha="right", fontsize=15)
+plt.yticks(fontsize=15)
+plt.savefig("failure_rate_by_scene.pdf", bbox_inches="tight")
 
 # -
 
 success_dist_plotting_data
 
+# # Summary statistics
 
+# +
+success_dist_plotting_data["total_work"] = success_dist_plotting_data["left_total_work"] + \
+                                           success_dist_plotting_data["right_total_work"] + \
+                                           success_dist_plotting_data["body_total_work"]
+# success_dist_plotting_data["total_dist"] = success_dist_plotting_data["left_total_dist"] + \
+#                                            success_dist_plotting_data["right_total_dist"] + \
+#                                            success_dist_plotting_data["body_total_dist"]
+summary = success_dist_plotting_data.describe()
+# summary
 
+task_summaries = success_dist_plotting_data.groupby(["task_label"], as_index=False).agg([np.mean, np.std])
+task_summaries = task_summaries[[("num_ground_goal_conditions", "mean"),
+                                ("num_ground_goal_conditions", "std"),
+                                ("total_work", "mean"),
+                                ("total_work", "std"),
+                                ("body_total_dist", "mean"),
+                                ("body_total_dist", "std"),
+                                ("frames_to_success", "mean"),
+                                ("frames_to_success", "std")]]
+#                                 "total_work", "body_total_distance", "frames_to_success"]
+task_summaries.to_csv("task_summaries.csv")
+task_summaries
+# -
 
+a = success_dist_plotting_data.groupby(["task_label"], as_index=False)["num_ground_goal_conditions"]
+names = []
+groups = []
+for name, group in a:
+    names.append(name)
+    groups.append(group)
+print(names)
+groups[7]
 
 

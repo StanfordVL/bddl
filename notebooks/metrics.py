@@ -17,7 +17,8 @@ import h5py
 import matplotlib.pyplot as plt
 import numpy as np
 
-filename = "../../iGibson/putting_away_Christmas_decorations_filtered_0_Beechwood_0_int_2021-03-13_22-51-53.hdf5"
+# filename = "../../iGibson/putting_away_Christmas_decorations_filtered_0_Beechwood_0_int_2021-03-13_22-51-53.hdf5"
+filename = "D:\new_demo_data\external demos-20210317T192549Z-001\external demos\packing_lunches_filtered\packing_lunches_filtered_1_Wainscott_0_int_success"
 
 f = h5py.File(filename, "r")
 print("Task Name: ", f.attrs['/metadata/task_name'])
@@ -84,8 +85,6 @@ left_grasp_on_filter = np.convolve(left_grasp_engaged, np.array([1,-1]))
 left_grasp_on = np.where(np.isclose(left_grasp_on_filter, 1, 0.2))
 left_grasp_off = np.where(np.isclose(left_grasp_off_filter, -1, 0.2))
 # # Force/Work
-
-
 left_force = np.sum(f['vr']['vr_device_data']['left_controller'][:, 17:23], axis=1)
 right_force = np.sum(f['vr']['vr_device_data']['right_controller'][:, 17:23], axis=1)
 body_force = np.sum(f['vr']['vr_device_data']['vr_position_data'][:, 6:12], axis=1)
