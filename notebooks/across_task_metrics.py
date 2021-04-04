@@ -23,9 +23,10 @@ import seaborn as sns
 import pprint
 from pathlib import *
 
-sns.set_context("poster")
+sns.set_context("paper")
 selected_colors = ['#D81B60', '#1E88E5', '#FFC107', '#004D40']
-sns.set_palette(sns.color_palette(selected_colors))
+our_palette = sns.color_palette(selected_colors)
+sns.set_palette(our_palette)
 
 # demos_filepath = os.path.join("d:", "external_demos_data")
 # raw_data = []
@@ -100,7 +101,8 @@ columns = [
     "body_total_force",
     "left_total_work",
     "right_total_work",
-    "body_total_work"
+    "body_total_work",
+    "all_devices_total_work"
 ]
 
 clip = .2
@@ -158,16 +160,22 @@ for demo in raw_data:
     right_work = right_delta_position * right_force
     body_work = body_delta_position * body_force
     
-    record.append(np.sum(left_work))
-    record.append(np.sum(right_work))
-    record.append(np.sum(body_work))
+    left_total_work = np.sum(left_work)
+    right_total_work = np.sum(right_work)
+    body_total_work = np.sum(body_work)
+    all_devices_total_work = left_total_work + right_total_work + body_total_work
+    
+    record.append(left_total_work)
+    record.append(right_total_work)
+    record.append(body_total_work)
+    record.append(all_devices_total_work)
     
     records.append(record)
     
 
 dist_plotting_data = pd.DataFrame.from_records(records, columns=columns)
 dist_plotting_data["task_label"] = dist_plotting_data["task_name"] + "_" + dist_plotting_data["task_instance"].astype(str)
-dist_plotting_data
+
 # -
 
 # ### Total distance traveled by task - randomly selected scene
@@ -241,13 +249,31 @@ hued_dfs[1]["device"] = "right"
 hued_dfs[2]["device"] = "body"
 
 hued_plotting_data = pd.concat(hued_dfs)
-# -
+
+# +
+our_palette = sns.color_palette(selected_colors)
 
 fig = plt.figure(figsize=(10, 6))
 # ax = sns.stripplot(x="task_label", y="total_dist", data=hued_plotting_data, jitter=0.05)
-ax = sns.violinplot(x="task_label", y="total_dist", hue="device", data=hued_plotting_data)
+ax = sns.boxplot(x="task_label", y="total_dist", hue="device", data=hued_plotting_data)
 plt.xticks(rotation=90)
 plt.savefig("total_distance_range.pdf")
+
+fig = plt.figure(figsize=(10, 6))
+ax1 = sns.boxplot(
+    x="task_label", 
+    y="body_total_dist", 
+    data=dist_plotting_data, 
+    palette=our_palette,
+    order=dist_plotting_data.sort_values("task_label").task_label.drop_duplicates(),    
+)
+ax1.set_xticklabels(ax1.get_xticklabels(), rotation=60, ha="right", fontsize=15)
+plt.title("Total distance traveled by body during each activity instance", fontsize=20)
+plt.ylabel("Total distance traveled by body", fontsize=15)
+plt.xlabel("Activity instance", fontsize=15)
+plt.yticks(fontsize=15)
+plt.savefig("body_total_distance_range.pdf", bbox_inches="tight")
+# -
 
 
 # ### Total work by task - avg across scenes
@@ -291,11 +317,13 @@ hued_dfs[1]["device"] = "right"
 hued_dfs[2]["device"] = "body"
 
 hued_plotting_data = pd.concat(hued_dfs)
-# -
 
+
+
+# +
 fig = plt.figure(figsize=(10, 6))
 # ax = sns.stripplot(x="task_label", y="total_dist", data=hued_plotting_data, jitter=0.05)
-ax = sns.violinplot(
+ax = sns.boxplot(
     x="task_label", 
     y="total_work", 
     hue="device", 
@@ -303,12 +331,33 @@ ax = sns.violinplot(
 plt.xticks(rotation=90)
 plt.savefig("total_work_range.pdf")
 
+fig = plt.figure(figsize=(10, 6))
+ax1 = sns.boxplot(
+    x="task_label", 
+    y="all_devices_total_work", 
+    data=dist_plotting_data, 
+    palette=our_palette,
+    order=dist_plotting_data.sort_values("task_label").task_label.drop_duplicates(),
+)
+ax1.set_xticklabels(ax1.get_xticklabels(), rotation=60, ha="right", fontsize=15)
+plt.yticks(fontsize=15)
+plt.title("Total work done during each activity instance", fontsize=20)
+plt.ylabel("Total work done by hands and body", fontsize=15)
+plt.xlabel("Activity instance", fontsize=15)
+plt.yticks(fontsize=15)
+plt.savefig("devices_total_work_range.pdf", bbox_inches="tight")
+# -
+
 # # Time to success 
 
 # +
 import tasknet
 from tasknet.task_base import TaskNetTask 
 tasknet.set_backend("iGibson")
+
+sns.set_palette(sns.color_palette(selected_colors))
+our_palette = sns.color_palette(selected_colors)
+
 
 records = []
 columns = [
@@ -376,7 +425,7 @@ for demo in raw_data:
 success_plotting_data = pd.DataFrame.from_records(records, columns=columns)
 success_plotting_data["task_label"] = success_plotting_data["task_name"] + "_" + success_plotting_data["task_instance"].astype(str)
 success_plotting_data_nofailure = success_plotting_data[success_plotting_data["success"] == 1]
-success_plotting_data_nofailure
+
 # -
 
 # ### Total frames to reach success ONLY FOR SUCCESSFUL DEMOS - randomly selected scene
@@ -385,14 +434,18 @@ success_plotting_data_nofailure
 choice_fn = lambda obj: obj.loc[np.random.choice(obj.index), :]
 success_data_randomscenes = success_plotting_data_nofailure.groupby(["task_name", "task_instance"], as_index=False).apply(choice_fn)
 
+# +
+
 fig = plt.figure(figsize=(10, 6))
 ax = sns.barplot(
     x="task_label",
     y="frames_to_success",
-    data=success_data_randomscenes
+    data=success_data_randomscenes,
+    palette=our_palette
 )
 plt.xticks(rotation=90)
 plt.savefig('frames_to_success_randomscenes.pdf')
+# -
 
 # ### Total frames to reach success ONLY FOR SUCCESSFUL DEMOS - average across scenes 
 
@@ -405,7 +458,9 @@ fig = plt.figure(figsize=(10, 6))
 ax = sns.barplot(
     x="task_label",
     y="frames_to_success",
-    data=success_data_avg)
+    data=success_data_avg,
+    palette=our_palette
+)
 
 plt.xticks(rotation=90)
 plt.savefig('frames_to_success_avg.pdf')
@@ -424,11 +479,16 @@ ax = sns.boxplot(
     x="task_label",
     y="frames_to_success",
     data=success_plotting_data_nofailure,
-    palette="flare"
+    palette=our_palette,
+    order=success_plotting_data_nofailure.sort_values("task_label").task_label.drop_duplicates(),
 )
 ax.set_xticklabels(ax.get_xticklabels(), rotation=60, ha="right", fontsize=15)
 plt.yticks(fontsize=15)
-plt.savefig('frames_to_success_range.pdf')
+plt.title("Frames elapsed until success", fontsize=20)
+plt.ylabel("Frames success", fontsize=15)
+plt.xlabel("Activity instance", fontsize=15)
+plt.yticks(fontsize=15)
+plt.savefig('frames_to_success_range.pdf', bbox_inches="tight")
 
 # # Time to success, normalized by num ground goal conditions
 
@@ -439,16 +499,36 @@ fig = plt.figure(figsize=(10, 6))
 ax = sns.barplot(
     x="task_label",
     y="frames_to_success_normalized_ground",
-    data=success_data_avg)
+    data=success_data_avg,
+    palette=our_palette
+)
 
 plt.xticks(rotation=90)
 plt.savefig('frames_to_success_avg_groundnorm.pdf')
 # -
 
+# ### Total frames to reach success ONLY FOR SUCCESSFUL DEMOS - range, normalized by num ground goal conditions
+
+fig = plt.figure(figsize=(10, 6))
+ax = sns.boxplot(
+    x="task_label",
+    y="frames_to_success_normalized_ground",
+    data=success_plotting_data_nofailure,
+    palette=our_palette,
+    order=success_plotting_data_nofailure.sort_values("task_label").task_label.drop_duplicates(),
+)
+ax.set_xticklabels(ax.get_xticklabels(), rotation=60, ha="right", fontsize=15)
+plt.yticks(fontsize=15)
+plt.title("Frames elapsed until success, normalized by activity volume", fontsize=20)
+plt.ylabel("Frames to success / activity volume", fontsize=15)
+plt.xlabel("Activity instance", fontsize=15)
+plt.yticks(fontsize=15)
+plt.savefig('frames_to_success_range_norm.pdf', bbox_inches="tight")
+
 # # Correlation of task duration and efficiency
 
 success_dist_plotting_data = pd.merge(dist_plotting_data, success_plotting_data_nofailure, on=["task_label", "scene_id"], how="inner")
-success_dist_plotting_data
+
 
 # ### Frames to success vs. total work
 
