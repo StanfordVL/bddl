@@ -192,7 +192,8 @@
   "vacuum.n.04": [
     "dustyable",
     "scrubbable",
-    "toggleable"
+    "toggleable",
+    "cleaningTool"
   ],
   "clothing.n.01": [
     "burnable",
@@ -1155,7 +1156,8 @@
   ],
   "broom.n.01": [
     "burnable",
-    "dustyable"
+    "dustyable",
+    "cleaningTool"
   ],
   "bin.n.01": [
     "breakable",
@@ -1244,7 +1246,8 @@
   "eraser.n.01": [
     "breakable",
     "burnable",
-    "dustyable"
+    "dustyable",
+    "cleaningTool"
   ],
   "cable.n.02": [
     "dustyable"
@@ -1355,7 +1358,8 @@
     "burnable",
     "dustyable",
     "scrubbable",
-    "soakable"
+    "soakable",
+    "cleaningTool"
   ],
   "stool.n.01": [
     "burnable",
@@ -1588,7 +1592,8 @@
     "sliceable"
   ],
   "scraper.n.01": [
-    "scrubbable"
+    "scrubbable",
+    "cleaningTool"
   ],
   "thread.n.01": [
     "breakable",
@@ -2598,7 +2603,8 @@
   "dishtowel.n.01": [
     "burnable",
     "scrubbable",
-    "soakable"
+    "soakable",
+    "cleaningTool"
   ],
   "beer.n.01": [
     "freezable",
@@ -4644,7 +4650,8 @@
     "perishable"
   ],
   "carpet_sweeper.n.01": [
-    "burnable"
+    "burnable",
+    "cleaningTool"
   ],
   "ladle.n.01": [
     "dustyable",
@@ -6515,7 +6522,8 @@
   ],
   "dinner_napkin.n.01": [
     "burnable",
-    "soakable"
+    "soakable",
+    "cleaningTool"
   ],
   "dish_rack.n.01": [
     "dustyable",
@@ -6727,13 +6735,15 @@
     "burnable",
     "dustyable",
     "scrubbable",
-    "soakable"
+    "soakable",
+    "cleaningTool"
   ],
   "hand_towel.n.01": [
     "burnable",
     "dustyable",
     "scrubbable",
-    "soakable"
+    "soakable",
+    "cleaningTool"
   ],
   "candy_cane.n.01": [
     "burnable",
