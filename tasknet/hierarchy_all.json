@@ -383,8 +383,8 @@
                                     {
                                       "name": "sofa.n.01",
                                       "igibson_categories": [
-                                        "couch",
-                                        "sofa"
+                                        "sofa",
+                                        "couch"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -804,9 +804,9 @@
                             {
                               "name": "rug.n.01",
                               "igibson_categories": [
+                                "carpet",
                                 "rug",
-                                "carpeting",
-                                "carpet"
+                                "carpeting"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -1006,8 +1006,8 @@
                                     {
                                       "name": "cream_pitcher.n.01",
                                       "igibson_categories": [
-                                        "cream_pitcher",
-                                        "creamer"
+                                        "creamer",
+                                        "cream_pitcher"
                                       ],
                                       "abilities": {
                                         "breakable": {},
@@ -1427,8 +1427,8 @@
                                 {
                                   "name": "ashcan.n.01",
                                   "igibson_categories": [
-                                    "trash_can",
-                                    "dustbin"
+                                    "dustbin",
+                                    "trash_can"
                                   ],
                                   "abilities": {
                                     "dustyable": {},
@@ -2485,8 +2485,8 @@
                                         {
                                           "name": "television_receiver.n.01",
                                           "igibson_categories": [
-                                            "standing_tv",
                                             "wall_mounted_tv",
+                                            "standing_tv",
                                             "television",
                                             "tv"
                                           ],
@@ -3768,9 +3768,9 @@
                                         {
                                           "name": "loudspeaker.n.01",
                                           "igibson_categories": [
-                                            "loudspeaker",
                                             "speaker",
-                                            "speaker_system"
+                                            "speaker_system",
+                                            "loudspeaker"
                                           ],
                                           "abilities": {
                                             "dustyable": {},
@@ -4597,8 +4597,8 @@
                                         {
                                           "name": "thumbtack.n.01",
                                           "igibson_categories": [
-                                            "pushpin",
-                                            "thumbtack"
+                                            "thumbtack",
+                                            "pushpin"
                                           ],
                                           "abilities": {
                                             "dustyable": {},
@@ -4621,8 +4621,8 @@
                                             {
                                               "name": "thumbtack.n.01",
                                               "igibson_categories": [
-                                                "pushpin",
-                                                "thumbtack"
+                                                "thumbtack",
+                                                "pushpin"
                                               ],
                                               "abilities": {
                                                 "dustyable": {},
@@ -4955,8 +4955,8 @@
                                     }
                                   ],
                                   "igibson_categories": [
-                                    "holder",
-                                    "paper_towel_holder"
+                                    "paper_towel_holder",
+                                    "holder"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -6832,8 +6832,8 @@
                                     {
                                       "name": "lawn_mower.n.01",
                                       "igibson_categories": [
-                                        "mower",
-                                        "lawn_mower"
+                                        "lawn_mower",
+                                        "mower"
                                       ],
                                       "abilities": {
                                         "slicer": {},
@@ -6996,8 +6996,8 @@
                                             {
                                               "name": "frying_pan.n.01",
                                               "igibson_categories": [
-                                                "skillet",
-                                                "frying_pan"
+                                                "frying_pan",
+                                                "skillet"
                                               ],
                                               "abilities": {
                                                 "dustyable": {},
@@ -8579,9 +8579,9 @@
                             {
                               "name": "rug.n.01",
                               "igibson_categories": [
+                                "carpet",
                                 "rug",
-                                "carpeting",
-                                "carpet"
+                                "carpeting"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -8713,8 +8713,8 @@
                                 {
                                   "name": "gym_shoe.n.01",
                                   "igibson_categories": [
-                                    "sneaker",
-                                    "gym_shoe"
+                                    "gym_shoe",
+                                    "sneaker"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -8918,8 +8918,8 @@
                                     {
                                       "name": "jersey.n.03",
                                       "igibson_categories": [
-                                        "t-shirt",
-                                        "jersey"
+                                        "jersey",
+                                        "t-shirt"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -9034,9 +9034,9 @@
                                     {
                                       "name": "jean.n.01",
                                       "igibson_categories": [
+                                        "jean",
                                         "denim",
-                                        "jeans",
-                                        "jean"
+                                        "jeans"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -9372,9 +9372,9 @@
                                     {
                                       "name": "jean.n.01",
                                       "igibson_categories": [
+                                        "jean",
                                         "denim",
-                                        "jeans",
-                                        "jean"
+                                        "jeans"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -9783,10 +9783,10 @@
                             }
                           ],
                           "igibson_categories": [
-                            "wrapping",
                             "wrapped_gift",
+                            "wrapper",
                             "wrap",
-                            "wrapper"
+                            "wrapping"
                           ],
                           "abilities": {
                             "breakable": {},
@@ -10746,8 +10746,8 @@
                                         {
                                           "name": "jersey.n.03",
                                           "igibson_categories": [
-                                            "t-shirt",
-                                            "jersey"
+                                            "jersey",
+                                            "t-shirt"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -10862,9 +10862,9 @@
                                         {
                                           "name": "jean.n.01",
                                           "igibson_categories": [
+                                            "jean",
                                             "denim",
-                                            "jeans",
-                                            "jean"
+                                            "jeans"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -11200,9 +11200,9 @@
                                         {
                                           "name": "jean.n.01",
                                           "igibson_categories": [
+                                            "jean",
                                             "denim",
-                                            "jeans",
-                                            "jean"
+                                            "jeans"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -12769,8 +12769,8 @@
                             {
                               "name": "newspaper.n.03",
                               "igibson_categories": [
-                                "paper",
-                                "newspaper"
+                                "newspaper",
+                                "paper"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -14651,8 +14651,8 @@
                                 {
                                   "name": "jewel.n.01",
                                   "igibson_categories": [
-                                    "gem",
-                                    "jewel"
+                                    "jewel",
+                                    "gem"
                                   ],
                                   "abilities": {
                                     "breakable": {},
@@ -14797,8 +14797,8 @@
                             {
                               "name": "wreath.n.01",
                               "igibson_categories": [
-                                "wreath",
-                                "garland"
+                                "garland",
+                                "wreath"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -15927,8 +15927,8 @@
                                         {
                                           "name": "apple.n.01",
                                           "igibson_categories": [
-                                            "half_apple",
-                                            "apple"
+                                            "apple",
+                                            "half_apple"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -15941,14 +15941,15 @@
                                             "dustyable": {},
                                             "freezable": {},
                                             "perishable": {},
+                                            "sliceable": {},
                                             "stainable": {}
                                           }
                                         },
                                         {
                                           "name": "apricot.n.02",
                                           "igibson_categories": [
-                                            "half_apricot",
-                                            "apricot"
+                                            "apricot",
+                                            "half_apricot"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -16145,8 +16146,8 @@
                                             {
                                               "name": "lemon.n.01",
                                               "igibson_categories": [
-                                                "half_lemon",
-                                                "lemon"
+                                                "lemon",
+                                                "half_lemon"
                                               ],
                                               "abilities": {
                                                 "burnable": {
@@ -16179,6 +16180,7 @@
                                                 "dustyable": {},
                                                 "freezable": {},
                                                 "perishable": {},
+                                                "sliceable": {},
                                                 "stainable": {}
                                               }
                                             },
@@ -16252,7 +16254,8 @@
                                           ],
                                           "abilities": {
                                             "freezable": {},
-                                            "perishable": {}
+                                            "perishable": {},
+                                            "sliceable": {}
                                           }
                                         },
                                         {
@@ -16278,8 +16281,8 @@
                                         {
                                           "name": "pear.n.01",
                                           "igibson_categories": [
-                                            "half_pear",
-                                            "pear"
+                                            "pear",
+                                            "half_pear"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -16297,8 +16300,8 @@
                                         {
                                           "name": "pineapple.n.02",
                                           "igibson_categories": [
-                                            "pineapple",
-                                            "half_pineapple"
+                                            "half_pineapple",
+                                            "pineapple"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -16620,8 +16623,8 @@
                                         {
                                           "name": "apple.n.01",
                                           "igibson_categories": [
-                                            "half_apple",
-                                            "apple"
+                                            "apple",
+                                            "half_apple"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -16634,14 +16637,15 @@
                                             "dustyable": {},
                                             "freezable": {},
                                             "perishable": {},
+                                            "sliceable": {},
                                             "stainable": {}
                                           }
                                         },
                                         {
                                           "name": "pear.n.01",
                                           "igibson_categories": [
-                                            "half_pear",
-                                            "pear"
+                                            "pear",
+                                            "half_pear"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -16667,7 +16671,8 @@
                                           "cook_temperature": 212.0
                                         },
                                         "freezable": {},
-                                        "perishable": {}
+                                        "perishable": {},
+                                        "sliceable": {}
                                       }
                                     },
                                     {
@@ -16845,6 +16850,7 @@
                                                     },
                                                     "freezable": {},
                                                     "perishable": {},
+                                                    "sliceable": {},
                                                     "soakable": {},
                                                     "stainable": {}
                                                   }
@@ -17865,8 +17871,8 @@
                             {
                               "name": "apple.n.01",
                               "igibson_categories": [
-                                "half_apple",
-                                "apple"
+                                "apple",
+                                "half_apple"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -17879,14 +17885,15 @@
                                 "dustyable": {},
                                 "freezable": {},
                                 "perishable": {},
+                                "sliceable": {},
                                 "stainable": {}
                               }
                             },
                             {
                               "name": "apricot.n.02",
                               "igibson_categories": [
-                                "half_apricot",
-                                "apricot"
+                                "apricot",
+                                "half_apricot"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -18083,8 +18090,8 @@
                                 {
                                   "name": "lemon.n.01",
                                   "igibson_categories": [
-                                    "half_lemon",
-                                    "lemon"
+                                    "lemon",
+                                    "half_lemon"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -18117,6 +18124,7 @@
                                     "dustyable": {},
                                     "freezable": {},
                                     "perishable": {},
+                                    "sliceable": {},
                                     "stainable": {}
                                   }
                                 },
@@ -18190,7 +18198,8 @@
                               ],
                               "abilities": {
                                 "freezable": {},
-                                "perishable": {}
+                                "perishable": {},
+                                "sliceable": {}
                               }
                             },
                             {
@@ -18216,8 +18225,8 @@
                             {
                               "name": "pear.n.01",
                               "igibson_categories": [
-                                "half_pear",
-                                "pear"
+                                "pear",
+                                "half_pear"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -18235,8 +18244,8 @@
                             {
                               "name": "pineapple.n.02",
                               "igibson_categories": [
-                                "pineapple",
-                                "half_pineapple"
+                                "half_pineapple",
+                                "pineapple"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -18840,8 +18849,8 @@
                                             }
                                           ],
                                           "igibson_categories": [
-                                            "chili",
-                                            "chilly"
+                                            "chilly",
+                                            "chili"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -18900,8 +18909,8 @@
                                 {
                                   "name": "tomato.n.01",
                                   "igibson_categories": [
-                                    "half_tomato",
-                                    "tomato"
+                                    "tomato",
+                                    "half_tomato"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -19536,8 +19545,8 @@
                     {
                       "name": "coconut.n.01",
                       "igibson_categories": [
-                        "coconut",
-                        "half_coconut"
+                        "half_coconut",
+                        "coconut"
                       ],
                       "abilities": {
                         "breakable": {},
@@ -19571,8 +19580,8 @@
                     {
                       "name": "chocolate.n.02",
                       "igibson_categories": [
-                        "chocolate_box",
-                        "chocolate"
+                        "chocolate",
+                        "chocolate_box"
                       ],
                       "abilities": {
                         "breakable": {},
@@ -21629,8 +21638,8 @@
                                     {
                                       "name": "catsup.n.01",
                                       "igibson_categories": [
-                                        "ketchup",
-                                        "catsup"
+                                        "catsup",
+                                        "ketchup"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -22323,8 +22332,8 @@
                                         }
                                       ],
                                       "igibson_categories": [
-                                        "sugar",
-                                        "sugar_jar"
+                                        "sugar_jar",
+                                        "sugar"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -24222,9 +24231,9 @@
                             {
                               "name": "pop.n.02",
                               "igibson_categories": [
-                                "pop",
+                                "soda",
                                 "pop_case",
-                                "soda"
+                                "pop"
                               ],
                               "abilities": {
                                 "freezable": {},
@@ -24265,8 +24274,8 @@
                         {
                           "name": "tea.n.01",
                           "igibson_categories": [
-                            "tea",
-                            "tea_box"
+                            "tea_box",
+                            "tea"
                           ],
                           "abilities": {
                             "freezable": {},
@@ -24330,9 +24339,9 @@
                             }
                           ],
                           "igibson_categories": [
+                            "coffee_cup",
                             "coffee_bag",
-                            "coffee",
-                            "coffee_cup"
+                            "coffee"
                           ],
                           "abilities": {
                             "burnable": {},
@@ -26092,9 +26101,9 @@
                                 {
                                   "name": "pop.n.02",
                                   "igibson_categories": [
-                                    "pop",
+                                    "soda",
                                     "pop_case",
-                                    "soda"
+                                    "pop"
                                   ],
                                   "abilities": {
                                     "freezable": {},
@@ -26135,8 +26144,8 @@
                             {
                               "name": "tea.n.01",
                               "igibson_categories": [
-                                "tea",
-                                "tea_box"
+                                "tea_box",
+                                "tea"
                               ],
                               "abilities": {
                                 "freezable": {},
@@ -26200,9 +26209,9 @@
                                 }
                               ],
                               "igibson_categories": [
+                                "coffee_cup",
                                 "coffee_bag",
-                                "coffee",
-                                "coffee_cup"
+                                "coffee"
                               ],
                               "abilities": {
                                 "burnable": {},
@@ -28182,9 +28191,9 @@
                                     {
                                       "name": "pop.n.02",
                                       "igibson_categories": [
-                                        "pop",
+                                        "soda",
                                         "pop_case",
-                                        "soda"
+                                        "pop"
                                       ],
                                       "abilities": {
                                         "freezable": {},
@@ -28225,8 +28234,8 @@
                                 {
                                   "name": "tea.n.01",
                                   "igibson_categories": [
-                                    "tea",
-                                    "tea_box"
+                                    "tea_box",
+                                    "tea"
                                   ],
                                   "abilities": {
                                     "freezable": {},
@@ -28290,9 +28299,9 @@
                                     }
                                   ],
                                   "igibson_categories": [
+                                    "coffee_cup",
                                     "coffee_bag",
-                                    "coffee",
-                                    "coffee_cup"
+                                    "coffee"
                                   ],
                                   "abilities": {
                                     "burnable": {},
@@ -29277,8 +29286,8 @@
                     {
                       "name": "wreath.n.01",
                       "igibson_categories": [
-                        "wreath",
-                        "garland"
+                        "garland",
+                        "wreath"
                       ],
                       "abilities": {
                         "breakable": {},

@@ -5418,6 +5418,7 @@
                                     "dustyable": {},
                                     "freezable": {},
                                     "perishable": {},
+                                    "sliceable": {},
                                     "stainable": {}
                                   }
                                 },
@@ -5473,7 +5474,8 @@
                               ],
                               "abilities": {
                                 "freezable": {},
-                                "perishable": {}
+                                "perishable": {},
+                                "sliceable": {}
                               }
                             },
                             {
@@ -5511,6 +5513,7 @@
                                 "dustyable": {},
                                 "freezable": {},
                                 "perishable": {},
+                                "sliceable": {},
                                 "stainable": {}
                               }
                             },
@@ -23684,6 +23687,7 @@
                                                 "dustyable": {},
                                                 "freezable": {},
                                                 "perishable": {},
+                                                "sliceable": {},
                                                 "stainable": {}
                                               }
                                             },
@@ -23739,7 +23743,8 @@
                                           ],
                                           "abilities": {
                                             "freezable": {},
-                                            "perishable": {}
+                                            "perishable": {},
+                                            "sliceable": {}
                                           }
                                         },
                                         {
@@ -23777,6 +23782,7 @@
                                             "dustyable": {},
                                             "freezable": {},
                                             "perishable": {},
+                                            "sliceable": {},
                                             "stainable": {}
                                           }
                                         },
@@ -24323,6 +24329,7 @@
                                             "dustyable": {},
                                             "freezable": {},
                                             "perishable": {},
+                                            "sliceable": {},
                                             "stainable": {}
                                           }
                                         },
@@ -24355,7 +24362,8 @@
                                           "cook_temperature": 212.0
                                         },
                                         "freezable": {},
-                                        "perishable": {}
+                                        "perishable": {},
+                                        "sliceable": {}
                                       }
                                     },
                                     {
