@@ -96,7 +96,7 @@ class TaskNetTask(object):
 
             # Import scenes and objects into simulator
             self.import_scene()
-            self.import_agent()
+            # self.import_agent()
 
             if self.online_sampling:
                 # Sample objects to satisfy initial conditions
@@ -107,7 +107,7 @@ class TaskNetTask(object):
                 # Add clutter objects into the scenes
                 self.clutter_scene()
 
-            self.move_agent()
+            # self.move_agent()
 
         # Generate goal condition with the fully populated self.object_scope
         self.gen_goal_conditions()
