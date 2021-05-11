@@ -9264,6 +9264,7 @@
                                 "burnable": {
                                   "burn_temperature": 250.0
                                 },
+                                "cleaningTool": {},
                                 "soakable": {},
                                 "stainable": {}
                               }
@@ -9292,6 +9293,7 @@
                                 "burnable": {
                                   "burn_temperature": 200.0
                                 },
+                                "cleaningTool": {},
                                 "soakable": {},
                                 "stainable": {}
                               }
@@ -24973,6 +24975,7 @@
                             "burnable": {
                               "burn_temperature": 250.0
                             },
+                            "cleaningTool": {},
                             "soakable": {},
                             "stainable": {}
                           }
@@ -25001,6 +25004,7 @@
                             "burnable": {
                               "burn_temperature": 200.0
                             },
+                            "cleaningTool": {},
                             "soakable": {},
                             "stainable": {}
                           }
