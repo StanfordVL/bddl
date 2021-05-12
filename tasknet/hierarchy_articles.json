@@ -14776,6 +14776,7 @@
                                     "burnable": {
                                       "burn_temperature": 500.0
                                     },
+                                    "cleaningTool": {},
                                     "dustyable": {},
                                     "stainable": {}
                                   }
@@ -17121,6 +17122,7 @@
                                 "burnable": {
                                   "burn_temperature": 500.0
                                 },
+                                "cleaningTool": {},
                                 "dustyable": {},
                                 "stainable": {}
                               }
