@@ -9025,18 +9025,6 @@
                               }
                             },
                             {
-                              "name": "document.n.02",
-                              "igibson_categories": [
-                                "document"
-                              ],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 100.0
-                                },
-                                "dustyable": {}
-                              }
-                            },
-                            {
                               "name": "model.n.04",
                               "children": [
                                 {
@@ -9060,7 +9048,9 @@
                             }
                           ],
                           "igibson_categories": [],
-                          "abilities": {}
+                          "abilities": {
+                            "breakable": {}
+                          }
                         },
                         {
                           "name": "art.n.01",
@@ -24855,11 +24845,7 @@
                                       "igibson_categories": [
                                         "tree"
                                       ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 1472.0
-                                        }
-                                      }
+                                      "abilities": {}
                                     },
                                     {
                                       "name": "shrub.n.01",
@@ -24896,31 +24882,66 @@
                                   ],
                                   "igibson_categories": [],
                                   "abilities": {
-                                    "burnable": {}
+                                    "burnable": {
+                                      "burn_temperature": 300
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 220.0
+                                    },
+                                    "perishable": {},
+                                    "sliceable": {}
                                   }
                                 }
                               ],
                               "igibson_categories": [],
                               "abilities": {
-                                "burnable": {}
+                                "burnable": {
+                                  "burn_temperature": 300
+                                },
+                                "cookable": {
+                                  "cook_temperature": 220.0
+                                },
+                                "perishable": {},
+                                "sliceable": {}
                               }
                             }
                           ],
                           "igibson_categories": [],
                           "abilities": {
-                            "burnable": {}
+                            "burnable": {
+                              "burn_temperature": 300
+                            },
+                            "cookable": {
+                              "cook_temperature": 220.0
+                            },
+                            "perishable": {},
+                            "sliceable": {}
                           }
                         }
                       ],
                       "igibson_categories": [],
                       "abilities": {
-                        "burnable": {}
+                        "burnable": {
+                          "burn_temperature": 300
+                        },
+                        "cookable": {
+                          "cook_temperature": 220.0
+                        },
+                        "perishable": {},
+                        "sliceable": {}
                       }
                     }
                   ],
                   "igibson_categories": [],
                   "abilities": {
-                    "burnable": {}
+                    "burnable": {
+                      "burn_temperature": 300
+                    },
+                    "cookable": {
+                      "cook_temperature": 220.0
+                    },
+                    "perishable": {},
+                    "sliceable": {}
                   }
                 }
               ],
@@ -27996,22 +28017,20 @@
           "abilities": {}
         },
         {
-          "name": "group.n.01",
+          "name": "communication.n.02",
           "children": [
             {
-              "name": "arrangement.n.02",
+              "name": "written_communication.n.01",
               "children": [
                 {
-                  "name": "flower_arrangement.n.01",
+                  "name": "writing.n.02",
                   "children": [
                     {
-                      "name": "wreath.n.01",
+                      "name": "document.n.01",
                       "igibson_categories": [
-                        "garland",
-                        "wreath"
+                        "document"
                       ],
                       "abilities": {
-                        "breakable": {},
                         "burnable": {
                           "burn_temperature": 100.0
                         },
@@ -28021,7 +28040,6 @@
                   ],
                   "igibson_categories": [],
                   "abilities": {
-                    "breakable": {},
                     "burnable": {
                       "burn_temperature": 100.0
                     },
@@ -28031,26 +28049,12 @@
               ],
               "igibson_categories": [],
               "abilities": {
-                "breakable": {},
                 "burnable": {
                   "burn_temperature": 100.0
                 },
                 "dustyable": {}
               }
-            }
-          ],
-          "igibson_categories": [],
-          "abilities": {
-            "breakable": {},
-            "burnable": {
-              "burn_temperature": 100.0
             },
-            "dustyable": {}
-          }
-        },
-        {
-          "name": "communication.n.02",
-          "children": [
             {
               "name": "signal.n.01",
               "children": [
@@ -28117,6 +28121,59 @@
           ],
           "igibson_categories": [],
           "abilities": {}
+        },
+        {
+          "name": "group.n.01",
+          "children": [
+            {
+              "name": "arrangement.n.02",
+              "children": [
+                {
+                  "name": "flower_arrangement.n.01",
+                  "children": [
+                    {
+                      "name": "wreath.n.01",
+                      "igibson_categories": [
+                        "garland",
+                        "wreath"
+                      ],
+                      "abilities": {
+                        "breakable": {},
+                        "burnable": {
+                          "burn_temperature": 100.0
+                        },
+                        "dustyable": {}
+                      }
+                    }
+                  ],
+                  "igibson_categories": [],
+                  "abilities": {
+                    "breakable": {},
+                    "burnable": {
+                      "burn_temperature": 100.0
+                    },
+                    "dustyable": {}
+                  }
+                }
+              ],
+              "igibson_categories": [],
+              "abilities": {
+                "breakable": {},
+                "burnable": {
+                  "burn_temperature": 100.0
+                },
+                "dustyable": {}
+              }
+            }
+          ],
+          "igibson_categories": [],
+          "abilities": {
+            "breakable": {},
+            "burnable": {
+              "burn_temperature": 100.0
+            },
+            "dustyable": {}
+          }
         },
         {
           "name": "psychological_feature.n.01",
