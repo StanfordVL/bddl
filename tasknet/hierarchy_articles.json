@@ -5117,7 +5117,11 @@
                           "igibson_categories": [
                             "wood"
                           ],
-                          "abilities": {}
+                          "abilities": {
+                            "burnable": {
+                              "burn_temperature": 572.0
+                            }
+                          }
                         },
                         {
                           "name": "plant_product.n.01",
@@ -5174,11 +5178,7 @@
                       ],
                       "igibson_categories": [],
                       "abilities": {
-                        "breakable": {},
-                        "burnable": {
-                          "burn_temperature": 1100.0
-                        },
-                        "perishable": {}
+                        "burnable": {}
                       }
                     },
                     {
@@ -27302,7 +27302,11 @@
                               "igibson_categories": [
                                 "wood"
                               ],
-                              "abilities": {}
+                              "abilities": {
+                                "burnable": {
+                                  "burn_temperature": 572.0
+                                }
+                              }
                             },
                             {
                               "name": "plant_product.n.01",
@@ -27359,11 +27363,7 @@
                           ],
                           "igibson_categories": [],
                           "abilities": {
-                            "breakable": {},
-                            "burnable": {
-                              "burn_temperature": 1100.0
-                            },
-                            "perishable": {}
+                            "burnable": {}
                           }
                         },
                         {
