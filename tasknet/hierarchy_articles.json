@@ -157,8 +157,8 @@
                                             {
                                               "name": "mayonnaise.n.01",
                                               "igibson_categories": [
-                                                "mayonnaise",
-                                                "mayo"
+                                                "mayo",
+                                                "mayonnaise"
                                               ],
                                               "abilities": {
                                                 "burnable": {
@@ -421,8 +421,8 @@
                                     {
                                       "name": "catsup.n.01",
                                       "igibson_categories": [
-                                        "ketchup",
-                                        "catsup"
+                                        "catsup",
+                                        "ketchup"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -816,8 +816,8 @@
                                     {
                                       "name": "coriander.n.03",
                                       "igibson_categories": [
-                                        "coriander",
-                                        "cilantro"
+                                        "cilantro",
+                                        "coriander"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -3077,8 +3077,8 @@
                             {
                               "name": "kabob.n.01",
                               "igibson_categories": [
-                                "kebab",
-                                "kabob"
+                                "kabob",
+                                "kebab"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -8735,8 +8735,8 @@
                             {
                               "name": "newspaper.n.03",
                               "igibson_categories": [
-                                "paper",
-                                "newspaper"
+                                "newspaper",
+                                "paper"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -8853,8 +8853,8 @@
                                 {
                                   "name": "hardback.n.01",
                                   "igibson_categories": [
-                                    "hardcover",
-                                    "hardback"
+                                    "hardback",
+                                    "hardcover"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -8884,7 +8884,6 @@
                                 "burnable": {
                                   "burn_temperature": 100.0
                                 },
-                                "coldSource": {},
                                 "dustyable": {},
                                 "openable": {},
                                 "soakable": {}
@@ -10732,8 +10731,8 @@
                                             {
                                               "name": "thumbtack.n.01",
                                               "igibson_categories": [
-                                                "thumbtack",
-                                                "pushpin"
+                                                "pushpin",
+                                                "thumbtack"
                                               ],
                                               "abilities": {
                                                 "dustyable": {},
@@ -10917,8 +10916,8 @@
                                     {
                                       "name": "slide_fastener.n.01",
                                       "igibson_categories": [
-                                        "zipper",
-                                        "zip"
+                                        "zip",
+                                        "zipper"
                                       ],
                                       "abilities": {
                                         "breakable": {},
@@ -10948,8 +10947,8 @@
                                         {
                                           "name": "thumbtack.n.01",
                                           "igibson_categories": [
-                                            "thumbtack",
-                                            "pushpin"
+                                            "pushpin",
+                                            "thumbtack"
                                           ],
                                           "abilities": {
                                             "dustyable": {},
@@ -11337,8 +11336,8 @@
                                     {
                                       "name": "gauge.n.01",
                                       "igibson_categories": [
-                                        "gauge",
-                                        "gage"
+                                        "gage",
+                                        "gauge"
                                       ],
                                       "abilities": {
                                         "dustyable": {},
@@ -11867,8 +11866,8 @@
                                             }
                                           ],
                                           "igibson_categories": [
-                                            "headphone",
-                                            "earphone"
+                                            "earphone",
+                                            "headphone"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -13201,8 +13200,8 @@
                                     }
                                   ],
                                   "igibson_categories": [
-                                    "luggage",
-                                    "baggage"
+                                    "baggage",
+                                    "luggage"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -13432,8 +13431,8 @@
                                 {
                                   "name": "bathtub.n.01",
                                   "igibson_categories": [
-                                    "tub",
-                                    "bathtub"
+                                    "bathtub",
+                                    "tub"
                                   ],
                                   "abilities": {
                                     "dustyable": {},
@@ -14246,8 +14245,8 @@
                             {
                               "name": "bag.n.04",
                               "igibson_categories": [
-                                "purse",
-                                "handbag"
+                                "handbag",
+                                "purse"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -14639,8 +14638,8 @@
                                 {
                                   "name": "chest_of_drawers.n.01",
                                   "igibson_categories": [
-                                    "dresser",
-                                    "bureau"
+                                    "bureau",
+                                    "dresser"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -14717,8 +14716,8 @@
                               "name": "rug.n.01",
                               "igibson_categories": [
                                 "carpet",
-                                "rug",
-                                "carpeting"
+                                "carpeting",
+                                "rug"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -14840,8 +14839,8 @@
                                                 {
                                                   "name": "cleaver.n.01",
                                                   "igibson_categories": [
-                                                    "cleaver",
-                                                    "chopper"
+                                                    "chopper",
+                                                    "cleaver"
                                                   ],
                                                   "abilities": {
                                                     "dustyable": {},
@@ -14994,8 +14993,8 @@
                                     {
                                       "name": "wrench.n.03",
                                       "igibson_categories": [
-                                        "wrench",
-                                        "spanner"
+                                        "spanner",
+                                        "wrench"
                                       ],
                                       "abilities": {
                                         "dustyable": {},
@@ -15118,8 +15117,8 @@
                                                 {
                                                   "name": "pruner.n.02",
                                                   "igibson_categories": [
-                                                    "pruner",
-                                                    "lopper"
+                                                    "lopper",
+                                                    "pruner"
                                                   ],
                                                   "abilities": {
                                                     "slicer": {},
@@ -15208,8 +15207,8 @@
                                     {
                                       "name": "pincer.n.01",
                                       "igibson_categories": [
-                                        "tweezer",
-                                        "pincer"
+                                        "pincer",
+                                        "tweezer"
                                       ],
                                       "abilities": {
                                         "dustyable": {},
@@ -16654,8 +16653,8 @@
                                         {
                                           "name": "television_receiver.n.01",
                                           "igibson_categories": [
-                                            "tv",
-                                            "television"
+                                            "television",
+                                            "tv"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -17271,8 +17270,8 @@
                                 {
                                   "name": "sunscreen.n.01",
                                   "igibson_categories": [
-                                    "sunscreen",
-                                    "sunblock"
+                                    "sunblock",
+                                    "sunscreen"
                                   ],
                                   "abilities": {
                                     "freezable": {},
@@ -17872,8 +17871,8 @@
                                 {
                                   "name": "bannister.n.02",
                                   "igibson_categories": [
-                                    "handrail",
-                                    "banister"
+                                    "banister",
+                                    "handrail"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -18034,8 +18033,8 @@
                                 {
                                   "name": "cornice.n.01",
                                   "igibson_categories": [
-                                    "valance",
-                                    "cornice"
+                                    "cornice",
+                                    "valance"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -18661,8 +18660,8 @@
                                         {
                                           "name": "jean.n.01",
                                           "igibson_categories": [
-                                            "jean",
-                                            "denim"
+                                            "denim",
+                                            "jean"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -18804,8 +18803,8 @@
                                         {
                                           "name": "jean.n.01",
                                           "igibson_categories": [
-                                            "jean",
-                                            "denim"
+                                            "denim",
+                                            "jean"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -18836,8 +18835,8 @@
                                         {
                                           "name": "jersey.n.03",
                                           "igibson_categories": [
-                                            "t-shirt",
-                                            "jersey"
+                                            "jersey",
+                                            "t-shirt"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -18994,8 +18993,8 @@
                                         }
                                       ],
                                       "igibson_categories": [
-                                        "sweater",
-                                        "jumper"
+                                        "jumper",
+                                        "sweater"
                                       ],
                                       "abilities": {
                                         "burnable": {}
@@ -19740,7 +19739,6 @@
                                                 "heatSource": {
                                                   "temperature": 1000,
                                                   "heating_rate": 0.04,
-                                                  "distance_threshold": 0.4,
                                                   "requires_toggled_on": true,
                                                   "requires_closed": true,
                                                   "requires_inside": true
@@ -19969,8 +19967,8 @@
                                     {
                                       "name": "jean.n.01",
                                       "igibson_categories": [
-                                        "jean",
-                                        "denim"
+                                        "denim",
+                                        "jean"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -20112,8 +20110,8 @@
                                     {
                                       "name": "jean.n.01",
                                       "igibson_categories": [
-                                        "jean",
-                                        "denim"
+                                        "denim",
+                                        "jean"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -20144,8 +20142,8 @@
                                     {
                                       "name": "jersey.n.03",
                                       "igibson_categories": [
-                                        "t-shirt",
-                                        "jersey"
+                                        "jersey",
+                                        "t-shirt"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -20302,8 +20300,8 @@
                                     }
                                   ],
                                   "igibson_categories": [
-                                    "sweater",
-                                    "jumper"
+                                    "jumper",
+                                    "sweater"
                                   ],
                                   "abilities": {
                                     "burnable": {}
@@ -21180,8 +21178,8 @@
                           ],
                           "igibson_categories": [
                             "wrap",
-                            "wrapping",
-                            "wrapper"
+                            "wrapper",
+                            "wrapping"
                           ],
                           "abilities": {
                             "breakable": {},
@@ -21243,8 +21241,8 @@
                                     }
                                   ],
                                   "igibson_categories": [
-                                    "quilt",
-                                    "comforter"
+                                    "comforter",
+                                    "quilt"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -21329,8 +21327,8 @@
                               "name": "rug.n.01",
                               "igibson_categories": [
                                 "carpet",
-                                "rug",
-                                "carpeting"
+                                "carpeting",
+                                "rug"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -21740,8 +21738,8 @@
                             {
                               "name": "carpet_pad.n.01",
                               "igibson_categories": [
-                                "underlayment",
-                                "underlay"
+                                "underlay",
+                                "underlayment"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -23108,8 +23106,8 @@
                                 {
                                   "name": "jewel.n.01",
                                   "igibson_categories": [
-                                    "jewel",
-                                    "gem"
+                                    "gem",
+                                    "jewel"
                                   ],
                                   "abilities": {
                                     "breakable": {},
@@ -23130,8 +23128,8 @@
                             {
                               "name": "sequin.n.01",
                               "igibson_categories": [
-                                "sequin",
-                                "diamante"
+                                "diamante",
+                                "sequin"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -23268,8 +23266,8 @@
                                 {
                                   "name": "frosting.n.01",
                                   "igibson_categories": [
-                                    "icing",
-                                    "frosting"
+                                    "frosting",
+                                    "icing"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -24729,8 +24727,8 @@
                         }
                       ],
                       "igibson_categories": [
-                        "stone",
-                        "rock"
+                        "rock",
+                        "stone"
                       ],
                       "abilities": {
                         "stainable": {}
@@ -24760,8 +24758,8 @@
                         {
                           "name": "shell.n.05",
                           "igibson_categories": [
-                            "shell",
-                            "eggshell"
+                            "eggshell",
+                            "shell"
                           ],
                           "abilities": {
                             "breakable": {},
@@ -27896,8 +27894,8 @@
                             {
                               "name": "fillet.n.02",
                               "igibson_categories": [
-                                "fillet",
-                                "filet"
+                                "filet",
+                                "fillet"
                               ],
                               "abilities": {
                                 "breakable": {},
