@@ -8884,7 +8884,6 @@
                                 "burnable": {
                                   "burn_temperature": 100.0
                                 },
-                                "coldSource": {},
                                 "dustyable": {},
                                 "openable": {},
                                 "soakable": {}
@@ -19740,7 +19739,6 @@
                                                 "heatSource": {
                                                   "temperature": 1000,
                                                   "heating_rate": 0.04,
-                                                  "distance_threshold": 0.4,
                                                   "requires_toggled_on": true,
                                                   "requires_closed": true,
                                                   "requires_inside": true
