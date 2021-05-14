@@ -57,7 +57,7 @@
                                 }
                               ],
                               "igibson_categories": [
-                                "floor"
+                                "floors"
                               ],
                               "abilities": {
                                 "dustyable": {},
@@ -871,8 +871,8 @@
                                 {
                                   "name": "bathtub.n.01",
                                   "igibson_categories": [
-                                    "bathtub",
-                                    "tub"
+                                    "tub",
+                                    "bathtub"
                                   ],
                                   "abilities": {
                                     "dustyable": {},
@@ -1572,6 +1572,38 @@
                               "name": "bag.n.01",
                               "children": [
                                 {
+                                  "name": "drawstring_bag.n.01",
+                                  "children": [
+                                    {
+                                      "name": "duffel_bag.n.01",
+                                      "igibson_categories": [
+                                        "duffle",
+                                        "duffel",
+                                        "duffel_bag"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 410.0
+                                        },
+                                        "dustyable": {},
+                                        "openable": {},
+                                        "soakable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 410.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "soakable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
                                   "name": "backpack.n.01",
                                   "igibson_categories": [
                                     "backpack",
@@ -1612,37 +1644,6 @@
                                     },
                                     "dustyable": {},
                                     "openable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "drawstring_bag.n.01",
-                                  "children": [
-                                    {
-                                      "name": "duffel_bag.n.01",
-                                      "igibson_categories": [
-                                        "duffel",
-                                        "duffle"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 410.0
-                                        },
-                                        "dustyable": {},
-                                        "openable": {},
-                                        "soakable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 410.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "soakable": {},
                                     "stainable": {}
                                   }
                                 },
@@ -2322,23 +2323,12 @@
                                   }
                                 },
                                 {
-                                  "name": "pendulum.n.01",
-                                  "igibson_categories": [
-                                    "pendulum"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "stainable": {},
-                                    "timeSetable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
                                   "name": "duplicator.n.01",
                                   "children": [
                                     {
                                       "name": "facsimile.n.02",
                                       "igibson_categories": [
+                                        "facsimile",
                                         "fax"
                                       ],
                                       "abilities": {
@@ -2362,6 +2352,18 @@
                                     "dustyable": {},
                                     "openable": {},
                                     "stainable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "pendulum.n.01",
+                                  "igibson_categories": [
+                                    "pendulum"
+                                  ],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "stainable": {},
+                                    "timeSetable": {},
                                     "toggleable": {}
                                   }
                                 },
@@ -2486,10 +2488,10 @@
                                         {
                                           "name": "television_receiver.n.01",
                                           "igibson_categories": [
-                                            "standing_tv",
-                                            "wall_mounted_tv",
                                             "tv",
-                                            "television"
+                                            "television",
+                                            "wall_mounted_tv",
+                                            "standing_tv"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -2527,6 +2529,57 @@
                                     "breakable": {},
                                     "dustyable": {},
                                     "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "modem.n.01",
+                                  "igibson_categories": [
+                                    "modem"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "peripheral.n.01",
+                                  "children": [
+                                    {
+                                      "name": "data_input_device.n.01",
+                                      "children": [
+                                        {
+                                          "name": "scanner.n.02",
+                                          "igibson_categories": [
+                                            "scanner"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "dustyable": {},
+                                            "openable": {},
+                                            "toggleable": {}
+                                          }
+                                        },
+                                        {
+                                          "name": "computer_keyboard.n.01",
+                                          "igibson_categories": [
+                                            "keypad"
+                                          ],
+                                          "abilities": {
+                                            "dustyable": {},
+                                            "stainable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "dustyable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "dustyable": {}
                                   }
                                 },
                                 {
@@ -2579,46 +2632,6 @@
                                   }
                                 },
                                 {
-                                  "name": "peripheral.n.01",
-                                  "children": [
-                                    {
-                                      "name": "data_input_device.n.01",
-                                      "children": [
-                                        {
-                                          "name": "scanner.n.02",
-                                          "igibson_categories": [
-                                            "scanner"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "dustyable": {},
-                                            "openable": {},
-                                            "toggleable": {}
-                                          }
-                                        },
-                                        {
-                                          "name": "computer_keyboard.n.01",
-                                          "igibson_categories": [
-                                            "keypad"
-                                          ],
-                                          "abilities": {
-                                            "dustyable": {},
-                                            "stainable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "dustyable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "dustyable": {}
-                                  }
-                                },
-                                {
                                   "name": "audio_system.n.01",
                                   "children": [
                                     {
@@ -2665,17 +2678,6 @@
                                     "breakable": {},
                                     "dustyable": {},
                                     "timeSetable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "modem.n.01",
-                                  "igibson_categories": [
-                                    "modem"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "dustyable": {},
                                     "toggleable": {}
                                   }
                                 },
@@ -3045,6 +3047,23 @@
                                           }
                                         },
                                         {
+                                          "name": "watch.n.01",
+                                          "igibson_categories": [
+                                            "watch"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "burnable": {
+                                              "burn_temperature": 200.0
+                                            },
+                                            "dustyable": {},
+                                            "screwable": {},
+                                            "stainable": {},
+                                            "timeSetable": {},
+                                            "toggleable": {}
+                                          }
+                                        },
+                                        {
                                           "name": "timer.n.01",
                                           "children": [
                                             {
@@ -3073,23 +3092,6 @@
                                               "burn_temperature": 780.0
                                             },
                                             "dustyable": {},
-                                            "stainable": {},
-                                            "timeSetable": {},
-                                            "toggleable": {}
-                                          }
-                                        },
-                                        {
-                                          "name": "watch.n.01",
-                                          "igibson_categories": [
-                                            "watch"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "burnable": {
-                                              "burn_temperature": 200.0
-                                            },
-                                            "dustyable": {},
-                                            "screwable": {},
                                             "stainable": {},
                                             "timeSetable": {},
                                             "toggleable": {}
@@ -3769,9 +3771,9 @@
                                         {
                                           "name": "loudspeaker.n.01",
                                           "igibson_categories": [
-                                            "speaker",
                                             "speaker_system",
-                                            "loudspeaker"
+                                            "loudspeaker",
+                                            "speaker"
                                           ],
                                           "abilities": {
                                             "dustyable": {},
@@ -4598,8 +4600,8 @@
                                         {
                                           "name": "thumbtack.n.01",
                                           "igibson_categories": [
-                                            "pushpin",
-                                            "thumbtack"
+                                            "thumbtack",
+                                            "pushpin"
                                           ],
                                           "abilities": {
                                             "dustyable": {},
@@ -4622,8 +4624,8 @@
                                             {
                                               "name": "thumbtack.n.01",
                                               "igibson_categories": [
-                                                "pushpin",
-                                                "thumbtack"
+                                                "thumbtack",
+                                                "pushpin"
                                               ],
                                               "abilities": {
                                                 "dustyable": {},
@@ -5085,8 +5087,8 @@
                                         {
                                           "name": "light_bulb.n.01",
                                           "igibson_categories": [
-                                            "light_bulb",
                                             "lightbulb",
+                                            "light_bulb",
                                             "bulb"
                                           ],
                                           "abilities": {
@@ -5323,6 +5325,74 @@
                               "igibson_categories": [],
                               "abilities": {
                                 "breakable": {},
+                                "dustyable": {},
+                                "stainable": {}
+                              }
+                            },
+                            {
+                              "name": "trap.n.01",
+                              "children": [
+                                {
+                                  "name": "mousetrap.n.01",
+                                  "igibson_categories": [
+                                    "mousetrap"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 392.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {},
+                                    "toggleable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "breakable": {},
+                                "burnable": {
+                                  "burn_temperature": 392.0
+                                },
+                                "dustyable": {},
+                                "openable": {},
+                                "stainable": {},
+                                "toggleable": {}
+                              }
+                            },
+                            {
+                              "name": "alarm.n.02",
+                              "children": [
+                                {
+                                  "name": "siren.n.04",
+                                  "igibson_categories": [
+                                    "siren"
+                                  ],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [
+                                "alarm"
+                              ],
+                              "abilities": {
+                                "dustyable": {},
+                                "toggleable": {}
+                              }
+                            },
+                            {
+                              "name": "comb.n.01",
+                              "igibson_categories": [
+                                "comb"
+                              ],
+                              "abilities": {
+                                "breakable": {},
+                                "burnable": {
+                                  "burn_temperature": 200.0
+                                },
                                 "dustyable": {},
                                 "stainable": {}
                               }
@@ -5845,20 +5915,6 @@
                               }
                             },
                             {
-                              "name": "comb.n.01",
-                              "igibson_categories": [
-                                "comb"
-                              ],
-                              "abilities": {
-                                "breakable": {},
-                                "burnable": {
-                                  "burn_temperature": 200.0
-                                },
-                                "dustyable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
                               "name": "blower.n.01",
                               "igibson_categories": [
                                 "blower"
@@ -5952,28 +6008,6 @@
                               "abilities": {
                                 "breakable": {},
                                 "dustyable": {}
-                              }
-                            },
-                            {
-                              "name": "alarm.n.02",
-                              "children": [
-                                {
-                                  "name": "siren.n.04",
-                                  "igibson_categories": [
-                                    "siren"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "toggleable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [
-                                "alarm"
-                              ],
-                              "abilities": {
-                                "dustyable": {},
-                                "toggleable": {}
                               }
                             },
                             {
@@ -6176,38 +6210,6 @@
                                   "burn_temperature": 100.0
                                 },
                                 "heatSource": {},
-                                "toggleable": {}
-                              }
-                            },
-                            {
-                              "name": "trap.n.01",
-                              "children": [
-                                {
-                                  "name": "mousetrap.n.01",
-                                  "igibson_categories": [
-                                    "mousetrap"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 392.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {},
-                                    "toggleable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "breakable": {},
-                                "burnable": {
-                                  "burn_temperature": 392.0
-                                },
-                                "dustyable": {},
-                                "openable": {},
-                                "stainable": {},
                                 "toggleable": {}
                               }
                             },
@@ -6597,60 +6599,6 @@
                                       }
                                     },
                                     {
-                                      "name": "spatula.n.02",
-                                      "igibson_categories": [
-                                        "spatula"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 500.0
-                                        },
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "wrench.n.03",
-                                      "igibson_categories": [
-                                        "wrench",
-                                        "spanner"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "screwable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "plunger.n.03",
-                                      "igibson_categories": [
-                                        "plunger"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "float.n.05",
-                                      "igibson_categories": [
-                                        "float"
-                                      ],
-                                      "abilities": {
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "shovel.n.01",
-                                      "igibson_categories": [
-                                        "shovel"
-                                      ],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
                                       "name": "saw.n.02",
                                       "children": [
                                         {
@@ -6701,6 +6649,60 @@
                                       ],
                                       "abilities": {
                                         "slicer": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "spatula.n.02",
+                                      "igibson_categories": [
+                                        "spatula"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 500.0
+                                        },
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "wrench.n.03",
+                                      "igibson_categories": [
+                                        "wrench",
+                                        "spanner"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "screwable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "plunger.n.03",
+                                      "igibson_categories": [
+                                        "plunger"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "float.n.05",
+                                      "igibson_categories": [
+                                        "float"
+                                      ],
+                                      "abilities": {
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "shovel.n.01",
+                                      "igibson_categories": [
+                                        "shovel"
+                                      ],
+                                      "abilities": {
+                                        "breakable": {},
                                         "stainable": {}
                                       }
                                     },
@@ -6833,8 +6835,8 @@
                                     {
                                       "name": "lawn_mower.n.01",
                                       "igibson_categories": [
-                                        "mower",
-                                        "lawn_mower"
+                                        "lawn_mower",
+                                        "mower"
                                       ],
                                       "abilities": {
                                         "slicer": {},
@@ -7611,8 +7613,8 @@
                                 {
                                   "name": "scrub_brush.n.01",
                                   "igibson_categories": [
-                                    "scrubber",
-                                    "scrub_brush"
+                                    "scrub_brush",
+                                    "scrubber"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -7950,16 +7952,40 @@
                               }
                             },
                             {
-                              "name": "deodorant.n.01",
-                              "igibson_categories": [
-                                "deodorant"
-                              ],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 100.0
+                              "name": "cream.n.03",
+                              "children": [
+                                {
+                                  "name": "sunscreen.n.01",
+                                  "igibson_categories": [
+                                    "sunblock",
+                                    "sunscreen"
+                                  ],
+                                  "abilities": {
+                                    "freezable": {},
+                                    "liquid": {},
+                                    "perishable": {}
+                                  }
                                 },
-                                "perishable": {},
-                                "screwable": {}
+                                {
+                                  "name": "lanolin.n.02",
+                                  "igibson_categories": [
+                                    "lanolin"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 833.0
+                                    },
+                                    "freezable": {},
+                                    "liquid": {},
+                                    "perishable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "freezable": {},
+                                "liquid": {},
+                                "perishable": {}
                               }
                             },
                             {
@@ -8031,40 +8057,16 @@
                               "abilities": {}
                             },
                             {
-                              "name": "cream.n.03",
-                              "children": [
-                                {
-                                  "name": "sunscreen.n.01",
-                                  "igibson_categories": [
-                                    "sunscreen",
-                                    "sunblock"
-                                  ],
-                                  "abilities": {
-                                    "freezable": {},
-                                    "liquid": {},
-                                    "perishable": {}
-                                  }
-                                },
-                                {
-                                  "name": "lanolin.n.02",
-                                  "igibson_categories": [
-                                    "lanolin"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 833.0
-                                    },
-                                    "freezable": {},
-                                    "liquid": {},
-                                    "perishable": {}
-                                  }
-                                }
+                              "name": "deodorant.n.01",
+                              "igibson_categories": [
+                                "deodorant"
                               ],
-                              "igibson_categories": [],
                               "abilities": {
-                                "freezable": {},
-                                "liquid": {},
-                                "perishable": {}
+                                "burnable": {
+                                  "burn_temperature": 100.0
+                                },
+                                "perishable": {},
+                                "screwable": {}
                               }
                             },
                             {
@@ -8921,8 +8923,8 @@
                                     {
                                       "name": "jersey.n.03",
                                       "igibson_categories": [
-                                        "t-shirt",
-                                        "jersey"
+                                        "jersey",
+                                        "t-shirt"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -9037,9 +9039,9 @@
                                     {
                                       "name": "jean.n.01",
                                       "igibson_categories": [
-                                        "denim",
+                                        "jeans",
                                         "jean",
-                                        "jeans"
+                                        "denim"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -9375,9 +9377,9 @@
                                     {
                                       "name": "jean.n.01",
                                       "igibson_categories": [
-                                        "denim",
+                                        "jeans",
                                         "jean",
-                                        "jeans"
+                                        "denim"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -9418,8 +9420,8 @@
                                 {
                                   "name": "pajama.n.02",
                                   "igibson_categories": [
-                                    "pajama",
                                     "pyjama",
+                                    "pajama",
                                     "pajamas"
                                   ],
                                   "abilities": {
@@ -9786,10 +9788,10 @@
                             }
                           ],
                           "igibson_categories": [
-                            "wrapping",
                             "wrapped_gift",
-                            "wrap",
-                            "wrapper"
+                            "wrapping",
+                            "wrapper",
+                            "wrap"
                           ],
                           "abilities": {
                             "breakable": {},
@@ -10749,8 +10751,8 @@
                                         {
                                           "name": "jersey.n.03",
                                           "igibson_categories": [
-                                            "t-shirt",
-                                            "jersey"
+                                            "jersey",
+                                            "t-shirt"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -10865,9 +10867,9 @@
                                         {
                                           "name": "jean.n.01",
                                           "igibson_categories": [
-                                            "denim",
+                                            "jeans",
                                             "jean",
-                                            "jeans"
+                                            "denim"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -11203,9 +11205,9 @@
                                         {
                                           "name": "jean.n.01",
                                           "igibson_categories": [
-                                            "denim",
+                                            "jeans",
                                             "jean",
-                                            "jeans"
+                                            "denim"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -11246,8 +11248,8 @@
                                     {
                                       "name": "pajama.n.02",
                                       "igibson_categories": [
-                                        "pajama",
                                         "pyjama",
+                                        "pajama",
                                         "pajamas"
                                       ],
                                       "abilities": {
@@ -12006,6 +12008,19 @@
                                   }
                                 },
                                 {
+                                  "name": "grill.n.02",
+                                  "igibson_categories": [
+                                    "grille",
+                                    "grill"
+                                  ],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "heatSource": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
                                   "name": "frame.n.10",
                                   "igibson_categories": [
                                     "frame"
@@ -12016,19 +12031,6 @@
                                       "burn_temperature": 300.0
                                     },
                                     "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "grill.n.02",
-                                  "igibson_categories": [
-                                    "grill",
-                                    "grille"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "heatSource": {},
                                     "openable": {},
                                     "stainable": {}
                                   }
@@ -12586,18 +12588,6 @@
                               }
                             },
                             {
-                              "name": "document.n.02",
-                              "igibson_categories": [
-                                "document"
-                              ],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 100.0
-                                },
-                                "dustyable": {}
-                              }
-                            },
-                            {
                               "name": "model.n.04",
                               "children": [
                                 {
@@ -12621,7 +12611,9 @@
                             }
                           ],
                           "igibson_categories": [],
-                          "abilities": {}
+                          "abilities": {
+                            "breakable": {}
+                          }
                         },
                         {
                           "name": "product.n.02",
@@ -12632,8 +12624,8 @@
                                 {
                                   "name": "hardback.n.01",
                                   "igibson_categories": [
-                                    "hardback",
-                                    "hardcover"
+                                    "hardcover",
+                                    "hardback"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -12772,8 +12764,8 @@
                             {
                               "name": "newspaper.n.03",
                               "igibson_categories": [
-                                "paper",
-                                "newspaper"
+                                "newspaper",
+                                "paper"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -14826,6 +14818,18 @@
                           }
                         },
                         {
+                          "name": "christmas_tree.n.05",
+                          "igibson_categories": [
+                            "christmas_tree",
+                            "christmas_tree_decorated"
+                          ],
+                          "abilities": {
+                            "burnable": {
+                              "burn_temperature": 1472.0
+                            }
+                          }
+                        },
+                        {
                           "name": "garnish.n.01",
                           "children": [
                             {
@@ -14932,6 +14936,31 @@
                               "name": "thread.n.01",
                               "children": [
                                 {
+                                  "name": "tinsel.n.02",
+                                  "igibson_categories": [
+                                    "tinsel"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 734.0
+                                    },
+                                    "dustyable": {}
+                                  }
+                                },
+                                {
+                                  "name": "dental_floss.n.01",
+                                  "igibson_categories": [
+                                    "floss",
+                                    "dental_floss"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 410.0
+                                    }
+                                  }
+                                },
+                                {
                                   "name": "cotton.n.04",
                                   "igibson_categories": [
                                     "cotton"
@@ -14942,30 +14971,6 @@
                                     },
                                     "sliceable": {},
                                     "soakable": {}
-                                  }
-                                },
-                                {
-                                  "name": "dental_floss.n.01",
-                                  "igibson_categories": [
-                                    "floss"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 410.0
-                                    }
-                                  }
-                                },
-                                {
-                                  "name": "tinsel.n.02",
-                                  "igibson_categories": [
-                                    "tinsel"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 734.0
-                                    },
-                                    "dustyable": {}
                                   }
                                 }
                               ],
@@ -15877,22 +15882,28 @@
                                       "igibson_categories": [
                                         "tree"
                                       ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 1472.0
-                                        }
-                                      }
+                                      "abilities": {}
                                     }
                                   ],
                                   "igibson_categories": [],
                                   "abilities": {
-                                    "burnable": {}
+                                    "burnable": {
+                                      "burn_temperature": 300
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 220.0
+                                    },
+                                    "perishable": {},
+                                    "sliceable": {}
                                   }
                                 }
                               ],
                               "igibson_categories": [],
                               "abilities": {
-                                "burnable": {}
+                                "burnable": {},
+                                "cookable": {},
+                                "perishable": {},
+                                "sliceable": {}
                               }
                             }
                           ],
@@ -15955,8 +15966,8 @@
                                         {
                                           "name": "apricot.n.02",
                                           "igibson_categories": [
-                                            "half_apricot",
-                                            "apricot"
+                                            "apricot",
+                                            "half_apricot"
                                           ],
                                           "abilities": {
                                             "breakable": {},
@@ -16132,8 +16143,8 @@
                                         {
                                           "name": "kiwi.n.03",
                                           "igibson_categories": [
-                                            "kiwi",
-                                            "half_kiwi"
+                                            "half_kiwi",
+                                            "kiwi"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -16173,8 +16184,8 @@
                                             {
                                               "name": "orange.n.01",
                                               "igibson_categories": [
-                                                "orange",
-                                                "half_orange"
+                                                "half_orange",
+                                                "orange"
                                               ],
                                               "abilities": {
                                                 "breakable": {},
@@ -16307,8 +16318,8 @@
                                         {
                                           "name": "pineapple.n.02",
                                           "igibson_categories": [
-                                            "pineapple",
-                                            "half_pineapple"
+                                            "half_pineapple",
+                                            "pineapple"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -16402,8 +16413,8 @@
                                             {
                                               "name": "cranberry.n.02",
                                               "igibson_categories": [
-                                                "cranberry",
-                                                "container_cranberry"
+                                                "container_cranberry",
+                                                "cranberry"
                                               ],
                                               "abilities": {
                                                 "burnable": {
@@ -16897,23 +16908,6 @@
                                                   }
                                                 },
                                                 {
-                                                  "name": "peanut.n.04",
-                                                  "igibson_categories": [
-                                                    "peanut"
-                                                  ],
-                                                  "abilities": {
-                                                    "breakable": {},
-                                                    "burnable": {
-                                                      "burn_temperature": 2012
-                                                    },
-                                                    "cookable": {
-                                                      "cook_temperature": 350.0
-                                                    },
-                                                    "perishable": {},
-                                                    "sliceable": {}
-                                                  }
-                                                },
-                                                {
                                                   "name": "almond.n.02",
                                                   "igibson_categories": [
                                                     "almond"
@@ -16925,6 +16919,23 @@
                                                     },
                                                     "cookable": {
                                                       "cook_temperature": 325.0
+                                                    },
+                                                    "perishable": {},
+                                                    "sliceable": {}
+                                                  }
+                                                },
+                                                {
+                                                  "name": "peanut.n.04",
+                                                  "igibson_categories": [
+                                                    "peanut"
+                                                  ],
+                                                  "abilities": {
+                                                    "breakable": {},
+                                                    "burnable": {
+                                                      "burn_temperature": 2012
+                                                    },
+                                                    "cookable": {
+                                                      "cook_temperature": 350.0
                                                     },
                                                     "perishable": {},
                                                     "sliceable": {}
@@ -17035,8 +17046,8 @@
                                         {
                                           "name": "cranberry.n.02",
                                           "igibson_categories": [
-                                            "cranberry",
-                                            "container_cranberry"
+                                            "container_cranberry",
+                                            "cranberry"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -17903,8 +17914,8 @@
                             {
                               "name": "apricot.n.02",
                               "igibson_categories": [
-                                "half_apricot",
-                                "apricot"
+                                "apricot",
+                                "half_apricot"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -18080,8 +18091,8 @@
                             {
                               "name": "kiwi.n.03",
                               "igibson_categories": [
-                                "kiwi",
-                                "half_kiwi"
+                                "half_kiwi",
+                                "kiwi"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -18121,8 +18132,8 @@
                                 {
                                   "name": "orange.n.01",
                                   "igibson_categories": [
-                                    "orange",
-                                    "half_orange"
+                                    "half_orange",
+                                    "orange"
                                   ],
                                   "abilities": {
                                     "breakable": {},
@@ -18255,8 +18266,8 @@
                             {
                               "name": "pineapple.n.02",
                               "igibson_categories": [
-                                "pineapple",
-                                "half_pineapple"
+                                "half_pineapple",
+                                "pineapple"
                               ],
                               "abilities": {
                                 "burnable": {
@@ -18350,8 +18361,8 @@
                                 {
                                   "name": "cranberry.n.02",
                                   "igibson_categories": [
-                                    "cranberry",
-                                    "container_cranberry"
+                                    "container_cranberry",
+                                    "cranberry"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -18860,8 +18871,8 @@
                                             }
                                           ],
                                           "igibson_categories": [
-                                            "chilly",
-                                            "chili"
+                                            "chili",
+                                            "chilly"
                                           ],
                                           "abilities": {
                                             "burnable": {
@@ -18920,8 +18931,8 @@
                                 {
                                   "name": "tomato.n.01",
                                   "igibson_categories": [
-                                    "tomato",
-                                    "half_tomato"
+                                    "half_tomato",
+                                    "tomato"
                                   ],
                                   "abilities": {
                                     "burnable": {
@@ -19160,6 +19171,26 @@
                                   }
                                 },
                                 {
+                                  "name": "green_onion.n.01",
+                                  "igibson_categories": [
+                                    "green_onion_chopped",
+                                    "scallion",
+                                    "green_onion"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 525
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 425.0
+                                    },
+                                    "freezable": {},
+                                    "perishable": {},
+                                    "sliceable": {}
+                                  }
+                                },
+                                {
                                   "name": "shallot.n.03",
                                   "igibson_categories": [
                                     "shallot"
@@ -19170,24 +19201,6 @@
                                     },
                                     "cookable": {
                                       "cook_temperature": 400.0
-                                    },
-                                    "freezable": {},
-                                    "perishable": {},
-                                    "sliceable": {}
-                                  }
-                                },
-                                {
-                                  "name": "green_onion.n.01",
-                                  "igibson_categories": [
-                                    "scallion"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 525
-                                    },
-                                    "cookable": {
-                                      "cook_temperature": 425.0
                                     },
                                     "freezable": {},
                                     "perishable": {},
@@ -19556,8 +19569,8 @@
                     {
                       "name": "coconut.n.01",
                       "igibson_categories": [
-                        "coconut",
-                        "half_coconut"
+                        "half_coconut",
+                        "coconut"
                       ],
                       "abilities": {
                         "breakable": {},
@@ -19591,8 +19604,8 @@
                     {
                       "name": "chocolate.n.02",
                       "igibson_categories": [
-                        "chocolate_box",
-                        "chocolate"
+                        "chocolate",
+                        "chocolate_box"
                       ],
                       "abilities": {
                         "breakable": {},
@@ -19784,6 +19797,63 @@
                               }
                             },
                             {
+                              "name": "white_bread.n.01",
+                              "children": [
+                                {
+                                  "name": "french_bread.n.01",
+                                  "children": [
+                                    {
+                                      "name": "baguet.n.01",
+                                      "igibson_categories": [
+                                        "baguette"
+                                      ],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "burnable": {
+                                          "burn_temperature": 525
+                                        },
+                                        "cookable": {
+                                          "cook_temperature": 425.0
+                                        },
+                                        "freezable": {},
+                                        "perishable": {},
+                                        "sliceable": {},
+                                        "soakable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 525
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 425.0
+                                    },
+                                    "freezable": {},
+                                    "perishable": {},
+                                    "sliceable": {},
+                                    "soakable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "breakable": {},
+                                "burnable": {
+                                  "burn_temperature": 525
+                                },
+                                "cookable": {
+                                  "cook_temperature": 425.0
+                                },
+                                "freezable": {},
+                                "perishable": {},
+                                "sliceable": {},
+                                "soakable": {}
+                              }
+                            },
+                            {
                               "name": "flatbread.n.01",
                               "children": [
                                 {
@@ -19857,63 +19927,6 @@
                                 "freezable": {},
                                 "perishable": {},
                                 "sliceable": {}
-                              }
-                            },
-                            {
-                              "name": "white_bread.n.01",
-                              "children": [
-                                {
-                                  "name": "french_bread.n.01",
-                                  "children": [
-                                    {
-                                      "name": "baguet.n.01",
-                                      "igibson_categories": [
-                                        "baguette"
-                                      ],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "burnable": {
-                                          "burn_temperature": 525
-                                        },
-                                        "cookable": {
-                                          "cook_temperature": 425.0
-                                        },
-                                        "freezable": {},
-                                        "perishable": {},
-                                        "sliceable": {},
-                                        "soakable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 525
-                                    },
-                                    "cookable": {
-                                      "cook_temperature": 425.0
-                                    },
-                                    "freezable": {},
-                                    "perishable": {},
-                                    "sliceable": {},
-                                    "soakable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "breakable": {},
-                                "burnable": {
-                                  "burn_temperature": 525
-                                },
-                                "cookable": {
-                                  "cook_temperature": 425.0
-                                },
-                                "freezable": {},
-                                "perishable": {},
-                                "sliceable": {},
-                                "soakable": {}
                               }
                             },
                             {
@@ -20050,6 +20063,25 @@
                               }
                             },
                             {
+                              "name": "gingerbread.n.01",
+                              "igibson_categories": [
+                                "gingerbread"
+                              ],
+                              "abilities": {
+                                "breakable": {},
+                                "burnable": {
+                                  "burn_temperature": 450
+                                },
+                                "cookable": {
+                                  "cook_temperature": 350.0
+                                },
+                                "freezable": {},
+                                "perishable": {},
+                                "sliceable": {},
+                                "soakable": {}
+                              }
+                            },
+                            {
                               "name": "pancake.n.01",
                               "children": [
                                 {
@@ -20104,25 +20136,6 @@
                                 "freezable": {},
                                 "perishable": {},
                                 "sliceable": {}
-                              }
-                            },
-                            {
-                              "name": "gingerbread.n.01",
-                              "igibson_categories": [
-                                "gingerbread"
-                              ],
-                              "abilities": {
-                                "breakable": {},
-                                "burnable": {
-                                  "burn_temperature": 450
-                                },
-                                "cookable": {
-                                  "cook_temperature": 350.0
-                                },
-                                "freezable": {},
-                                "perishable": {},
-                                "sliceable": {},
-                                "soakable": {}
                               }
                             },
                             {
@@ -20472,24 +20485,6 @@
                               "name": "cut_of_pork.n.01",
                               "children": [
                                 {
-                                  "name": "bacon.n.01",
-                                  "igibson_categories": [
-                                    "bacon"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 450
-                                    },
-                                    "cookable": {
-                                      "cook_temperature": 400.0
-                                    },
-                                    "freezable": {},
-                                    "perishable": {},
-                                    "sliceable": {}
-                                  }
-                                },
-                                {
                                   "name": "ham.n.01",
                                   "children": [
                                     {
@@ -20518,6 +20513,24 @@
                                     "breakable": {},
                                     "burnable": {
                                       "burn_temperature": 400
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 400.0
+                                    },
+                                    "freezable": {},
+                                    "perishable": {},
+                                    "sliceable": {}
+                                  }
+                                },
+                                {
+                                  "name": "bacon.n.01",
+                                  "igibson_categories": [
+                                    "bacon"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 450
                                     },
                                     "cookable": {
                                       "cook_temperature": 400.0
@@ -21649,8 +21662,8 @@
                                     {
                                       "name": "catsup.n.01",
                                       "igibson_categories": [
-                                        "catsup",
-                                        "ketchup"
+                                        "ketchup",
+                                        "catsup"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -21774,8 +21787,8 @@
                                             {
                                               "name": "mayonnaise.n.01",
                                               "igibson_categories": [
-                                                "mayonnaise",
-                                                "mayo"
+                                                "mayo",
+                                                "mayonnaise"
                                               ],
                                               "abilities": {
                                                 "burnable": {
@@ -21898,6 +21911,28 @@
                                       }
                                     },
                                     {
+                                      "name": "dip.n.04",
+                                      "children": [
+                                        {
+                                          "name": "guacamole.n.01",
+                                          "igibson_categories": [
+                                            "guacamole"
+                                          ],
+                                          "abilities": {
+                                            "freezable": {},
+                                            "perishable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [
+                                        "dip"
+                                      ],
+                                      "abilities": {
+                                        "freezable": {},
+                                        "perishable": {}
+                                      }
+                                    },
+                                    {
                                       "name": "vinegar.n.01",
                                       "igibson_categories": [
                                         "vinegar"
@@ -21970,28 +22005,6 @@
                                           "burn_temperature": 450
                                         },
                                         "cookable": {},
-                                        "freezable": {},
-                                        "perishable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "dip.n.04",
-                                      "children": [
-                                        {
-                                          "name": "guacamole.n.01",
-                                          "igibson_categories": [
-                                            "guacamole"
-                                          ],
-                                          "abilities": {
-                                            "freezable": {},
-                                            "perishable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [
-                                        "dip"
-                                      ],
-                                      "abilities": {
                                         "freezable": {},
                                         "perishable": {}
                                       }
@@ -22343,8 +22356,8 @@
                                         }
                                       ],
                                       "igibson_categories": [
-                                        "sugar_jar",
-                                        "sugar"
+                                        "sugar",
+                                        "sugar_jar"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -22804,6 +22817,63 @@
                                   }
                                 },
                                 {
+                                  "name": "white_bread.n.01",
+                                  "children": [
+                                    {
+                                      "name": "french_bread.n.01",
+                                      "children": [
+                                        {
+                                          "name": "baguet.n.01",
+                                          "igibson_categories": [
+                                            "baguette"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "burnable": {
+                                              "burn_temperature": 525
+                                            },
+                                            "cookable": {
+                                              "cook_temperature": 425.0
+                                            },
+                                            "freezable": {},
+                                            "perishable": {},
+                                            "sliceable": {},
+                                            "soakable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "burnable": {
+                                          "burn_temperature": 525
+                                        },
+                                        "cookable": {
+                                          "cook_temperature": 425.0
+                                        },
+                                        "freezable": {},
+                                        "perishable": {},
+                                        "sliceable": {},
+                                        "soakable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 525
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 425.0
+                                    },
+                                    "freezable": {},
+                                    "perishable": {},
+                                    "sliceable": {},
+                                    "soakable": {}
+                                  }
+                                },
+                                {
                                   "name": "flatbread.n.01",
                                   "children": [
                                     {
@@ -22877,63 +22947,6 @@
                                     "freezable": {},
                                     "perishable": {},
                                     "sliceable": {}
-                                  }
-                                },
-                                {
-                                  "name": "white_bread.n.01",
-                                  "children": [
-                                    {
-                                      "name": "french_bread.n.01",
-                                      "children": [
-                                        {
-                                          "name": "baguet.n.01",
-                                          "igibson_categories": [
-                                            "baguette"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "burnable": {
-                                              "burn_temperature": 525
-                                            },
-                                            "cookable": {
-                                              "cook_temperature": 425.0
-                                            },
-                                            "freezable": {},
-                                            "perishable": {},
-                                            "sliceable": {},
-                                            "soakable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "burnable": {
-                                          "burn_temperature": 525
-                                        },
-                                        "cookable": {
-                                          "cook_temperature": 425.0
-                                        },
-                                        "freezable": {},
-                                        "perishable": {},
-                                        "sliceable": {},
-                                        "soakable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 525
-                                    },
-                                    "cookable": {
-                                      "cook_temperature": 425.0
-                                    },
-                                    "freezable": {},
-                                    "perishable": {},
-                                    "sliceable": {},
-                                    "soakable": {}
                                   }
                                 },
                                 {
@@ -23349,8 +23362,8 @@
                                     {
                                       "name": "hamburger.n.01",
                                       "igibson_categories": [
-                                        "hamburger",
-                                        "burger"
+                                        "burger",
+                                        "hamburger"
                                       ],
                                       "abilities": {
                                         "burnable": {
@@ -23601,6 +23614,40 @@
                               }
                             },
                             {
+                              "name": "pasta.n.01",
+                              "children": [
+                                {
+                                  "name": "lasagna.n.01",
+                                  "igibson_categories": [
+                                    "lasagna"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 475
+                                    },
+                                    "cookable": {
+                                      "cook_temperature": 375.0
+                                    },
+                                    "freezable": {},
+                                    "perishable": {},
+                                    "sliceable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "burnable": {
+                                  "burn_temperature": 475
+                                },
+                                "cookable": {
+                                  "cook_temperature": 375.0
+                                },
+                                "freezable": {},
+                                "perishable": {},
+                                "sliceable": {}
+                              }
+                            },
+                            {
                               "name": "mold.n.06",
                               "igibson_categories": [
                                 "mold"
@@ -23679,40 +23726,6 @@
                                 "freezable": {},
                                 "liquid": {},
                                 "perishable": {}
-                              }
-                            },
-                            {
-                              "name": "pasta.n.01",
-                              "children": [
-                                {
-                                  "name": "lasagna.n.01",
-                                  "igibson_categories": [
-                                    "lasagna"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 475
-                                    },
-                                    "cookable": {
-                                      "cook_temperature": 375.0
-                                    },
-                                    "freezable": {},
-                                    "perishable": {},
-                                    "sliceable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 475
-                                },
-                                "cookable": {
-                                  "cook_temperature": 375.0
-                                },
-                                "freezable": {},
-                                "perishable": {},
-                                "sliceable": {}
                               }
                             },
                             {
@@ -23901,6 +23914,22 @@
                                       }
                                     },
                                     {
+                                      "name": "lollipop.n.02",
+                                      "igibson_categories": [
+                                        "lollipop"
+                                      ],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "burnable": {
+                                          "burn_temperature": 350
+                                        },
+                                        "cookable": {
+                                          "cook_temperature": 300.0
+                                        },
+                                        "perishable": {}
+                                      }
+                                    },
+                                    {
                                       "name": "mint.n.05",
                                       "children": [
                                         {
@@ -24005,22 +24034,6 @@
                                         "perishable": {},
                                         "sliceable": {}
                                       }
-                                    },
-                                    {
-                                      "name": "lollipop.n.02",
-                                      "igibson_categories": [
-                                        "lollipop"
-                                      ],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "burnable": {
-                                          "burn_temperature": 350
-                                        },
-                                        "cookable": {
-                                          "cook_temperature": 300.0
-                                        },
-                                        "perishable": {}
-                                      }
                                     }
                                   ],
                                   "igibson_categories": [
@@ -24029,18 +24042,6 @@
                                   "abilities": {
                                     "burnable": {},
                                     "cookable": {}
-                                  }
-                                },
-                                {
-                                  "name": "chewing_gum.n.01",
-                                  "igibson_categories": [
-                                    "gum"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 100.0
-                                    },
-                                    "perishable": {}
                                   }
                                 },
                                 {
@@ -24092,6 +24093,18 @@
                                     "freezable": {},
                                     "perishable": {}
                                   }
+                                },
+                                {
+                                  "name": "chewing_gum.n.01",
+                                  "igibson_categories": [
+                                    "gum"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 100.0
+                                    },
+                                    "perishable": {}
+                                  }
                                 }
                               ],
                               "igibson_categories": [],
@@ -24120,6 +24133,23 @@
                           "igibson_categories": [],
                           "abilities": {
                             "burnable": {}
+                          }
+                        },
+                        {
+                          "name": "puree.n.01",
+                          "igibson_categories": [
+                            "puree"
+                          ],
+                          "abilities": {
+                            "burnable": {
+                              "burn_temperature": 350
+                            },
+                            "cookable": {
+                              "cook_temperature": 235.0
+                            },
+                            "freezable": {},
+                            "liquid": {},
+                            "perishable": {}
                           }
                         },
                         {
@@ -24211,23 +24241,6 @@
                             "kosher"
                           ],
                           "abilities": {}
-                        },
-                        {
-                          "name": "puree.n.01",
-                          "igibson_categories": [
-                            "puree"
-                          ],
-                          "abilities": {
-                            "burnable": {
-                              "burn_temperature": 350
-                            },
-                            "cookable": {
-                              "cook_temperature": 235.0
-                            },
-                            "freezable": {},
-                            "liquid": {},
-                            "perishable": {}
-                          }
                         }
                       ],
                       "igibson_categories": [],
@@ -24242,9 +24255,9 @@
                             {
                               "name": "pop.n.02",
                               "igibson_categories": [
-                                "pop",
                                 "pop_case",
-                                "soda"
+                                "soda",
+                                "pop"
                               ],
                               "abilities": {
                                 "freezable": {},
@@ -24351,8 +24364,8 @@
                           ],
                           "igibson_categories": [
                             "coffee_cup",
-                            "coffee_pouch",
-                            "coffee"
+                            "coffee",
+                            "coffee_pouch"
                           ],
                           "abilities": {
                             "burnable": {},
@@ -25984,7 +25997,11 @@
                           "igibson_categories": [
                             "wood"
                           ],
-                          "abilities": {}
+                          "abilities": {
+                            "burnable": {
+                              "burn_temperature": 572.0
+                            }
+                          }
                         },
                         {
                           "name": "plant_product.n.01",
@@ -26041,11 +26058,7 @@
                       ],
                       "igibson_categories": [],
                       "abilities": {
-                        "breakable": {},
-                        "burnable": {
-                          "burn_temperature": 1100.0
-                        },
-                        "perishable": {}
+                        "burnable": {}
                       }
                     },
                     {
@@ -26112,9 +26125,9 @@
                                 {
                                   "name": "pop.n.02",
                                   "igibson_categories": [
-                                    "pop",
                                     "pop_case",
-                                    "soda"
+                                    "soda",
+                                    "pop"
                                   ],
                                   "abilities": {
                                     "freezable": {},
@@ -26221,8 +26234,8 @@
                               ],
                               "igibson_categories": [
                                 "coffee_cup",
-                                "coffee_pouch",
-                                "coffee"
+                                "coffee",
+                                "coffee_pouch"
                               ],
                               "abilities": {
                                 "burnable": {},
@@ -28074,7 +28087,11 @@
                               "igibson_categories": [
                                 "wood"
                               ],
-                              "abilities": {}
+                              "abilities": {
+                                "burnable": {
+                                  "burn_temperature": 572.0
+                                }
+                              }
                             },
                             {
                               "name": "plant_product.n.01",
@@ -28131,11 +28148,7 @@
                           ],
                           "igibson_categories": [],
                           "abilities": {
-                            "breakable": {},
-                            "burnable": {
-                              "burn_temperature": 1100.0
-                            },
-                            "perishable": {}
+                            "burnable": {}
                           }
                         },
                         {
@@ -28202,9 +28215,9 @@
                                     {
                                       "name": "pop.n.02",
                                       "igibson_categories": [
-                                        "pop",
                                         "pop_case",
-                                        "soda"
+                                        "soda",
+                                        "pop"
                                       ],
                                       "abilities": {
                                         "freezable": {},
@@ -28311,8 +28324,8 @@
                                   ],
                                   "igibson_categories": [
                                     "coffee_cup",
-                                    "coffee_pouch",
-                                    "coffee"
+                                    "coffee",
+                                    "coffee_pouch"
                                   ],
                                   "abilities": {
                                     "burnable": {},
@@ -29148,8 +29161,8 @@
                             {
                               "name": "fillet.n.02",
                               "igibson_categories": [
-                                "fillet",
-                                "filet"
+                                "filet",
+                                "fillet"
                               ],
                               "abilities": {
                                 "breakable": {},
@@ -29550,6 +29563,42 @@
         {
           "name": "communication.n.02",
           "children": [
+            {
+              "name": "written_communication.n.01",
+              "children": [
+                {
+                  "name": "writing.n.02",
+                  "children": [
+                    {
+                      "name": "document.n.01",
+                      "igibson_categories": [
+                        "document"
+                      ],
+                      "abilities": {
+                        "burnable": {
+                          "burn_temperature": 100.0
+                        },
+                        "dustyable": {}
+                      }
+                    }
+                  ],
+                  "igibson_categories": [],
+                  "abilities": {
+                    "burnable": {
+                      "burn_temperature": 100.0
+                    },
+                    "dustyable": {}
+                  }
+                }
+              ],
+              "igibson_categories": [],
+              "abilities": {
+                "burnable": {
+                  "burn_temperature": 100.0
+                },
+                "dustyable": {}
+              }
+            },
             {
               "name": "signal.n.01",
               "children": [
