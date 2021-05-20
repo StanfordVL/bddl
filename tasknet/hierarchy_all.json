@@ -2090,6 +2090,20 @@
                               "name": "case.n.05",
                               "children": [
                                 {
+                                  "name": "briefcase.n.01",
+                                  "igibson_categories": [
+                                    "briefcase"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 413.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
                                   "name": "baggage.n.01",
                                   "children": [
                                     {
@@ -2129,20 +2143,6 @@
                                     },
                                     "dustyable": {},
                                     "openable": {}
-                                  }
-                                },
-                                {
-                                  "name": "briefcase.n.01",
-                                  "igibson_categories": [
-                                    "briefcase"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 413.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
                                   }
                                 }
                               ],
