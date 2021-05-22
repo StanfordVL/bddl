@@ -22192,6 +22192,37 @@
                                       }
                                     },
                                     {
+                                      "name": "tea.n.05",
+                                      "children": [
+                                        {
+                                          "name": "tea_bag.n.01",
+                                          "igibson_categories": [
+                                            "tea_bag"
+                                          ],
+                                          "abilities": {
+                                            "burnable": {},
+                                            "dustyable": {},
+                                            "soakable": {},
+                                            "stainable": {}
+                                          }
+                                        },
+                                        {
+                                          "name": "oolong.n.01",
+                                          "igibson_categories": [
+                                            "oolong"
+                                          ],
+                                          "abilities": {
+                                            "perishable": {},
+                                            "soakable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "soakable": {}
+                                      }
+                                    },
+                                    {
                                       "name": "rosemary.n.02",
                                       "igibson_categories": [
                                         "rosemary"
@@ -22280,26 +22311,6 @@
                                       }
                                     },
                                     {
-                                      "name": "tea.n.05",
-                                      "children": [
-                                        {
-                                          "name": "oolong.n.01",
-                                          "igibson_categories": [
-                                            "oolong"
-                                          ],
-                                          "abilities": {
-                                            "perishable": {},
-                                            "soakable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "perishable": {},
-                                        "soakable": {}
-                                      }
-                                    },
-                                    {
                                       "name": "comfrey.n.02",
                                       "igibson_categories": [
                                         "comfrey"
@@ -22318,9 +22329,7 @@
                                     }
                                   ],
                                   "igibson_categories": [],
-                                  "abilities": {
-                                    "perishable": {}
-                                  }
+                                  "abilities": {}
                                 },
                                 {
                                   "name": "salt.n.02",
