@@ -1569,108 +1569,6 @@
                               }
                             },
                             {
-                              "name": "bag.n.01",
-                              "children": [
-                                {
-                                  "name": "drawstring_bag.n.01",
-                                  "children": [
-                                    {
-                                      "name": "duffel_bag.n.01",
-                                      "igibson_categories": [
-                                        "duffel",
-                                        "duffel_bag",
-                                        "duffle"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 410.0
-                                        },
-                                        "dustyable": {},
-                                        "openable": {},
-                                        "soakable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 410.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "soakable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "backpack.n.01",
-                                  "igibson_categories": [
-                                    "backpack",
-                                    "rucksack"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 100.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "pouch.n.01",
-                                  "igibson_categories": [
-                                    "pouch"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 100.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "carryall.n.01",
-                                  "igibson_categories": [
-                                    "tote"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 410.0
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "sack.n.01",
-                                  "igibson_categories": [
-                                    "sack"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 410.0
-                                    },
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [
-                                "bag"
-                              ],
-                              "abilities": {
-                                "burnable": {},
-                                "openable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
                               "name": "package.n.02",
                               "children": [
                                 {
@@ -2087,6 +1985,109 @@
                               }
                             },
                             {
+                              "name": "bag.n.01",
+                              "children": [
+                                {
+                                  "name": "drawstring_bag.n.01",
+                                  "children": [
+                                    {
+                                      "name": "duffel_bag.n.01",
+                                      "igibson_categories": [
+                                        "duffel",
+                                        "duffel_bag",
+                                        "duffle"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 410.0
+                                        },
+                                        "dustyable": {},
+                                        "openable": {},
+                                        "soakable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 410.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "soakable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "sack.n.01",
+                                  "igibson_categories": [
+                                    "paper_bag",
+                                    "sack"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 410.0
+                                    },
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "backpack.n.01",
+                                  "igibson_categories": [
+                                    "backpack",
+                                    "rucksack"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 100.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "pouch.n.01",
+                                  "igibson_categories": [
+                                    "pouch"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 100.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "carryall.n.01",
+                                  "igibson_categories": [
+                                    "tote"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 410.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [
+                                "bag"
+                              ],
+                              "abilities": {
+                                "burnable": {},
+                                "openable": {},
+                                "stainable": {}
+                              }
+                            },
+                            {
                               "name": "case.n.05",
                               "children": [
                                 {
@@ -2155,6 +2156,37 @@
                               }
                             },
                             {
+                              "name": "bag.n.04",
+                              "children": [
+                                {
+                                  "name": "shoulder_bag.n.01",
+                                  "igibson_categories": [
+                                    "shoulder_bag"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 350.0
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [
+                                "handbag",
+                                "purse"
+                              ],
+                              "abilities": {
+                                "burnable": {
+                                  "burn_temperature": 350.0
+                                },
+                                "dustyable": {},
+                                "openable": {},
+                                "stainable": {}
+                              }
+                            },
+                            {
                               "name": "drawer.n.01",
                               "igibson_categories": [
                                 "drawer"
@@ -2190,20 +2222,6 @@
                               "abilities": {
                                 "dustyable": {},
                                 "openable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
-                              "name": "bag.n.04",
-                              "igibson_categories": [
-                                "handbag",
-                                "purse"
-                              ],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 212.0
-                                },
-                                "dustyable": {},
                                 "stainable": {}
                               }
                             },
@@ -22200,7 +22218,9 @@
                                             "tea_bag"
                                           ],
                                           "abilities": {
-                                            "burnable": {},
+                                            "burnable": {
+                                              "burn_temperature": 250.0
+                                            },
                                             "dustyable": {},
                                             "soakable": {},
                                             "stainable": {}
