@@ -2,60 +2,32 @@
     (:domain igibson)
 
     (:objects
-     	floor1 floor2 - floor
-    	broom1 - broom
-    	oven1 - oven
-    	dustpan1 - dustpan
-    	fridge1 - fridge
-    	squeegee1 - squeegee
-    	bucket1 - bucket
-    	sink1 - sink
-    	soapsuds1 - soapsuds
-    	table1 - table
-    	sofa1 - sofa
+     	floor.n.01_1 - floor.n.01
+    	broom.n.01_1 - broom.n.01
+    	conditioner.n.03_1 - conditioner.n.03
+    	shampoo.n.01_1 - shampoo.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (not 
-            (scrubbed floor1)
-        ) 
-        (not 
-            (scrubbed floor2)
-        ) 
-        (nextto broom1 oven1) 
-        (ontop dustpan1 fridge1) 
-        (nextto squeegee1 fridge1) 
-        (nextto bucket1 sink1) 
-        (and 
-            (nextto soapsuds1 sink1) 
-            (inside soapsuds1 bucket1)
-        ) 
-        (inroom table1 kitchen) 
-        (inroom sink1 kitchen) 
-        (inroom sofa1 livingroom) 
-        (inroom oven1 kitchen) 
-        (inroom floor1 kitchen) 
-        (inroom floor2 livingroom) 
-        (inroom fridge1 kitchen)
+        (dusty floor.n.01_1) 
+        (onfloor broom.n.01_1 floor.n.01_1) 
+        (onfloor conditioner.n.03_1 floor.n.01_1) 
+        (onfloor shampoo.n.01_1 floor.n.01_1) 
+        (inroom floor.n.01_1 bathroom) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (forall 
-                (?floor - floor) 
-                (scrubbed ?floor)
+            (not 
+                (dusty ?floor.n.01_1)
             ) 
-            (nextto ?broom1 ?oven1) 
-            (nextto ?dustpan1 ?oven1) 
-            (and 
-                (nextto ?bucket1 ?fridge1) 
-                (not 
-                    (inside ?soapsuds1 ?bucket1)
-                )
+            (not 
+                (onfloor ?conditioner.n.03_1 ?floor.n.01_1)
             ) 
-            (and 
-                (nextto ?squeegee1 ?fridge1) 
-                (inside ?squeegee1 ?bucket1)
+            (not 
+                (onfloor ?shampoo.n.01_1 ?floor.n.01_1)
             )
         )
     )

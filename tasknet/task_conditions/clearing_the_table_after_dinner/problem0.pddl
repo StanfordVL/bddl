@@ -2,112 +2,55 @@
     (:domain igibson)
 
     (:objects
-     	table1 - table
-    	cutlery1 cutlery2 cutlery3 cutlery4 cutlery5 - cutlery
-    	cup1 cup2 cup3 cup4 - cup
-    	garbage1 - garbage
-    	dishwasher1 - dishwasher
-    	flatware1 flatware2 flatware3 flatware4 flatware5 - flatware
-    	condiment1 condiment2 condiment3 condiment4 condiment5 - condiment
-    	crumb1 crumb2 crumb3 crumb4 crumb5 crumb6 - crumb
+     	floor.n.01_1 - floor.n.01
+    	chair.n.01_1 chair.n.01_2 - chair.n.01
+    	table.n.02_1 - table.n.02
+    	cup.n.01_1 cup.n.01_2 - cup.n.01
+    	bucket.n.01_1 bucket.n.01_2 - bucket.n.01
+    	bowl.n.01_1 bowl.n.01_2 bowl.n.01_3 bowl.n.01_4 - bowl.n.01
+    	catsup.n.01_1 - catsup.n.01
+    	beverage.n.01_1 beverage.n.01_2 - beverage.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (not 
-            (scrubbed table1)
-        ) 
-        (ontop cutlery5 table1) 
-        (ontop cutlery4 table1) 
-        (ontop cutlery3 table1) 
-        (ontop cutlery2 table1) 
-        (ontop cutlery1 table1) 
-        (ontop cup4 table1) 
-        (ontop cup3 table1) 
-        (ontop cup2 table1) 
-        (ontop cup1 table1) 
-        (nextto garbage1 dishwasher1) 
-        (ontop flatware5 table1) 
-        (ontop flatware4 table1) 
-        (ontop flatware3 table1) 
-        (ontop flatware2 table1) 
-        (ontop flatware1 table1) 
-        (and 
-            (ontop condiment1 flatware1) 
-            (under table1 condiment1)
-        ) 
-        (and 
-            (ontop condiment2 flatware2) 
-            (under table1 condiment2)
-        ) 
-        (and 
-            (ontop condiment3 flatware3) 
-            (under table1 condiment3)
-        ) 
-        (and 
-            (ontop condiment4 flatware4) 
-            (under table1 condiment4)
-        ) 
-        (and 
-            (ontop condiment5 flatware5) 
-            (under table1 condiment5)
-        ) 
-        (and 
-            (ontop crumb1 flatware1) 
-            (under table1 crumb1)
-        ) 
-        (and 
-            (ontop crumb2 flatware2) 
-            (under table1 crumb2)
-        ) 
-        (and 
-            (ontop crumb3 flatware3) 
-            (under table1 crumb3)
-        ) 
-        (and 
-            (ontop crumb4 flatware4) 
-            (under table1 crumb4)
-        ) 
-        (and 
-            (ontop crumb5 flatware5) 
-            (under table1 crumb5)
-        ) 
-        (ontop crumb6 table1) 
-        (inroom table1 diningroom) 
-        (inroom dishwasher1 kitchen)
+        (ontop cup.n.01_1 table.n.02_1) 
+        (ontop cup.n.01_2 table.n.02_1) 
+        (onfloor bucket.n.01_1 floor.n.01_1) 
+        (ontop bowl.n.01_1 table.n.02_1) 
+        (ontop bowl.n.01_2 table.n.02_1) 
+        (ontop bowl.n.01_3 table.n.02_1) 
+        (ontop bowl.n.01_4 table.n.02_1) 
+        (ontop catsup.n.01_1 table.n.02_1) 
+        (ontop beverage.n.01_1 table.n.02_1) 
+        (onfloor beverage.n.01_2 floor.n.01_1) 
+        (onfloor bucket.n.01_2 floor.n.01_1) 
+        (inroom floor.n.01_1 dining_room) 
+        (inroom chair.n.01_1 dining_room) 
+        (inroom chair.n.01_2 dining_room) 
+        (inroom table.n.02_1 dining_room) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
             (forall 
-                (?crumb - crumb) 
-                (inside ?crumb ?garbage1)
-            ) 
-            (forall 
-                (?flatware - flatware) 
-                (imply 
-                    (and 
-                        (not 
-                            (ontop ?crumb ?flatware)
-                        ) 
-                        (not 
-                            (ontop ?condiment ?flatware)
-                        )
-                    ) 
-                    (inside ?flatware ?dishwasher1)
+                (?cup.n.01 - cup.n.01) 
+                (exists 
+                    (?bucket.n.01 - bucket.n.01) 
+                    (inside ?cup.n.01 ?bucket.n.01)
                 )
             ) 
             (forall 
-                (?condiment - condiment) 
-                (inside ?condiment ?garbage1)
+                (?bowl.n.01 - bowl.n.01) 
+                (exists 
+                    (?bucket.n.01 - bucket.n.01) 
+                    (inside ?bowl.n.01 ?bucket.n.01)
+                )
             ) 
-            (scrubbed ?table1) 
-            (forall 
-                (?cup - cup) 
-                (inside ?cup ?dishwasher1)
-            ) 
-            (forall 
-                (?cutlery - cutlery) 
-                (inside ?cutlery ?dishwasher1)
+            (exists 
+                (?bucket.n.01 - bucket.n.01) 
+                (inside ?catsup.n.01_1 ?bucket.n.01)
             )
         )
     )

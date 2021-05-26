@@ -2,67 +2,36 @@
     (:domain igibson)
 
     (:objects
-     	soap1 soap2 - soap
-    	cabinet1 cabinet2 - cabinet
-    	bucket1 bucket2 - bucket
-    	broom1 - broom
-    	dustpan1 - dustpan
-    	rag1 rag2 - rag
-    	floor1 floor2 - floor
-    	sink1 sink2 - sink
+     	floor.n.01_1 - floor.n.01
+    	broom.n.01_1 - broom.n.01
+    	dustpan.n.02_1 - dustpan.n.02
+    	cleansing_agent.n.01_1 - cleansing_agent.n.01
+    	scrub_brush.n.01_1 - scrub_brush.n.01
+    	door.n.01_1 - door.n.01
+    	sink.n.01_1 - sink.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (inside soap1 cabinet1) 
-        (inside soap2 cabinet2) 
-        (inside bucket1 cabinet1) 
-        (inside bucket2 cabinet2) 
-        (nextto broom1 cabinet2) 
-        (nextto dustpan1 cabinet2) 
-        (inside rag1 cabinet1) 
-        (inside rag2 cabinet2) 
-        (not 
-            (scrubbed floor1)
-        ) 
-        (not 
-            (scrubbed floor2)
-        ) 
-        (dusty floor2) 
-        (inroom floor1 bathroom) 
-        (inroom floor2 kitchen) 
-        (inroom sink1 bathroom) 
-        (inroom sink2 kitchen) 
-        (inroom cabinet1 bathroom) 
-        (inroom cabinet2 kitchen)
+        (dusty floor.n.01_1) 
+        (stained floor.n.01_1) 
+        (onfloor broom.n.01_1 floor.n.01_1) 
+        (onfloor dustpan.n.02_1 floor.n.01_1) 
+        (onfloor cleansing_agent.n.01_1 floor.n.01_1) 
+        (onfloor scrub_brush.n.01_1 floor.n.01_1) 
+        (inroom floor.n.01_1 bathroom) 
+        (inroom door.n.01_1 bathroom) 
+        (inroom sink.n.01_1 bathroom) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (scrubbed ?floor1) 
             (not 
-                (dusty ?floor2)
+                (stained ?floor.n.01_1)
             ) 
-            (scrubbed ?floor2) 
-            (nextto ?broom1 ?cabinet2) 
-            (nextto ?dustpan1 ?cabinet2) 
-            (forall 
-                (?rag - rag) 
-                (exists 
-                    (?sink - sink) 
-                    (inside ?rag ?sink)
-                )
-            ) 
-            (forpairs 
-                (?bucket - bucket) 
-                (?cabinet - cabinet) 
-                (inside ?bucket ?cabinet)
-            ) 
-            (soaked ?rag1) 
-            (soaked ?rag2) 
-            (forpairs 
-                (?soap - soap) 
-                (?cabinet - cabinet) 
-                (inside ?soap ?cabinet)
+            (not 
+                (dusty ?floor.n.01_1)
             )
         )
     )

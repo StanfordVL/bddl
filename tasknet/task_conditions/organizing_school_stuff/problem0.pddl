@@ -2,60 +2,45 @@
     (:domain igibson)
 
     (:objects
-        backpack1 - backpack
-        sofa1 - sofa
-        book1 book2 book3 book4 book5 - book
-        sofa_chair1 - sofa_chair
-        tablet1 - tablet
-        pen1 pen2 - pen
-        coffee_table1 - coffee_table
-        shelf1 shelf2 - shelf
-        pencil1 pencil2 - pencil
-        folder1 folder2 - folder
+     	highlighter.n.02_1 - highlighter.n.02
+    	bed.n.01_1 - bed.n.01
+    	pencil.n.01_1 - pencil.n.01
+    	pen.n.01_1 - pen.n.01
+    	floor.n.01_1 - floor.n.01
+    	calculator.n.02_1 - calculator.n.02
+    	book.n.02_1 - book.n.02
+    	folder.n.02_1 - folder.n.02
+        table.n.02_1 - table.n.02
+    	backpack.n.01_1 - backpack.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (ontop backpack1 sofa1) 
-        (ontop book1 sofa_chair1) 
-        (ontop book2 sofa_chair1) 
-        (nextto book3 sofa_chair1) 
-        (nextto book4 sofa_chair1) 
-        (ontop tablet1 sofa1) 
-        (ontop pen1 coffee_table1) 
-        (ontop pen2 shelf1) 
-        (ontop pencil1 coffee_table1) 
-        (under pencil2 coffee_table1) 
-        (ontop folder1 shelf1) 
-        (ontop folder2 shelf2) 
-        (ontop book5 sofa1)
+        (ontop highlighter.n.02_1 bed.n.01_1) 
+        (ontop pencil.n.01_1 bed.n.01_1) 
+        (onfloor pen.n.01_1 floor.n.01_1) 
+        (onfloor calculator.n.02_1 floor.n.01_1) 
+        (ontop book.n.02_1 bed.n.01_1) 
+        (ontop folder.n.02_1 bed.n.01_1) 
+        (onfloor backpack.n.01_1 floor.n.01_1) 
+        (inroom floor.n.01_1 bedroom) 
+        (inroom bed.n.01_1 bedroom) 
+        (inroom table.n.02_1 bedroom) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (ontop ?backpack1 ?sofa_chair1) 
-            (forall 
-                (?pen - pen) 
-                (inside ?pen ?backpack1)
+            (and 
+                (nextto ?folder.n.02_1 ?book.n.02_1) 
+                (nextto ?folder.n.02_1 ?backpack.n.01_1) 
+                (nextto ?book.n.02_1 ?backpack.n.01_1)
             ) 
-            (forall 
-                (?pencil - pencil) 
-                (inside ?pencil ?backpack1)
-            ) 
-            (inside ?tablet1 ?backpack1) 
-            (imply 
-                (ontop ?folder1 ?shelf1) 
-                (ontop ?folder2 ?shelf1)
-            ) 
-            (forn 
-                (2) 
-                (?book - book) 
-                (inside ?book ?backpack1)
-            ) 
-            (forn 
-                (3) 
-                (?book - book) 
-                (ontop ?book ?shelf2)
-            )
+            (inside ?highlighter.n.02_1 ?backpack.n.01_1) 
+            (inside ?pencil.n.01_1 ?backpack.n.01_1) 
+            (inside ?pen.n.01_1 ?backpack.n.01_1) 
+            (inside ?calculator.n.02_1 ?backpack.n.01_1) 
+            (ontop ?backpack.n.01_1 ?bed.n.01_1)
         )
     )
 )

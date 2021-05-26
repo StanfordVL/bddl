@@ -2,77 +2,79 @@
     (:domain igibson)
 
     (:objects
-     	basket1 basket2 basket3 basket4 - basket
-    	shelf1 - shelf
-    	chocolate1 chocolate2 chocolate3 chocolate4 chocolate5 chocolate6 chocolate7 chocolate8 - chocolate
-    	candy1 candy2 candy3 candy4 candy5 candy6 candy7 candy8 - candy
-    	egg1 egg2 egg3 egg4 egg5 egg6 egg7 egg8 - egg
-    	foil1 foil2 foil3 foil4 - foil
+     	basket.n.01_1 basket.n.01_2 - basket.n.01
+    	countertop.n.01_1 - countertop.n.01
+    	ball.n.01_1 - ball.n.01
+    	jewelry.n.01_1 - jewelry.n.01
+    	book.n.02_1 book.n.02_2 - book.n.02
+    	cabinet.n.01_1 cabinet.n.01_2 - cabinet.n.01
+    	bow.n.08_1 bow.n.08_2 - bow.n.08
+    	egg.n.02_1 egg.n.02_2 - egg.n.02
+    	electric_refrigerator.n.01_1 - electric_refrigerator.n.01
+    	candy.n.01_1 candy.n.01_2 - candy.n.01
+    	floor.n.01_1 - floor.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (ontop basket1 shelf1) 
-        (ontop basket2 shelf1) 
-        (ontop basket3 shelf1) 
-        (ontop basket4 shelf1) 
-        (ontop chocolate1 shelf1) 
-        (ontop chocolate2 shelf1) 
-        (ontop chocolate3 shelf1) 
-        (ontop chocolate4 shelf1) 
-        (ontop chocolate5 shelf1) 
-        (ontop chocolate6 shelf1) 
-        (ontop chocolate7 shelf1) 
-        (ontop chocolate8 shelf1) 
-        (ontop candy1 shelf1) 
-        (ontop candy2 shelf1) 
-        (ontop candy3 shelf1) 
-        (ontop candy4 shelf1) 
-        (ontop candy5 shelf1) 
-        (ontop candy6 shelf1) 
-        (ontop candy7 shelf1) 
-        (ontop candy8 shelf1) 
-        (ontop egg1 shelf1) 
-        (ontop egg2 shelf1) 
-        (ontop egg3 shelf1) 
-        (ontop egg4 shelf1) 
-        (ontop egg5 shelf1) 
-        (ontop egg6 shelf1) 
-        (ontop egg7 shelf1) 
-        (ontop egg8 shelf1) 
-        (ontop foil1 shelf1) 
-        (ontop foil2 shelf1) 
-        (ontop foil3 shelf1) 
-        (ontop foil4 shelf1)
+        (ontop basket.n.01_1 countertop.n.01_1) 
+        (ontop basket.n.01_2 countertop.n.01_1) 
+        (ontop ball.n.01_1 countertop.n.01_1) 
+        (ontop jewelry.n.01_1 countertop.n.01_1) 
+        (inside book.n.02_1 cabinet.n.01_1) 
+        (inside book.n.02_2 cabinet.n.01_1) 
+        (inside bow.n.08_1 cabinet.n.01_2) 
+        (inside bow.n.08_2 cabinet.n.01_2) 
+        (inside egg.n.02_1 electric_refrigerator.n.01_1) 
+        (cooked egg.n.02_1) 
+        (inside egg.n.02_2 electric_refrigerator.n.01_1) 
+        (cooked egg.n.02_2) 
+        (ontop candy.n.01_1 electric_refrigerator.n.01_1) 
+        (ontop candy.n.01_2 electric_refrigerator.n.01_1) 
+        (inroom countertop.n.01_1 kitchen) 
+        (inroom cabinet.n.01_1 kitchen) 
+        (inroom cabinet.n.01_2 kitchen) 
+        (inroom electric_refrigerator.n.01_1 kitchen) 
+        (inroom floor.n.01_1 kitchen) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (forn 
-                (4) 
-                (?basket - basket) 
+            (forall 
+                (?basket.n.01 - basket.n.01) 
+                (ontop ?basket.n.01 ?countertop.n.01_1)
+            ) 
+            (forpairs 
+                (?basket.n.01 - basket.n.01) 
+                (?egg.n.02 - egg.n.02) 
+                (inside ?egg.n.02 ?basket.n.01)
+            ) 
+            (forpairs 
+                (?basket.n.01 - basket.n.01) 
+                (?candy.n.01 - candy.n.01) 
+                (inside ?candy.n.01 ?basket.n.01)
+            ) 
+            (exists 
+                (?basket.n.01 - basket.n.01) 
                 (and 
-                    (forn 
-                        (2) 
-                        (?chocolate - chocolate) 
-                        (inside ?chocolate ?basket)
-                    ) 
-                    (forn 
-                        (2) 
-                        (?candy - candy) 
-                        (inside ?candy ?basket)
-                    ) 
-                    (forn 
-                        (2) 
-                        (?egg - egg) 
-                        (inside ?egg ?basket)
-                    ) 
-                    (inside ?foil ?basket) 
-                    (under ?foil ?chocolate) 
-                    (under ?foil ?egg) 
-                    (under ?foil ?candy)
+                    (inside ?jewelry.n.01_1 ?basket.n.01) 
+                    (inside ?ball.n.01_1 ?basket.n.01)
                 )
             ) 
-            (scrubbed ?table1)
+            (forpairs 
+                (?bow.n.08 - bow.n.08) 
+                (?basket.n.01 - basket.n.01) 
+                (or 
+                    (ontop ?bow.n.08 ?basket.n.01) 
+                    (inside ?bow.n.08 ?basket.n.01)
+                )
+            ) 
+            (forpairs 
+                (?book.n.02 - book.n.02) 
+                (?basket.n.01 - basket.n.01) 
+                (nextto ?book.n.02 ?basket.n.01)
+            )
         )
     )
 )

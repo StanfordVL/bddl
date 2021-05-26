@@ -2,125 +2,47 @@
     (:domain igibson)
 
     (:objects
-     	garbage1 - garbage
-    	table1 - table
-    	tape1 - tape
-    	shelf1 - shelf
-    	box1 box2 box3 - box
-    	gravestone1 gravestone2 - gravestone
-    	skeleton1 skeleton2 - skeleton
-    	pumpkin1 - pumpkin
-    	caldron1 - caldron
-    	hat1 - hat
-    	candle1 candle2 - candle
-    	stake1 stake2 stake3 stake4 - stake
-    	sheet1 sheet2 sheet3 - sheet
+     	pumpkin.n.02_1 pumpkin.n.02_2 - pumpkin.n.02
+    	floor.n.01_1 - floor.n.01
+    	caldron.n.01_1 - caldron.n.01
+    	sheet.n.03_1 - sheet.n.03
+    	table.n.02_1 - table.n.02
+    	candle.n.01_1 candle.n.01_2 candle.n.01_3 - candle.n.01
+    	cabinet.n.01_1 - cabinet.n.01
+    	sofa.n.01_1 - sofa.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (nextto garbage1 table1) 
-        (ontop tape1 shelf1) 
-        (and 
-            (under box1 shelf1) 
-            (open box1)
-        ) 
-        (and 
-            (under box2 shelf1) 
-            (open box2)
-        ) 
-        (and 
-            (under box3 shelf1) 
-            (open box3)
-        ) 
-        (and 
-            (under gravestone1 table1) 
-            (under gravestone2 table1) 
-            (under skeleton1 table1) 
-            (under skeleton2 table1) 
-            (under pumpkin1 table1) 
-            (under caldron1 table1)
-        ) 
-        (and 
-            (ontop hat1 table1) 
-            (ontop candle1 table1) 
-            (ontop candle2 table1) 
-            (ontop stake1 table1) 
-            (ontop stake2 table1) 
-            (ontop stake3 table1) 
-            (ontop stake4 table1) 
-            (ontop sheet1 table1) 
-            (ontop sheet2 table1) 
-            (ontop sheet3 table1)
-        )
+        (onfloor pumpkin.n.02_1 floor.n.01_1) 
+        (onfloor pumpkin.n.02_2 floor.n.01_1) 
+        (onfloor caldron.n.01_1 floor.n.01_1) 
+        (ontop sheet.n.03_1 table.n.02_1) 
+        (onfloor candle.n.01_1 floor.n.01_1) 
+        (onfloor candle.n.01_2 floor.n.01_1) 
+        (onfloor candle.n.01_3 floor.n.01_1) 
+        (inroom floor.n.01_1 living_room) 
+        (inroom cabinet.n.01_1 living_room) 
+        (inroom table.n.02_1 living_room) 
+        (inroom sofa.n.01_1 living_room) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
             (forall 
-                (?candle - candle) 
-                (imply 
-                    (broken ?candle) 
-                    (inside ?candle ?garbage1)
-                )
-            ) 
-            (exists 
-                (?box - box) 
-                (forall 
-                    (?candle - candle) 
-                    (imply 
-                        (not 
-                            (broken ?candle)
-                        ) 
-                        (inside ?candle ?box)
-                    )
-                )
-            ) 
-            (exists 
-                (?box - box) 
-                (forall 
-                    (?sheet - sheet) 
-                    (inside ?sheet ?box)
-                )
-            ) 
-            (exists 
-                (?box - box) 
-                (forall 
-                    (?hat - hat) 
-                    (inside ?hat ?box)
-                )
-            ) 
-            (exists 
-                (?box - box) 
-                (forall 
-                    (?stake - stake) 
-                    (inside ?stake ?box)
-                )
-            ) 
-            (exists 
-                (?box - box) 
-                (forall 
-                    (?gravestone - gravestone) 
-                    (inside ?gravestone ?box)
-                )
-            ) 
-            (exists 
-                (?box - box) 
-                (forall 
-                    (?skeleton - skeleton) 
-                    (inside ?skeleton ?box)
-                )
+                (?pumpkin.n.02 - pumpkin.n.02) 
+                (inside ?pumpkin.n.02 ?cabinet.n.01_1)
             ) 
             (forall 
-                (?box - box) 
-                (and 
-                    (ontop ?box ?shelf1) 
-                    (not 
-                        (open ?box)
-                    )
-                )
+                (?candle.n.01 - candle.n.01) 
+                (inside ?candle.n.01 ?cabinet.n.01_1)
             ) 
-            (inside ?pumpkin1 ?garbage1) 
-            (under ?caldron1 ?shelf1)
+            (or 
+                (nextto ?sheet.n.03_1 ?table.n.02_1) 
+                (ontop ?sheet.n.03_1 ?table.n.02_1)
+            ) 
+            (nextto ?caldron.n.01_1 ?table.n.02_1)
         )
     )
 )

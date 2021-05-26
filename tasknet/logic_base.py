@@ -1,12 +1,14 @@
 from abc import abstractmethod, ABCMeta
 
 from future.utils import with_metaclass
+from tasknet.utils import UncontrolledCategoryError
 
 
 class Sentence(with_metaclass(ABCMeta)):
     def __init__(self, scope, task, body, object_map):
         self.children = []
         self.child_values = []
+        self.kwargs = {}
         self.task = task
         self.body = body
         self.scope = scope
@@ -30,10 +32,17 @@ class BinaryAtomicPredicate(AtomicPredicate):
         assert len(body) == 2, 'Param list should have 2 args'
         self.input1, self.input2 = [inp.strip('?') for inp in body]
         self.scope = scope
-        if isinstance(self.scope[self.input1], str):
-            self.input1 = self.scope[self.input1]
-        if isinstance(self.scope[self.input2], str):
-            self.input2 = self.scope[self.input2]
+        try:
+            if isinstance(self.scope[self.input1], str):
+                self.input1 = self.scope[self.input1]
+        except KeyError:
+            raise UncontrolledCategoryError
+        try:
+            if isinstance(self.scope[self.input2], str):
+                self.input2 = self.scope[self.input2]
+        except KeyError:
+            raise UncontrolledCategoryError
+
         self.get_ground_options()
 
     @abstractmethod
@@ -42,7 +51,7 @@ class BinaryAtomicPredicate(AtomicPredicate):
 
     def evaluate(self):
         if (self.scope[self.input1] is not None) and (self.scope[self.input2] is not None):
-            return self._evaluate(self.scope[self.input1], self.scope[self.input2])
+            return self._evaluate(self.scope[self.input1], self.scope[self.input2], **self.kwargs)
         else:
             print('%s and/or %s are not mapped to simulator objects in scope' %
                   (self.input1, self.input2))
@@ -53,7 +62,7 @@ class BinaryAtomicPredicate(AtomicPredicate):
 
     def sample(self, binary_state):
         if (self.scope[self.input1] is not None) and (self.scope[self.input2] is not None):
-            return self._sample(self.scope[self.input1], self.scope[self.input2], binary_state)
+            return self._sample(self.scope[self.input1], self.scope[self.input2], binary_state, **self.kwargs)
         else:
             print('%s and/or %s are not mapped to simulator objects in scope' %
                   (self.input1, self.input2))
@@ -71,8 +80,11 @@ class UnaryAtomicPredicate(AtomicPredicate):
         assert len(body) == 1, 'Param list should have 1 arg'
         self.input = body[0].strip('?')
         self.scope = scope
-        if isinstance(self.scope[self.input], str):
-            self.input = self.scope[self.input]
+        try:
+            if isinstance(self.scope[self.input], str):
+                self.input = self.scope[self.input]
+        except KeyError:
+            raise UncontrolledCategoryError
 
         self.get_ground_options()
 
@@ -82,7 +94,7 @@ class UnaryAtomicPredicate(AtomicPredicate):
 
     def evaluate(self):
         if self.scope[self.input] is not None:
-            return self._evaluate(self.scope[self.input])
+            return self._evaluate(self.scope[self.input], **self.kwargs)
         else:
             print('%s is not mapped to a simulator object in scope' % self.input)
             return False
@@ -93,7 +105,7 @@ class UnaryAtomicPredicate(AtomicPredicate):
 
     def sample(self, binary_state):
         if self.scope[self.input] is not None:
-            return self._sample(self.scope[self.input], binary_state)
+            return self._sample(self.scope[self.input], binary_state, **self.kwargs)
         else:
             print('%s is not mapped to a simulator object in scope' % self.input)
             return False
@@ -101,3 +113,4 @@ class UnaryAtomicPredicate(AtomicPredicate):
     def get_ground_options(self):
         self.flattened_condition_options = [
             [[self.STATE_NAME, self.input]]]
+

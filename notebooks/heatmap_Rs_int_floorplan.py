@@ -136,11 +136,6 @@ plt.legend(fontsize=30, loc='lower left', bbox_to_anchor=(0.07, 0.06))
 plt.imshow(floorplan)
 plt.savefig('task_heatmap_{}.pdf'.format(scene_id), bbox_inches='tight', pad_inches=0, transparent=True)
 
-<<<<<<< HEAD
-print(raw_data)
-
-=======
->>>>>>> 9bdc40d3b5efa06dbc5a1f47d8471ab509c01114
 
 # +
 # demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/examples_pre_hand')
@@ -259,9 +254,6 @@ for i, (demo, demo_file) in enumerate(zip(raw_data, demo_files)):
     plt.clf()
 
 
-<<<<<<< HEAD
-
-=======
 # +
 demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/Beechwood_0_int_demos')
 
@@ -336,4 +328,3 @@ plt.axis('off')
 plt.legend(fontsize=18, loc='upper left', bbox_to_anchor=(0.02, 0.77))
 plt.imshow(floorplan)
 plt.savefig('task_heatmap_{}.pdf'.format(scene_id), bbox_inches='tight', pad_inches=0, transparent=True)
->>>>>>> 9bdc40d3b5efa06dbc5a1f47d8471ab509c01114

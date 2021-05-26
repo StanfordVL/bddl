@@ -2,66 +2,100 @@
     (:domain igibson)
 
     (:objects
-     	dishwasher1 - dishwasher
-    	counter1 - counter
-    	floor1 - floor
-    	plate1 plate2 plate3 plate4 plate5 - plate
-    	sink1 - sink
-    	cooktop1 - cooktop
-    	mold1 mold2 mold3 mold4 - mold
-    	bucket1 - bucket
-    	receptacle1 - receptacle
-    	soapsuds1 - soapsuds
+        bin.n.01_1 - bin.n.01
+        floor.n.01_1 - floor.n.01
+        soap.n.01_1 - soap.n.01
+        cabinet.n.01_1 cabinet.n.01_2 - cabinet.n.01
+        electric_refrigerator.n.01_1 - electric_refrigerator.n.01
+        rag.n.01_1 - rag.n.01
+        dustpan.n.02_1 - dustpan.n.02
+        broom.n.01_1 - broom.n.01
+        blender.n.01_1 - blender.n.01
+        sink.n.01_1 - sink.n.01
+        casserole.n.02_1 - casserole.n.02
+        plate.n.04_1 - plate.n.04
+        vegetable_oil.n.01_1 - vegetable_oil.n.01
+        apple.n.01_1 - apple.n.01
+        window.n.01_1 - window.n.01
+        countertop.n.01_1 - countertop.n.01
+        agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (nextto dishwasher1 counter1) 
-        (ontop dishwasher1 floor1) 
-        (inside plate1 sink1) 
-        (inside plate2 sink1) 
-        (inside plate3 sink1) 
-        (inside plate4 sink1) 
-        (inside plate5 sink1) 
-        (nextto sink1 cooktop1) 
-        (ontop mold2 cooktop1) 
-        (ontop mold3 cooktop1) 
-        (ontop mold4 cooktop1) 
-        (ontop bucket1 floor1) 
-        (ontop receptacle1 floor1) 
-        (dusty counter1) 
-        (dusty cooktop1) 
-        (dusty floor1) 
-        (ontop soapsuds1 counter1) 
-        (ontop mold1 cooktop1) 
-        (ontop cooktop1 floor1) 
-        (ontop counter1 floor1) 
-        (inroom cooktop1 kitchen) 
-        (inroom floor1 kitchen) 
-        (inroom counter1 kitchen) 
-        (inroom sink1 kitchen) 
-        (inroom dishwasher1 kitchen)
+        (onfloor bin.n.01_1 floor.n.01_1) 
+        (inside soap.n.01_1 cabinet.n.01_1) 
+        (inside rag.n.01_1 cabinet.n.01_1) 
+        (not 
+            (soaked rag.n.01_1)
+        ) 
+        (inside dustpan.n.02_1 cabinet.n.01_1) 
+        (dusty dustpan.n.02_1) 
+        (onfloor broom.n.01_1 floor.n.01_1) 
+        (dusty broom.n.01_1) 
+        (onfloor blender.n.01_1 floor.n.01_1) 
+        (stained blender.n.01_1) 
+        (inside casserole.n.02_1 electric_refrigerator.n.01_1) 
+        (inside plate.n.04_1 electric_refrigerator.n.01_1) 
+        (stained plate.n.04_1) 
+        (inside vegetable_oil.n.01_1 electric_refrigerator.n.01_1) 
+        (inside apple.n.01_1 electric_refrigerator.n.01_1) 
+        (dusty floor.n.01_1) 
+        (dusty cabinet.n.01_1) 
+        (dusty cabinet.n.01_2) 
+        (inroom floor.n.01_1 kitchen) 
+        (inroom cabinet.n.01_1 kitchen) 
+        (inroom cabinet.n.01_2 kitchen) 
+        (inroom electric_refrigerator.n.01_1 kitchen) 
+        (inroom sink.n.01_1 kitchen) 
+        (inroom window.n.01_1 kitchen) 
+        (inroom countertop.n.01_1 kitchen) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (scrubbed ?sink1) 
-            (forn 
-                (5) 
-                (?plate - plate) 
-                (inside ?plate ?dishwasher1)
+            (ontop ?blender.n.01_1 ?countertop.n.01_1) 
+            (nextto ?soap.n.01_1 ?sink.n.01_1) 
+            (exists 
+                (?cabinet.n.01 - cabinet.n.01) 
+                (and 
+                    (inside ?vegetable_oil.n.01_1 ?cabinet.n.01) 
+                    (not 
+                        (inside ?plate.n.04_1 ?cabinet.n.01)
+                    )
+                )
             ) 
-            (inside ?mold2 ?receptacle1) 
-            (inside ?mold3 ?receptacle1) 
-            (inside ?mold4 ?receptacle1) 
-            (scrubbed ?cooktop1) 
-            (scrubbed ?floor1) 
-            (scrubbed ?counter1) 
-            (ontop ?cooktop1 ?floor1) 
-            (ontop ?counter1 ?floor1) 
-            (ontop ?receptacle1 ?floor1) 
-            (ontop ?bucket1 ?floor1) 
-            (inside ?soapsuds1 ?bucket1) 
-            (inside ?mold1 ?receptacle1)
+            (exists 
+                (?cabinet.n.01 - cabinet.n.01) 
+                (and 
+                    (inside ?plate.n.04_1 ?cabinet.n.01) 
+                    (not 
+                        (inside ?vegetable_oil.n.01_1 ?cabinet.n.01)
+                    )
+                )
+            ) 
+            (and 
+                (not 
+                    (dusty ?cabinet.n.01_1)
+                ) 
+                (not 
+                    (dusty ?cabinet.n.01_2)
+                ) 
+                (not 
+                    (dusty ?floor.n.01_1)
+                )
+            ) 
+            (not 
+                (stained ?plate.n.04_1)
+            ) 
+            (or 
+                (nextto ?rag.n.01_1 ?sink.n.01_1) 
+                (inside ?rag.n.01_1 ?sink.n.01_1)
+            ) 
+            (and 
+                (inside ?casserole.n.02_1 ?electric_refrigerator.n.01_1) 
+                (inside ?apple.n.01_1 ?electric_refrigerator.n.01_1)
+            )
         )
     )
 )

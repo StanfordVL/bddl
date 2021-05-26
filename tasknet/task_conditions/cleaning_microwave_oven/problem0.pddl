@@ -2,63 +2,37 @@
     (:domain igibson)
 
     (:objects
-     	microwave1 - microwave
-    	counter1 - counter
-    	sink1 - sink
-    	garbage1 - garbage
-    	crumb1 crumb2 crumb3 - crumb
-    	lemon1 - lemon
-    	vinegar1 - vinegar
-    	disinfectant1 - disinfectant
-    	water1 - water
-    	soap1 - soap
-    	washcloth1 - washcloth
+     	microwave.n.02_1 - microwave.n.02
+    	rag.n.01_1 - rag.n.01
+    	countertop.n.01_1 - countertop.n.01
+    	ashcan.n.01_1 - ashcan.n.01
+    	floor.n.01_1 - floor.n.01
+    	cabinet.n.01_1 - cabinet.n.01
+    	sink.n.01_1 - sink.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (and 
-            (ontop microwave1 counter1) 
-            (dusty microwave1)
-        ) 
-        (nextto sink1 counter1) 
-        (nextto garbage1 sink1) 
-        (and 
-            (inside crumb1 microwave1) 
-            (inside crumb2 microwave1) 
-            (inside crumb3 microwave1)
-        ) 
-        (and 
-            (ontop lemon1 microwave1) 
-            (ontop vinegar1 microwave1)
-        ) 
-        (and 
-            (ontop disinfectant1 sink1) 
-            (inside water1 sink1) 
-            (inside soap1 sink1) 
-            (and 
-                (ontop washcloth1 sink1) 
-                (not 
-                    (soaked washcloth1)
-                )
-            )
-        ) 
-        (inroom counter1 kitchen) 
-        (inroom sink1 kitchen) 
-        (inroom microwave1 kitchen)
+        (dusty microwave.n.02_1) 
+        (stained microwave.n.02_1) 
+        (ontop rag.n.01_1 countertop.n.01_1) 
+        (onfloor ashcan.n.01_1 floor.n.01_1) 
+        (inroom microwave.n.02_1 kitchen) 
+        (inroom cabinet.n.01_1 kitchen) 
+        (inroom countertop.n.01_1 kitchen) 
+        (inroom sink.n.01_1 kitchen) 
+        (inroom floor.n.01_1 kitchen) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (scrubbed ?microwave1) 
-            (and 
-                (soaked ?washcloth1) 
-                (dusty ?washcloth1)
+            (not 
+                (dusty ?microwave.n.02_1)
             ) 
-            (forall 
-                (?crumb - crumb) 
-                (inside ?crumb ?garbage1)
-            ) 
-            (inside ?lemon1 ?garbage1)
+            (not 
+                (stained ?microwave.n.02_1)
+            )
         )
     )
 )

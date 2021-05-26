@@ -2,77 +2,46 @@
     (:domain igibson)
 
     (:objects
-     	gym_shoe1 gym_shoe2 gym_shoe3 gym_shoe4 - gym_shoe
-    	bed1 - bed
-    	chest1 - chest
-    	soap1 - soap
-    	cabinet1 - cabinet
-    	washcloth1 - washcloth
-    	toothbrush1 - toothbrush
-    	counter1 - counter
+     	gym_shoe.n.01_1 gym_shoe.n.01_2 - gym_shoe.n.01
+    	floor.n.01_1 - floor.n.01
+    	shoe.n.01_1 shoe.n.01_2 - shoe.n.01
+    	soap.n.01_1 - soap.n.01
+    	brush.n.02_1 - brush.n.02
+    	sink.n.01_1 - sink.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (and 
-            (not 
-                (scrubbed gym_shoe1)
-            ) 
-            (not 
-                (scrubbed gym_shoe2)
-            ) 
-            (not 
-                (scrubbed gym_shoe3)
-            ) 
-            (not 
-                (scrubbed gym_shoe4)
-            )
-        ) 
-        (imply 
-            (under gym_shoe1 bed1) 
-            (under gym_shoe2 bed1)
-        ) 
-        (imply 
-            (inside gym_shoe3 chest1) 
-            (inside gym_shoe4 chest1)
-        ) 
-        (and 
-            (inside soap1 cabinet1) 
-            (inside washcloth1 cabinet1) 
-            (inside toothbrush1 cabinet1)
-        ) 
-        (inroom cabinet1 bathroom) 
-        (inroom bed1 bathroom) 
-        (inroom counter1 bathroom) 
-        (inroom chest1 bathroom)
+        (onfloor gym_shoe.n.01_1 floor.n.01_1) 
+        (stained gym_shoe.n.01_1) 
+        (onfloor gym_shoe.n.01_2 floor.n.01_1) 
+        (stained gym_shoe.n.01_2) 
+        (onfloor shoe.n.01_1 floor.n.01_1) 
+        (stained shoe.n.01_1) 
+        (onfloor shoe.n.01_2 floor.n.01_1) 
+        (stained shoe.n.01_2) 
+        (onfloor soap.n.01_1 floor.n.01_1) 
+        (onfloor brush.n.02_1 floor.n.01_1) 
+        (inroom sink.n.01_1 bathroom) 
+        (inroom floor.n.01_1 bathroom) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
             (forall 
-                (?gym_shoe - gym_shoe) 
-                (scrubbed ?gym_shoe)
-            ) 
-            (and 
+                (?gym_shoe.n.01 - gym_shoe.n.01) 
                 (not 
-                    (under ?gym_shoe1 ?bed1)
-                ) 
-                (not 
-                    (under ?gym_shoe2 ?bed1)
+                    (stained ?gym_shoe.n.01)
                 )
             ) 
-            (and 
+            (forall 
+                (?shoe.n.01 - shoe.n.01) 
                 (not 
-                    (inside ?gym_shoe3 ?chest1)
-                ) 
-                (not 
-                    (under ?gym_shoe4 ?chest1)
+                    (stained ?shoe.n.01)
                 )
             ) 
-            (and 
-                (ontop ?soap1 ?counter1) 
-                (ontop ?washcloth1 ?counter1) 
-                (ontop ?toothbrush1 ?counter1)
-            )
+            (nextto ?brush.n.02_1 ?sink.n.01_1)
         )
     )
 )

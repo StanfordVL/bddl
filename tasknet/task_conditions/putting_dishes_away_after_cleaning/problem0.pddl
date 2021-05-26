@@ -2,61 +2,27 @@
     (:domain igibson)
 
     (:objects
-        dishwasher.n.01_1 - dishwasher.n.01
-        dish.n.01_1 dish.n.01_10 dish.n.01_11 dish.n.01_12 dish.n.01_2 dish.n.01_3 dish.n.01_4 dish.n.01_5 dish.n.01_6 dish.n.01_7 dish.n.01_8 dish.n.01_9 - dish.n.01
+     	plate.n.04_1 plate.n.04_2 plate.n.04_3 plate.n.04_4 plate.n.04_5 plate.n.04_6 plate.n.04_7 plate.n.04_8 - plate.n.04
+    	countertop.n.01_1 countertop.n.01_2 - countertop.n.01
+    	cabinet.n.01_1 - cabinet.n.01
+    	floor.n.01_1 - floor.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (open dishwasher.n.01_1) 
-        (and 
-            (inside dish.n.01_1 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_1)
-        ) 
-        (and 
-            (inside dish.n.01_2 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_2)
-        ) 
-        (and 
-            (inside dish.n.01_3 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_3)
-        ) 
-        (and 
-            (inside dish.n.01_4 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_4)
-        ) 
-        (and 
-            (inside dish.n.01_5 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_5)
-        ) 
-        (and 
-            (inside dish.n.01_6 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_6)
-        ) 
-        (and 
-            (inside dish.n.01_7 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_7)
-        ) 
-        (and 
-            (inside dish.n.01_8 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_8)
-        ) 
-        (and 
-            (inside dish.n.01_9 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_9)
-        ) 
-        (and 
-            (inside dish.n.01_10 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_10)
-        ) 
-        (and 
-            (inside dish.n.01_11 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_11)
-        ) 
-        (and 
-            (inside dish.n.01_12 dishwasher.n.01_1) 
-            (scrubbed dish.n.01_12)
-        )
-        (inroom dishwasher.n.01_1 kitchen)
+        (ontop plate.n.04_1 countertop.n.01_1) 
+        (ontop plate.n.04_2 countertop.n.01_1) 
+        (ontop plate.n.04_3 countertop.n.01_1) 
+        (ontop plate.n.04_4 countertop.n.01_1) 
+        (ontop plate.n.04_5 countertop.n.01_2) 
+        (ontop plate.n.04_6 countertop.n.01_2) 
+        (ontop plate.n.04_7 countertop.n.01_2) 
+        (ontop plate.n.04_8 countertop.n.01_2) 
+        (inroom countertop.n.01_1 kitchen) 
+        (inroom countertop.n.01_2 kitchen) 
+        (inroom cabinet.n.01_1 kitchen) 
+        (inroom floor.n.01_1 kitchen) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
@@ -64,12 +30,9 @@
             (exists 
                 (?cabinet.n.01 - cabinet.n.01) 
                 (forall 
-                    (?dish.n.01 - dish.n.01) 
-                    (inside ?dish.n.01 ?cabinet.n.01)
+                    (?plate.n.04 - plate.n.04) 
+                    (inside ?plate.n.04 ?cabinet.n.01_1)
                 )
-            ) 
-            (not 
-                (open ?dishwasher.n.01)
             )
         )
     )

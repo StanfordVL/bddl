@@ -2,53 +2,37 @@
     (:domain igibson)
 
     (:objects
-        plaything1 plaything10 plaything11 plaything12 plaything2 plaything3 plaything4 plaything5 plaything6 plaything7 plaything8 plaything9 - plaything
-        sofa1 - sofa
-        tv1 - tv
-        coffee_table1 - coffee_table
-        shelf1 shelf2 - shelf
-        drawing1 - drawing
-        plush1 - plush
+        plaything.n.01_1 plaything.n.01_2 plaything.n.01_3 plaything.n.01_4 plaything.n.01_5 plaything.n.01_6 plaything.n.01_7 plaything.n.01_8 - plaything.n.01
+        floor.n.01_1 floor.n.01_2 - floor.n.01
+        carton.n.02_1 carton.n.02_2 - carton.n.02
+        agent.n.01_1 - agent.n.01
+        table.n.02_1 - table.n.02
     )
     
     (:init 
-        (ontop plaything1 sofa1) 
-        (nextto plaything2 tv1) 
-        (under plaything3 coffee_table1) 
-        (under plaything4 sofa1) 
-        (inside plaything5 sofa1) 
-        (ontop plaything6 tv1) 
-        (nextto plaything7 shelf2) 
-        (under plaything8 sofa1) 
-        (nextto plaything9 tv1) 
-        (under plaything10 sofa1) 
-        (nextto plaything11 shelf1) 
-        (ontop plaything12 coffee_table1) 
-        (under drawing1 sofa1) 
-        (nextto plush1 tv1)
+        (onfloor plaything.n.01_1 floor.n.01_1) 
+        (onfloor plaything.n.01_2 floor.n.01_1) 
+        (onfloor plaything.n.01_3 floor.n.01_1) 
+        (onfloor plaything.n.01_4 floor.n.01_1) 
+        (onfloor plaything.n.01_5 floor.n.01_2) 
+        (onfloor plaything.n.01_6 floor.n.01_2) 
+        (onfloor plaything.n.01_7 floor.n.01_2) 
+        (onfloor plaything.n.01_8 floor.n.01_2) 
+        (onfloor carton.n.02_1 floor.n.01_1) 
+        (ontop carton.n.02_2 table.n.02_1) 
+        (inroom floor.n.01_1 living_room) 
+        (inroom floor.n.01_2 dining_room) 
+        (inroom table.n.02_1 dining_room) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (exists 
-                (?shelf - shelf) 
-                (forall 
-                    (?plaything - plaything) 
-                    (inside ?plaything ?shelf)
-                )
-            ) 
-            (exists 
-                (?shelf - shelf) 
-                (forall 
-                    (?plush - plush) 
-                    (inside ?plush ?shelf)
-                )
-            ) 
-            (exists 
-                (?shelf - shelf) 
-                (forall 
-                    (?drawing - drawing) 
-                    (inside ?drawing ?shelf)
+            (forall 
+                (?plaything.n.01 - plaything.n.01) 
+                (exists 
+                    (?carton.n.02 - carton.n.02) 
+                    (inside ?plaything.n.01 ?carton.n.02)
                 )
             )
         )

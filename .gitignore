@@ -4,8 +4,8 @@
 **/*.ipynb
 .github
 **/*.ipynb_checkpoints
-notebooks/*.pdf
-notebooks/*.csv
-
+**/*.pdf
+**/*.csv
+.idea
 tasknet/task_conditions/parsing_tests/sample.pddl
 tasknet/sample_natural_condition.txt

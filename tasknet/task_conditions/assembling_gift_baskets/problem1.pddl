@@ -2,128 +2,64 @@
     (:domain igibson)
 
     (:objects
-     	basket1 basket2 basket3 basket4 - basket
-    	table1 - table
-    	scrapbook1 scrapbook2 scrapbook3 scrapbook4 - scrapbook
-    	wine1 wine2 - wine
-    	cheese1 cheese2 cheese3 cheese4 - cheese
-    	card1 card2 - card
-    	chocolate1 chocolate2 - chocolate
-    	cracker1 cracker2 cracker3 cracker4 - cracker
-    	candy1 candy2 - candy
-    	carpet1 - carpet
-    	sofa1 - sofa
+     	basket.n.01_1 basket.n.01_2 basket.n.01_3 basket.n.01_4 - basket.n.01
+    	floor.n.01_1 - floor.n.01
+    	candle.n.01_1 candle.n.01_2 candle.n.01_3 candle.n.01_4 - candle.n.01
+    	cookie.n.01_1 cookie.n.01_2 cookie.n.01_3 cookie.n.01_4 - cookie.n.01
+    	cheese.n.01_1 cheese.n.01_2 cheese.n.01_3 cheese.n.01_4 - cheese.n.01
+    	bow.n.08_1 bow.n.08_2 bow.n.08_3 bow.n.08_4 - bow.n.08
+        table.n.02_1 table.n.02_2 - table.n.02
+        agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (and 
-            (ontop basket1 table1) 
-            (ontop basket2 table1) 
-            (ontop basket3 table1) 
-            (ontop basket4 table1)
-        ) 
-        (and 
-            (under scrapbook1 table1) 
-            (under scrapbook2 table1) 
-            (under scrapbook3 table1) 
-            (under scrapbook4 table1)
-        ) 
-        (and 
-            (ontop wine1 table1) 
-            (ontop wine2 table1)
-        ) 
-        (and 
-            (ontop cheese1 table1) 
-            (ontop cheese2 table1) 
-            (ontop cheese3 table1) 
-            (ontop cheese4 table1)
-        ) 
-        (and 
-            (ontop card1 table1) 
-            (ontop card2 table1)
-        ) 
-        (and 
-            (ontop chocolate1 table1) 
-            (ontop chocolate2 table1)
-        ) 
-        (and 
-            (ontop cracker1 table1) 
-            (ontop cracker2 table1) 
-            (ontop cracker3 table1) 
-            (ontop cracker4 table1)
-        ) 
-        (and 
-            (ontop candy1 table1) 
-            (ontop candy2 table1)
-        ) 
-        (inroom table1 living room) 
-        (inroom carpet1 living room) 
-        (inroom sofa1 living room)
+        (onfloor basket.n.01_1 floor.n.01_1) 
+        (onfloor basket.n.01_2 floor.n.01_1) 
+        (onfloor basket.n.01_3 floor.n.01_1) 
+        (onfloor basket.n.01_4 floor.n.01_1) 
+        (ontop candle.n.01_1 table.n.02_1) 
+        (ontop candle.n.01_2 table.n.02_1) 
+        (ontop candle.n.01_3 table.n.02_1) 
+        (ontop candle.n.01_4 table.n.02_1) 
+        (ontop cookie.n.01_1 table.n.02_1) 
+        (ontop cookie.n.01_2 table.n.02_1) 
+        (ontop cookie.n.01_3 table.n.02_1) 
+        (ontop cookie.n.01_4 table.n.02_1) 
+        (ontop cheese.n.01_1 table.n.02_2) 
+        (ontop cheese.n.01_2 table.n.02_2) 
+        (ontop cheese.n.01_3 table.n.02_2) 
+        (ontop cheese.n.01_4 table.n.02_2) 
+        (ontop bow.n.08_1 table.n.02_2) 
+        (ontop bow.n.08_2 table.n.02_2) 
+        (ontop bow.n.08_3 table.n.02_2) 
+        (ontop bow.n.08_4 table.n.02_2) 
+        (inroom floor.n.01_1 living_room) 
+        (inroom table.n.02_1 living_room) 
+        (inroom table.n.02_2 living_room) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (forn 
-                (2) 
-                (?basket - basket) 
-                (and 
-                    (forn 
-                        (2) 
-                        (?scrapbook - scrapbook) 
-                        (inside ?scrapbook ?basket)
-                    ) 
-                    (forn 
-                        (2) 
-                        (?cracker - cracker) 
-                        (inside ?cracker ?basket)
-                    ) 
-                    (exists 
-                        (?candy - candy) 
-                        (exists 
-                            (?cracker - cracker) 
-                            (nextto ?candy ?cracker)
-                        )
-                    ) 
-                    (exists 
-                        (?cheese - cheese) 
-                        (exists 
-                            (?candy - candy) 
-                            (nextto ?cheese ?candy)
-                        )
-                    )
-                )
+            (forpairs 
+                (?basket.n.01 - basket.n.01) 
+                (?candle.n.01 - candle.n.01) 
+                (inside ?candle.n.01 ?basket.n.01)
             ) 
-            (forn 
-                (2) 
-                (?basket - basket) 
-                (and 
-                    (forn 
-                        (2) 
-                        (?scrapbook - scrapbook) 
-                        (inside ?scrapbook ?basket)
-                    ) 
-                    (exists 
-                        (?wine - wine) 
-                        (exists 
-                            (?cheese - cheese) 
-                            (nextto ?cheese ?wine)
-                        )
-                    ) 
-                    (exists 
-                        (?chocolate - chocolate) 
-                        (exists 
-                            (?scrapbook - scrapbook) 
-                            (ontop ?chocolate ?scrapbook)
-                        )
-                    ) 
-                    (exists 
-                        (?cracker - cracker) 
-                        (exists 
-                            (?chocolate - chocolate) 
-                            (nextto ?cracker ?chocolate)
-                        )
-                    )
-                )
+            (forpairs 
+                (?basket.n.01 - basket.n.01) 
+                (?cheese.n.01 - cheese.n.01) 
+                (inside ?cheese.n.01 ?basket.n.01)
+            ) 
+            (forpairs 
+                (?basket.n.01 - basket.n.01) 
+                (?cookie.n.01 - cookie.n.01) 
+                (inside ?cookie.n.01 ?basket.n.01)
+            ) 
+            (forpairs 
+                (?basket.n.01 - basket.n.01) 
+                (?bow.n.08 - bow.n.08) 
+                (inside ?bow.n.08 ?basket.n.01)
             )
         )
     )

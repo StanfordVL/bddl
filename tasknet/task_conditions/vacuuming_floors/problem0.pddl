@@ -2,49 +2,24 @@
     (:domain igibson)
 
     (:objects
-     	vacuum1 - vacuum
-    	floor1 - floor
-    	sofa1 - sofa
-    	crumb1 crumb2 crumb3 crumb4 crumb5 - crumb
-    	bed1 - bed
-    	carpet1 - carpet
-    	gym_shoe1 - gym_shoe
+     	floor.n.01_1 - floor.n.01
+    	vacuum.n.04_1 - vacuum.n.04
+        ashcan.n.01_1 - ashcan.n.01
+    	agent.n.01_1 - agent.n.01
     )
     
     (:init 
-        (and 
-            (ontop vacuum1 floor1) 
-            (ontop sofa1 floor1) 
-            (ontop crumb1 floor1) 
-            (ontop crumb2 floor1) 
-            (ontop crumb3 floor1) 
-            (dusty floor1)
-        ) 
-        (and 
-            (ontop bed1 carpet1) 
-            (ontop crumb4 carpet1) 
-            (ontop crumb5 carpet1) 
-            (ontop gym_shoe1 carpet1) 
-            (dusty carpet1)
-        ) 
-        (inroom floor1 livingroom) 
-        (inroom carpet1 bedroom) 
-        (inroom bed1 bedroom) 
-        (inroom sofa1 livingroom)
+        (dusty floor.n.01_1) 
+        (onfloor vacuum.n.04_1 floor.n.01_1) 
+        (onfloor ashcan.n.01_1 floor.n.01_1) 
+        (inroom floor.n.01_1 bedroom) 
+        (onfloor agent.n.01_1 floor.n.01_1)
     )
     
     (:goal 
         (and 
-            (forall 
-                (?crumb - crumb) 
-                (inside ?crumb ?vacuum1)
-            ) 
-            (nextto ?gym_shoe1 ?bed1) 
             (not 
-                (dusty ?floor1)
-            ) 
-            (not 
-                (dusty ?carpet1)
+                (dusty ?floor.n.01_1)
             )
         )
     )
