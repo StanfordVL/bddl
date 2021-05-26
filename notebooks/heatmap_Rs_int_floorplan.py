@@ -57,7 +57,7 @@ def convert_name(name):
         return "serving"
     elif name == "cleaning_out_drawers_filtered":
         return "drawers"
-    elif name == "putting_away_dishes_after_cleaning_filtered":
+    elif name == "putting_dishes_away_after_cleaning_filtered":
         return "dishes"
     elif name == "putting_away_Christmas_decorations_filtered":
         return "decorations"
@@ -69,6 +69,8 @@ def convert_name(name):
 
 
 print(raw_data)
+
+
 
 # -
 
@@ -134,8 +136,11 @@ plt.legend(fontsize=30, loc='lower left', bbox_to_anchor=(0.07, 0.06))
 plt.imshow(floorplan)
 plt.savefig('task_heatmap_{}.pdf'.format(scene_id), bbox_inches='tight', pad_inches=0, transparent=True)
 
+<<<<<<< HEAD
 print(raw_data)
 
+=======
+>>>>>>> 9bdc40d3b5efa06dbc5a1f47d8471ab509c01114
 
 # +
 # demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/examples_pre_hand')
@@ -254,4 +259,81 @@ for i, (demo, demo_file) in enumerate(zip(raw_data, demo_files)):
     plt.clf()
 
 
+<<<<<<< HEAD
 
+=======
+# +
+demos_filepath = os.path.join('/cvgl2/u/chengshu/TaskNet/data/Beechwood_0_int_demos')
+
+raw_data = []
+demo_files = []
+for demo_file in sorted(os.listdir(demos_filepath)):
+    if ".hdf5" not in demo_file: 
+        continue
+    if scene_id not in demo_file:
+        continue
+    raw_data.append(h5py.File(os.path.join(demos_filepath, demo_file), "r"))
+    demo_files.append(demo_file)
+# -
+
+trav_map_resolution = 0.01
+trav_map_size = 2400
+def world_to_map(xy):
+    world_xy = xy / trav_map_resolution
+    world_xy[:, 1] *= -1
+    return np.flip((world_xy + trav_map_size / 2.0)).astype(np.int)
+
+
+# +
+scene_id = 'Beechwood_0_int'
+
+plt.figure(figsize=(20,20))
+skip = 5
+
+floorplan_file = '/cvgl2/u/chengshu/TaskNet/data/floorplan/{}.png'.format(scene_id)
+floorplan = plt.imread(floorplan_file)
+colors = ['#004D40', '#D81B60', '#FFC107', '#1E88E5', '#FE6100', '#9CD4F3', '#1DD21D', '#5D3A9B']
+task_done = set()
+idx = 0
+for i, (demo, demo_file) in enumerate(zip(raw_data[::-1], demo_files[::-1])):
+    task_id = demo_file[:(demo_file.index(scene_id) - 1)]
+    if task_id == 're-shelving_library_books_filtered_0':
+        continue
+    task = task_id[:-2]
+    task = convert_name(task)
+    if task in task_done:
+        continue
+    task_done.add(task)
+
+    start_idx = max(
+        min(np.where(demo['vr']['vr_event_data']['left_controller'])[0]),
+        min(np.where(demo['vr']['vr_event_data']['right_controller'])[0])
+    )
+
+    satisfied = demo["goal_status"]["satisfied"]
+    total_frames, total_goal_conds = satisfied.shape
+    satisfied_goal_conds_by_frame = np.sum(satisfied, axis=1)
+    success_trace = np.nonzero(satisfied_goal_conds_by_frame == float(total_goal_conds))
+    success = bool(len(success_trace))
+
+    if success:
+        end_idx = np.min(success_trace)
+    else:
+        end_idx = total_frames
+
+
+    left_position = demo["vr"]["vr_device_data"]["left_controller"][start_idx:end_idx, 1:4]
+    right_position = demo["vr"]["vr_device_data"]["right_controller"][start_idx:end_idx, 1:4]
+    body_position = demo["vr"]["vr_device_data"]["vr_position_data"][start_idx:end_idx, 0:3]
+    body_position_xy = body_position[:, 0:2]
+    body_position_xy_map = world_to_map(body_position_xy)
+    
+    c = colors[idx % len(colors)]
+    plt.plot(body_position_xy_map[:, 1], body_position_xy_map[:, 0], marker='o', linewidth=5, alpha=1.0, label=task, c=c)
+    idx += 1
+
+plt.axis('off')
+plt.legend(fontsize=18, loc='upper left', bbox_to_anchor=(0.02, 0.77))
+plt.imshow(floorplan)
+plt.savefig('task_heatmap_{}.pdf'.format(scene_id), bbox_inches='tight', pad_inches=0, transparent=True)
+>>>>>>> 9bdc40d3b5efa06dbc5a1f47d8471ab509c01114
