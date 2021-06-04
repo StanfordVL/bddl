@@ -5,6 +5,7 @@ import pandas as pd
 import seaborn as sns 
 import tasknet
 from tasknet.task_base import TaskNetTask
+from tasknet.condition_evaluation import Negation
 
 # +
 COLORS = sns.color_palette("pastel")
@@ -100,7 +101,7 @@ volumes_data = pd.DataFrame(
 volumes_data
 
 # +
-vol_fig = plt.figure(figsize=(30, 8))
+vol_fig = plt.figure(figsize=(15, 4))
 vol_ax = sns.barplot(
     data=volumes_data.sort_values(by="volume", ascending=False),
     x="activity_name",
@@ -126,7 +127,7 @@ object_data = pd.DataFrame(
 object_data
 
 # +
-obj_fig = plt.figure(figsize=(30, 8))
+obj_fig = plt.figure(figsize=(15, 4))
 obj_ax = sns.barplot(
     data=object_data.sort_values(by="num_activity_related_objects", ascending=False),
     x="activity_name",
@@ -140,3 +141,92 @@ plt.savefig("numrelevantobjects_by_activities.pdf", bbox_inches="tight")
 # -
 
 # # Distinct predicates 
+
+# +
+predicate_name_map = {
+    "inside": "InsideOf",
+    "nextto": "NextTo",
+    "ontop": "OnTopOf",
+    "stained": "Stained",
+    "dusty": "Dusty",
+    "onfloor": "OnFloor",
+    "soaked": "Soaked",
+    "open": "Open",
+    "sliced": "Sliced",
+    "toggled_on": "ToggledOn",
+    "under": "Under",
+    "touching": "InContact",
+    "cooked": "Cooked", 
+    "frozen": "Frozen",
+    "burnt": "Burnt"
+}
+
+def predicate_to_category(predicate):
+    kinematics = set(["inside", "nextto", "ontop", "onfloor", "touching", "open", "under"])
+    kinematics = kinematics.union(set([predicate_name_map[pred] for pred in kinematics]))
+    temperatures = set(["frozen", "cooked", "burnt"])
+    temperatures = temperatures.union(set([predicate_name_map[pred] for pred in temperatures]))
+    particles = set(["soaked", "stained", "dusty"])
+    particles = particles.union(set([predicate_name_map[pred] for pred in particles]))
+    mesh_change = set(["sliced"])
+    mesh_change = mesh_change.union(set([predicate_name_map[pred] for pred in mesh_change]))
+    other = set(["toggled_on"])
+    other = other.union(set([predicate_name_map[pred] for pred in other]))
+    
+    if predicate in kinematics:
+        return 0
+    if predicate in temperatures:
+        return 1 
+    if predicate in particles:
+        return 2
+    if predicate in mesh_change:
+        return 3 
+    if predicate in other:
+        return 4
+    raise ValueError("Predicate not typed")
+    
+
+
+# +
+ground_goal_predicate_sets = []
+for task in tasks:
+    minimal_soln = sorted(task.ground_goal_state_options, key=len)[0]
+    ground_goal_predicate_set = set()
+    for literal in minimal_soln:
+        if isinstance(literal.children[0], Negation):
+            ground_goal_predicate_set.add(literal.children[0].children[0].STATE_NAME)
+        else:
+            ground_goal_predicate_set.add(literal.children[0].STATE_NAME)
+    ground_goal_predicate_sets.append(ground_goal_predicate_set)
+            
+predicate_to_num_activities = {predicate: 0 for predicate in predicate_name_map.keys()}
+for ground_goal_pred_set in ground_goal_predicate_sets:
+    for predicate in predicate_to_num_activities.keys():
+        if predicate in ground_goal_pred_set:
+            predicate_to_num_activities[predicate] += 1
+
+# +
+predicate_data = pd.DataFrame(
+    data=predicate_to_num_activities.items(), 
+    columns=["predicate", "num_activities"]
+)
+
+categories = []
+for row in predicate_data.itertuples():
+    categories.append(predicate_to_category(row.predicate))
+print(categories)
+    
+predicate_data
+# -
+
+pred_fig = plt.figure(figsize=(15, 4))
+pred_ax = sns.barplot(
+    data=predicate_data,
+    x="predicate",
+    y="num_activities"
+)
+plt.xticks(rotation=90)
+for i, bar in enumerate(pred_ax.patches):
+    bar.set_color(COLORS[categories[i]])
+
+
