@@ -112,7 +112,9 @@ class TaskNetTask(object):
         # Generate goal condition with the fully populated self.object_scope
         self.gen_goal_conditions()
         # assert accept_scene, 'None of the available scenes satisfy these initial conditions.'
-
+        # convert goal condition into ground predicates
+        self.gen_ground_goal_conditions()
+        self.goal_conditions = self.ground_goal_state_options[0]
         return accept_scene
 
     def gen_initial_conditions(self):
