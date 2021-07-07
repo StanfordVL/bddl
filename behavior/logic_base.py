@@ -4,7 +4,7 @@ from future.utils import with_metaclass
 from behavior.utils import UncontrolledCategoryError
 
 
-class Sentence(with_metaclass(ABCMeta)):
+class Expression(with_metaclass(ABCMeta)):
     def __init__(self, scope, task, body, object_map):
         self.children = []
         self.child_values = []
@@ -19,12 +19,12 @@ class Sentence(with_metaclass(ABCMeta)):
         pass
 
 
-class AtomicPredicate(Sentence):
+class AtomicFormula(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
 
-class BinaryAtomicPredicate(AtomicPredicate):
+class BinaryAtomicFormula(AtomicFormula):
     STATE_NAME = None
 
     def __init__(self, scope, task, body, object_map):
@@ -72,7 +72,7 @@ class BinaryAtomicPredicate(AtomicPredicate):
             [[self.STATE_NAME, self.input1, self.input2]]]
 
 
-class UnaryAtomicPredicate(AtomicPredicate):
+class UnaryAtomicFormula(AtomicFormula):
     STATE_NAME = None
 
     def __init__(self, scope, task, body, object_map):

@@ -75,9 +75,9 @@ def truncated_permutations(iterable, r=None, max_permutations=GROUND_GOALS_MAX_P
 class UncontrolledCategoryError(Exception):
     pass
 
-class UnsupportedSentenceError(Exception):
-    def __init__(self, sentence):
-        self.sentence = sentence
+class UnsupportedPredicateError(Exception):
+    def __init__(self, predicate):
+        self.predicate = predicate
 
 
 if __name__ == "__main__":

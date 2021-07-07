@@ -3,19 +3,19 @@ import itertools
 import numpy as np
 
 import behavior
-from behavior.logic_base import Sentence, AtomicPredicate, UnaryAtomicPredicate
-from behavior.utils import truncated_product, truncated_permutations, UnsupportedSentenceError
+from behavior.logic_base import Expression, AtomicFormula, UnaryAtomicFormula
+from behavior.utils import truncated_product, truncated_permutations, UnsupportedPredicateError
 
 # TODO: VERY IMPORTANT9o
 #   1. Change logic for checking categories once new iG object is being used
 #   2. `task` needs to be input properly. It'll be weird to call these in a method
 #           of BEHAVIORTask and then have to put `self` in
 
-#################### ATOMIC PREDICATES ####################
+#################### ATOMIC FORMULAE ####################
 # TODO: Remove this when tests support temperature-based cooked.
 
 
-class LegacyCookedForTesting(UnaryAtomicPredicate):
+class LegacyCookedForTesting(UnaryAtomicFormula):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
@@ -38,12 +38,12 @@ class LegacyCookedForTesting(UnaryAtomicPredicate):
 #################### RECURSIVE PREDICATES ####################
 
 # -JUNCTIONS
-class Conjunction(Sentence):
+class Conjunction(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
         new_scope = copy.copy(scope)
-        child_predicates = [get_sentence_for_token(subpredicate[0])(
+        child_predicates = [get_predicate_for_token(subpredicate[0])(
             new_scope, task, subpredicate[1:], object_map) for subpredicate in body]
         self.children.extend(child_predicates)
 
@@ -64,13 +64,13 @@ class Conjunction(Sentence):
                 list(itertools.chain(*option))
             )
 
-class Disjunction(Sentence):
+class Disjunction(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
         # body = [[predicate1], [predicate2], ..., [predicateN]]
         new_scope = copy.copy(scope)
-        child_predicates = [get_sentence_for_token(subpredicate[0])(
+        child_predicates = [get_predicate_for_token(subpredicate[0])(
             new_scope, task, subpredicate[1:], object_map) for subpredicate in body]
         self.children.extend(child_predicates)
 
@@ -91,7 +91,7 @@ class Disjunction(Sentence):
 
 
 # QUANTIFIERS
-class Universal(Sentence):
+class Universal(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
         iterable, subpredicate = body
@@ -102,7 +102,7 @@ class Universal(Sentence):
             if obj_name in object_map[category]:
                 new_scope = copy.copy(scope)
                 new_scope[param_label] = obj_name
-                self.children.append(get_sentence_for_token(subpredicate[0])(
+                self.children.append(get_predicate_for_token(subpredicate[0])(
                     new_scope, task, subpredicate[1:], object_map))
 
         self.get_ground_options()
@@ -125,7 +125,7 @@ class Universal(Sentence):
             )
 
 
-class Existential(Sentence):
+class Existential(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
         iterable, subpredicate = body
@@ -137,7 +137,7 @@ class Existential(Sentence):
                 new_scope = copy.copy(scope)
                 new_scope[param_label] = obj_name
                 # body = [["param_label", "-", "category"], [predicate]]
-                self.children.append(get_sentence_for_token(subpredicate[0])(
+                self.children.append(get_predicate_for_token(subpredicate[0])(
                     new_scope, task, subpredicate[1:], object_map))
 
         self.get_ground_options()
@@ -156,7 +156,7 @@ class Existential(Sentence):
             )
 
 
-class NQuantifier(Sentence):
+class NQuantifier(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
@@ -169,7 +169,7 @@ class NQuantifier(Sentence):
             if obj_name in object_map[category]:
                 new_scope = copy.copy(scope)
                 new_scope[param_label] = obj_name
-                self.children.append(get_sentence_for_token(subpredicate[0])(
+                self.children.append(get_predicate_for_token(subpredicate[0])(
                     new_scope, task, subpredicate[1:], object_map))
 
         self.get_ground_options()
@@ -195,7 +195,7 @@ class NQuantifier(Sentence):
                 )
 
 
-class ForPairs(Sentence):
+class ForPairs(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
@@ -212,7 +212,7 @@ class ForPairs(Sentence):
                         new_scope = copy.copy(scope)
                         new_scope[param_label1] = obj_name_1
                         new_scope[param_label2] = obj_name_2
-                        sub.append(get_sentence_for_token(subpredicate[0])(
+                        sub.append(get_predicate_for_token(subpredicate[0])(
                             new_scope, task, subpredicate[1:], object_map))
                 self.children.append(sub)
 
@@ -246,7 +246,7 @@ class ForPairs(Sentence):
                 self.flattened_condition_options.extend(unpacked_choice_options)
 
 
-class ForNPairs(Sentence):
+class ForNPairs(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
@@ -264,7 +264,7 @@ class ForNPairs(Sentence):
                         new_scope = copy.copy(scope)
                         new_scope[param_label1] = obj_name_1
                         new_scope[param_label2] = obj_name_2
-                        sub.append(get_sentence_for_token(subpredicate[0])(
+                        sub.append(get_predicate_for_token(subpredicate[0])(
                             new_scope, task, subpredicate[1:], object_map))
                 self.children.append(sub)
 
@@ -297,13 +297,13 @@ class ForNPairs(Sentence):
 
 
 # NEGATION
-class Negation(Sentence):
+class Negation(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
         # body = [[predicate]]
         subpredicate = body[0]
-        self.children.append(get_sentence_for_token(subpredicate[0])(
+        self.children.append(get_predicate_for_token(subpredicate[0])(
             scope, task, subpredicate[1:], object_map))
         assert len(self.children) == 1, 'More than one child.'
 
@@ -334,15 +334,15 @@ class Negation(Sentence):
 
 
 # IMPLICATION
-class Implication(Sentence):
+class Implication(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
         # body = [[antecedent], [consequent]]
         antecedent, consequent = body
-        self.children.append(get_sentence_for_token(antecedent[0])(
+        self.children.append(get_predicate_for_token(antecedent[0])(
             scope, task, antecedent[1:], object_map))
-        self.children.append(get_sentence_for_token(consequent[0])(
+        self.children.append(get_predicate_for_token(consequent[0])(
             scope, task, consequent[1:], object_map))
 
         self.get_ground_options()
@@ -377,12 +377,12 @@ class Implication(Sentence):
 
 # HEAD
 
-class HEAD(Sentence):
+class HEAD(Expression):
     def __init__(self, scope, task, body, object_map):
         super().__init__(scope, task, body, object_map)
 
         subpredicate = body
-        self.children.append(get_sentence_for_token(subpredicate[0])(
+        self.children.append(get_predicate_for_token(subpredicate[0])(
             scope, task, subpredicate[1:], object_map))
 
         self.terms = [term.lstrip('?')
@@ -503,12 +503,12 @@ TOKEN_MAPPING = {
 }
 
 
-def get_sentence_for_token(token):
+def get_predicate_for_token(token):
     if token in TOKEN_MAPPING:
         return TOKEN_MAPPING[token]
     else:
         try:
             return behavior.get_backend().get_predicate_class(token)
         except KeyError as e:
-            raise UnsupportedSentenceError(e)
+            raise UnsupportedPredicateError(e)
 
