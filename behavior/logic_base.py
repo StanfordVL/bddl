@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABCMeta
 
 from future.utils import with_metaclass
-from tasknet.utils import UncontrolledCategoryError
+from behavior.utils import UncontrolledCategoryError
 
 
 class Sentence(with_metaclass(ABCMeta)):

@@ -1,5 +1,5 @@
 from gibson2.object_states.factory import prepare_object_states
-from tasknet.task_base import TaskNetTask
+from behavior.task_base import BEHAVIORTask
 import sys
 
 class OfflineObject:
@@ -20,11 +20,11 @@ class OfflineObject:
                 print("unsupported")
 
 
-class OfflineTask(TaskNetTask):
+class OfflineTask(BEHAVIORTask):
     def initialize(self, object_map, frame_data):
         '''
         TODO should this method take scene_path and object_path as args, instead of
-            asking user to change in tasknet/config.py?
+            asking user to change in behavior/config.py?
         '''
         for object_group in self.objects:
             for obj in self.objects[object_group]:

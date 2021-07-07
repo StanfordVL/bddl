@@ -2,20 +2,20 @@ import random
 import os
 import sys
 
-from tasknet import get_backend
-from tasknet.config import SCENE_PATH
-from tasknet.sampler import Sampler
-from tasknet.parsing import parse_domain, parse_problem, gen_natural_language_conditions
-from tasknet.condition_evaluation import create_scope, compile_state, evaluate_state, get_ground_state_options
+from behavior import get_backend
+from behavior.config import SCENE_PATH
+from behavior.sampler import Sampler
+from behavior.parsing import parse_domain, parse_problem, gen_natural_language_conditions
+from behavior.condition_evaluation import create_scope, compile_state, evaluate_state, get_ground_state_options
 
 from gibson2.external.pybullet_tools.utils import quat_from_euler
 
 import numpy as np
 from IPython import embed
-from tasknet.object_taxonomy import ObjectTaxonomy
+from behavior.object_taxonomy import ObjectTaxonomy
 
 
-class TaskNetTask(object):
+class BEHAVIORTask(object):
     # TODO
     #   1. Update with new object formats
     #   2. Update initialize() to work with self.check_setup()
@@ -70,7 +70,7 @@ class TaskNetTask(object):
         Populate self.scene with necessary objects.
         :param scene_class: scene class from simulator
         TODO should this method take scene_path and object_path as args, instead of
-            asking user to change in tasknet/config.py?
+            asking user to change in behavior/config.py?
         '''
         scenes = os.listdir(self.scene_path)
         random.shuffle(scenes)
@@ -236,7 +236,7 @@ def organize_objects(sim_objects, dsl_objects):
     return objects
 
 
-class TaskNetScene(object):
+class BEHAVIORScene(object):
     def __init__(self, scene_file):
         self.scene_file = scene_file
         self.objects = []

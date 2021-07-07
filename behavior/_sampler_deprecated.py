@@ -3,8 +3,8 @@ import os
 import random
 import sys  
 
-from tasknet.config import OBJECT_MODEL_PATH, get_object_filepath
-from tasknet.object import BaseObject
+from behavior.config import OBJECT_MODEL_PATH, get_object_filepath
+from behavior.object import BaseObject
 
 
 class Sampler(object):
@@ -45,7 +45,7 @@ class Sampler(object):
             # TODO 
             sampled_simulator_objects.append([sim_obj, obj_pos, obj_orn])
 
-            # TASKNET OBJECT 
+            # BEHAVIOR OBJECT 
             dsl_obj = BaseObject(obj_category)  # NOTE can't do body_id now since the sim obj doesn't have an ID yet
             dsl_obj.position = obj_pos
             dsl_obj.orientation = obj_orn
