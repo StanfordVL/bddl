@@ -64,11 +64,12 @@ def parse_domain(domain):
                         raise Exception('Requirement %s not supported' % req)
                 requirements = group
             elif t == ':predicates':
-                predicate_name, arguments = parse_predicates(group)
-                if predicate_name in predicates:
-                    raise Exception(
-                        'Predicate %s defined multiple times' % predicate_name)
-                predicates[predicate_name] = arguments
+                for pred in group:
+                    predicate_name, arguments = parse_predicate(pred)
+                    if predicate_name in predicates:
+                        raise Exception(
+                            'Predicate %s defined multiple times' % predicate_name)
+                    predicates[predicate_name] = arguments
             elif t == ':types':
                 types = group
             elif t == ':action':
@@ -86,24 +87,23 @@ def parse_domain(domain):
                         domain_filename)
 
 
-def parse_predicates(group):
-    for pred in group:
-        predicate_name = pred.pop(0)
-        arguments = {}
-        untyped_variables = []
-        while pred:
-            t = pred.pop(0)
-            if t == '-':
-                if not untyped_variables:
-                    raise Exception('Unexpected hyphen in predicates')
-                var_type = pred.pop(0)
-                while untyped_variables:
-                    arguments[untyped_variables.pop(0)] = var_type
-            else:
-                untyped_variables.append(t)
-        while untyped_variables:
-            arguments[untyped_variables.pop(0)] = 'object'
-        return predicate_name, arguments
+def parse_predicate(pred):
+    predicate_name = pred.pop(0)
+    arguments = {}
+    untyped_variables = []
+    while pred:
+        t = pred.pop(0)
+        if t == '-':
+            if not untyped_variables:
+                raise Exception('Unexpected hyphen in predicates')
+            var_type = pred.pop(0)
+            while untyped_variables:
+                arguments[untyped_variables.pop(0)] = var_type
+        else:
+            untyped_variables.append(t)
+    while untyped_variables:
+        arguments[untyped_variables.pop(0)] = 'object'
+    return predicate_name, arguments
 
 
 def parse_action(group):
