@@ -1999,7 +1999,7 @@
                                       ],
                                       "abilities": {
                                         "burnable": {
-                                          "burn_temperature": 410.0
+                                          "burn_temperature": 210.0
                                         },
                                         "dustyable": {},
                                         "openable": {},
@@ -2011,7 +2011,7 @@
                                   "igibson_categories": [],
                                   "abilities": {
                                     "burnable": {
-                                      "burn_temperature": 410.0
+                                      "burn_temperature": 210.0
                                     },
                                     "dustyable": {},
                                     "openable": {},
@@ -2027,7 +2027,7 @@
                                   ],
                                   "abilities": {
                                     "burnable": {
-                                      "burn_temperature": 410.0
+                                      "burn_temperature": 210.0
                                     },
                                     "openable": {},
                                     "stainable": {}
@@ -2041,7 +2041,7 @@
                                   ],
                                   "abilities": {
                                     "burnable": {
-                                      "burn_temperature": 100.0
+                                      "burn_temperature": 37.77777777777778
                                     },
                                     "dustyable": {},
                                     "openable": {},
@@ -2055,7 +2055,7 @@
                                   ],
                                   "abilities": {
                                     "burnable": {
-                                      "burn_temperature": 100.0
+                                      "burn_temperature": 37.77777777777778
                                     },
                                     "dustyable": {},
                                     "openable": {},
@@ -2070,7 +2070,7 @@
                                   "abilities": {
                                     "breakable": {},
                                     "burnable": {
-                                      "burn_temperature": 410.0
+                                      "burn_temperature": 210.0
                                     },
                                     "dustyable": {},
                                     "openable": {},
@@ -24325,18 +24325,6 @@
                           }
                         },
                         {
-                          "name": "tea.n.01",
-                          "igibson_categories": [
-                            "tea",
-                            "tea_box"
-                          ],
-                          "abilities": {
-                            "freezable": {},
-                            "liquid": {},
-                            "perishable": {}
-                          }
-                        },
-                        {
                           "name": "coffee.n.01",
                           "children": [
                             {
@@ -24777,6 +24765,17 @@
                             "cookable": {
                               "cook_temperature": 100.0
                             },
+                            "freezable": {},
+                            "liquid": {},
+                            "perishable": {}
+                          }
+                        },
+                        {
+                          "name": "tea.n.01",
+                          "igibson_categories": [
+                            "tea"
+                          ],
+                          "abilities": {
                             "freezable": {},
                             "liquid": {},
                             "perishable": {}
@@ -26195,18 +26194,6 @@
                               }
                             },
                             {
-                              "name": "tea.n.01",
-                              "igibson_categories": [
-                                "tea",
-                                "tea_box"
-                              ],
-                              "abilities": {
-                                "freezable": {},
-                                "liquid": {},
-                                "perishable": {}
-                              }
-                            },
-                            {
                               "name": "coffee.n.01",
                               "children": [
                                 {
@@ -26647,6 +26634,17 @@
                                 "cookable": {
                                   "cook_temperature": 100.0
                                 },
+                                "freezable": {},
+                                "liquid": {},
+                                "perishable": {}
+                              }
+                            },
+                            {
+                              "name": "tea.n.01",
+                              "igibson_categories": [
+                                "tea"
+                              ],
+                              "abilities": {
                                 "freezable": {},
                                 "liquid": {},
                                 "perishable": {}
@@ -28285,18 +28283,6 @@
                                   }
                                 },
                                 {
-                                  "name": "tea.n.01",
-                                  "igibson_categories": [
-                                    "tea",
-                                    "tea_box"
-                                  ],
-                                  "abilities": {
-                                    "freezable": {},
-                                    "liquid": {},
-                                    "perishable": {}
-                                  }
-                                },
-                                {
                                   "name": "coffee.n.01",
                                   "children": [
                                     {
@@ -28737,6 +28723,17 @@
                                     "cookable": {
                                       "cook_temperature": 100.0
                                     },
+                                    "freezable": {},
+                                    "liquid": {},
+                                    "perishable": {}
+                                  }
+                                },
+                                {
+                                  "name": "tea.n.01",
+                                  "igibson_categories": [
+                                    "tea"
+                                  ],
+                                  "abilities": {
                                     "freezable": {},
                                     "liquid": {},
                                     "perishable": {}
