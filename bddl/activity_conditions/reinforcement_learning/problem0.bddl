@@ -1,0 +1,28 @@
+(define (problem pick_and_place_2_tables_0)
+    (:domain igibson)
+
+    (:objects
+     	book.n.02_1 book.n.02_2 book.n.02_3 book.n.02_4 book.n.02_5 - book.n.02
+    	table.n.02_1 table.n.02_2 - table.n.02
+    	floor.n.01_1 - floor.n.01
+    	agent.n.01_1 - agent.n.01
+    )
+    
+    (:init 
+        (ontop book.n.02_1 table.n.02_1) 
+        (ontop book.n.02_2 table.n.02_1) 
+        (ontop book.n.02_3 table.n.02_1) 
+        (ontop book.n.02_4 table.n.02_1) 
+        (ontop book.n.02_5 table.n.02_1) 
+        (inroom table.n.02_1 living_room) 
+        (inroom table.n.02_2 living_room) 
+        (inroom floor.n.01_1 living_room) 
+        (onfloor agent.n.01_1 floor.n.01_1)
+    )
+    
+    (:goal 
+        (and 
+            (ontop ?book.n.02_1 ?table.n.02_1) 
+        )
+    )
+)
