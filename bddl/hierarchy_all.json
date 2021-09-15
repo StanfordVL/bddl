@@ -2325,677 +2325,6 @@
                           "abilities": {}
                         },
                         {
-                          "name": "equipment.n.01",
-                          "children": [
-                            {
-                              "name": "apparatus.n.01",
-                              "children": [
-                                {
-                                  "name": "burner.n.01",
-                                  "igibson_categories": [
-                                    "burner"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "duplicator.n.01",
-                                  "children": [
-                                    {
-                                      "name": "facsimile.n.02",
-                                      "igibson_categories": [
-                                        "facsimile",
-                                        "fax"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 232.77777777777777
-                                        },
-                                        "dustyable": {},
-                                        "openable": {},
-                                        "stainable": {},
-                                        "toggleable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [
-                                    "copier"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 232.77777777777777
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "pendulum.n.01",
-                                  "igibson_categories": [
-                                    "pendulum"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "stainable": {},
-                                    "timeSetable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "purifier.n.01",
-                                  "igibson_categories": [
-                                    "purifier"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "stainable": {},
-                                    "toggleable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "dustyable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
-                              "name": "game_equipment.n.01",
-                              "children": [
-                                {
-                                  "name": "pool_table.n.01",
-                                  "igibson_categories": [
-                                    "pool_table"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 160.0
-                                    },
-                                    "dustyable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "ball.n.01",
-                                  "children": [
-                                    {
-                                      "name": "marble.n.02",
-                                      "igibson_categories": [
-                                        "marble"
-                                      ],
-                                      "abilities": {
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "baseball.n.02",
-                                      "igibson_categories": [
-                                        "baseball"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 211.66666666666666
-                                        },
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "football.n.02",
-                                      "igibson_categories": [
-                                        "football"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 211.66666666666666
-                                        },
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "softball.n.01",
-                                      "igibson_categories": [
-                                        "softball"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "basketball.n.02",
-                                      "igibson_categories": [
-                                        "basketball"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 211.66666666666666
-                                        },
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [
-                                    "ball"
-                                  ],
-                                  "abilities": {
-                                    "stainable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "stainable": {}
-                              }
-                            },
-                            {
-                              "name": "electronic_equipment.n.01",
-                              "children": [
-                                {
-                                  "name": "set.n.13",
-                                  "children": [
-                                    {
-                                      "name": "receiver.n.01",
-                                      "children": [
-                                        {
-                                          "name": "television_receiver.n.01",
-                                          "igibson_categories": [
-                                            "standing_tv",
-                                            "television",
-                                            "tv",
-                                            "wall_mounted_tv"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "burnable": {
-                                              "burn_temperature": 40.0
-                                            },
-                                            "dustyable": {},
-                                            "stainable": {},
-                                            "toggleable": {}
-                                          }
-                                        },
-                                        {
-                                          "name": "radio_receiver.n.01",
-                                          "igibson_categories": [
-                                            "radio"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "dustyable": {},
-                                            "timeSetable": {},
-                                            "toggleable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "dustyable": {},
-                                        "toggleable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "dustyable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "modem.n.01",
-                                  "igibson_categories": [
-                                    "modem"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "dustyable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "peripheral.n.01",
-                                  "children": [
-                                    {
-                                      "name": "data_input_device.n.01",
-                                      "children": [
-                                        {
-                                          "name": "scanner.n.02",
-                                          "igibson_categories": [
-                                            "scanner"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "dustyable": {},
-                                            "openable": {},
-                                            "toggleable": {}
-                                          }
-                                        },
-                                        {
-                                          "name": "computer_keyboard.n.01",
-                                          "igibson_categories": [
-                                            "keypad"
-                                          ],
-                                          "abilities": {
-                                            "dustyable": {},
-                                            "stainable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "dustyable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "dustyable": {}
-                                  }
-                                },
-                                {
-                                  "name": "telephone.n.01",
-                                  "children": [
-                                    {
-                                      "name": "radiotelephone.n.02",
-                                      "children": [
-                                        {
-                                          "name": "cellular_telephone.n.01",
-                                          "igibson_categories": [
-                                            "cellphone"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "dustyable": {},
-                                            "stainable": {},
-                                            "timeSetable": {},
-                                            "toggleable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "dustyable": {},
-                                        "stainable": {},
-                                        "timeSetable": {},
-                                        "toggleable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "handset.n.01",
-                                      "igibson_categories": [
-                                        "handset"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "toggleable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [
-                                    "phone",
-                                    "telephone"
-                                  ],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "audio_system.n.01",
-                                  "children": [
-                                    {
-                                      "name": "reproducer.n.01",
-                                      "children": [
-                                        {
-                                          "name": "stereo.n.01",
-                                          "children": [
-                                            {
-                                              "name": "ipod.n.01",
-                                              "igibson_categories": [
-                                                "ipod"
-                                              ],
-                                              "abilities": {
-                                                "breakable": {},
-                                                "dustyable": {},
-                                                "timeSetable": {},
-                                                "toggleable": {}
-                                              }
-                                            }
-                                          ],
-                                          "igibson_categories": [
-                                            "stereo"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "dustyable": {},
-                                            "timeSetable": {},
-                                            "toggleable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "dustyable": {},
-                                        "timeSetable": {},
-                                        "toggleable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "dustyable": {},
-                                    "timeSetable": {},
-                                    "toggleable": {}
-                                  }
-                                },
-                                {
-                                  "name": "television_equipment.n.01",
-                                  "children": [
-                                    {
-                                      "name": "television_camera.n.01",
-                                      "children": [
-                                        {
-                                          "name": "camcorder.n.01",
-                                          "igibson_categories": [
-                                            "camcorder"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "dustyable": {},
-                                            "timeSetable": {},
-                                            "toggleable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "dustyable": {},
-                                        "timeSetable": {},
-                                        "toggleable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "dustyable": {},
-                                    "timeSetable": {},
-                                    "toggleable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "dustyable": {}
-                              }
-                            },
-                            {
-                              "name": "gear.n.04",
-                              "children": [
-                                {
-                                  "name": "kit.n.02",
-                                  "igibson_categories": [
-                                    "kit"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 96.11111111111111
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 96.11111111111111
-                                },
-                                "dustyable": {},
-                                "openable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
-                              "name": "material.n.04",
-                              "children": [
-                                {
-                                  "name": "packaging.n.03",
-                                  "igibson_categories": [
-                                    "packaging"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 204.44444444444446
-                                    },
-                                    "dustyable": {},
-                                    "openable": {},
-                                    "stainable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "breakable": {},
-                                "burnable": {
-                                  "burn_temperature": 204.44444444444446
-                                },
-                                "dustyable": {},
-                                "openable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
-                              "name": "sports_equipment.n.01",
-                              "children": [
-                                {
-                                  "name": "golf_equipment.n.01",
-                                  "children": [
-                                    {
-                                      "name": "golf_club.n.02",
-                                      "children": [
-                                        {
-                                          "name": "iron.n.02",
-                                          "children": [
-                                            {
-                                              "name": "putter.n.02",
-                                              "igibson_categories": [
-                                                "putter"
-                                              ],
-                                              "abilities": {
-                                                "dustyable": {},
-                                                "stainable": {}
-                                              }
-                                            }
-                                          ],
-                                          "igibson_categories": [],
-                                          "abilities": {
-                                            "dustyable": {},
-                                            "stainable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [
-                                        "club"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "baseball_equipment.n.01",
-                                  "children": [
-                                    {
-                                      "name": "baseball.n.02",
-                                      "igibson_categories": [
-                                        "baseball"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 211.66666666666666
-                                        },
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 211.66666666666666
-                                    },
-                                    "dustyable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "basketball_equipment.n.01",
-                                  "children": [
-                                    {
-                                      "name": "basketball.n.02",
-                                      "igibson_categories": [
-                                        "basketball"
-                                      ],
-                                      "abilities": {
-                                        "burnable": {
-                                          "burn_temperature": 211.66666666666666
-                                        },
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 211.66666666666666
-                                    },
-                                    "dustyable": {},
-                                    "stainable": {}
-                                  }
-                                },
-                                {
-                                  "name": "weight.n.02",
-                                  "children": [
-                                    {
-                                      "name": "barbell.n.01",
-                                      "igibson_categories": [
-                                        "barbell"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    },
-                                    {
-                                      "name": "dumbbell.n.01",
-                                      "igibson_categories": [
-                                        "dumbbell"
-                                      ],
-                                      "abilities": {
-                                        "dustyable": {},
-                                        "stainable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [],
-                                  "abilities": {
-                                    "dustyable": {},
-                                    "stainable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "dustyable": {},
-                                "stainable": {}
-                              }
-                            },
-                            {
-                              "name": "photographic_equipment.n.01",
-                              "children": [
-                                {
-                                  "name": "camera.n.01",
-                                  "children": [
-                                    {
-                                      "name": "digital_camera.n.01",
-                                      "children": [
-                                        {
-                                          "name": "webcam.n.01",
-                                          "igibson_categories": [
-                                            "webcam"
-                                          ],
-                                          "abilities": {
-                                            "breakable": {},
-                                            "burnable": {
-                                              "burn_temperature": 450.0
-                                            },
-                                            "dustyable": {},
-                                            "toggleable": {}
-                                          }
-                                        }
-                                      ],
-                                      "igibson_categories": [],
-                                      "abilities": {
-                                        "breakable": {},
-                                        "burnable": {
-                                          "burn_temperature": 450.0
-                                        },
-                                        "dustyable": {},
-                                        "toggleable": {}
-                                      }
-                                    }
-                                  ],
-                                  "igibson_categories": [
-                                    "camera"
-                                  ],
-                                  "abilities": {
-                                    "breakable": {},
-                                    "burnable": {
-                                      "burn_temperature": 450.0
-                                    },
-                                    "dustyable": {},
-                                    "toggleable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "breakable": {},
-                                "burnable": {
-                                  "burn_temperature": 450.0
-                                },
-                                "dustyable": {},
-                                "toggleable": {}
-                              }
-                            }
-                          ],
-                          "igibson_categories": [],
-                          "abilities": {}
-                        },
-                        {
                           "name": "device.n.01",
                           "children": [
                             {
@@ -6355,6 +5684,668 @@
                                 },
                                 "freezable": {},
                                 "perishable": {}
+                              }
+                            }
+                          ],
+                          "igibson_categories": [],
+                          "abilities": {}
+                        },
+                        {
+                          "name": "equipment.n.01",
+                          "children": [
+                            {
+                              "name": "game_equipment.n.01",
+                              "children": [
+                                {
+                                  "name": "pool_table.n.01",
+                                  "igibson_categories": [
+                                    "pool_table"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 160.0
+                                    },
+                                    "dustyable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "ball.n.01",
+                                  "children": [
+                                    {
+                                      "name": "marble.n.02",
+                                      "igibson_categories": [
+                                        "marble"
+                                      ],
+                                      "abilities": {
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "baseball.n.02",
+                                      "igibson_categories": [
+                                        "baseball"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 211.66666666666666
+                                        },
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "football.n.02",
+                                      "igibson_categories": [
+                                        "football"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 211.66666666666666
+                                        },
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "softball.n.01",
+                                      "igibson_categories": [
+                                        "softball"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "basketball.n.02",
+                                      "igibson_categories": [
+                                        "basketball"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 211.66666666666666
+                                        },
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [
+                                    "ball"
+                                  ],
+                                  "abilities": {
+                                    "stainable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "stainable": {}
+                              }
+                            },
+                            {
+                              "name": "electronic_equipment.n.01",
+                              "children": [
+                                {
+                                  "name": "set.n.13",
+                                  "children": [
+                                    {
+                                      "name": "receiver.n.01",
+                                      "children": [
+                                        {
+                                          "name": "television_receiver.n.01",
+                                          "igibson_categories": [
+                                            "standing_tv",
+                                            "television",
+                                            "tv",
+                                            "wall_mounted_tv"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "burnable": {
+                                              "burn_temperature": 40.0
+                                            },
+                                            "dustyable": {},
+                                            "stainable": {},
+                                            "toggleable": {}
+                                          }
+                                        },
+                                        {
+                                          "name": "radio_receiver.n.01",
+                                          "igibson_categories": [
+                                            "radio"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "dustyable": {},
+                                            "timeSetable": {},
+                                            "toggleable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "dustyable": {},
+                                        "toggleable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "modem.n.01",
+                                  "igibson_categories": [
+                                    "modem"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "peripheral.n.01",
+                                  "children": [
+                                    {
+                                      "name": "data_input_device.n.01",
+                                      "children": [
+                                        {
+                                          "name": "scanner.n.02",
+                                          "igibson_categories": [
+                                            "scanner"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "dustyable": {},
+                                            "openable": {},
+                                            "toggleable": {}
+                                          }
+                                        },
+                                        {
+                                          "name": "computer_keyboard.n.01",
+                                          "igibson_categories": [
+                                            "keypad"
+                                          ],
+                                          "abilities": {
+                                            "dustyable": {},
+                                            "stainable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "dustyable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "dustyable": {}
+                                  }
+                                },
+                                {
+                                  "name": "telephone.n.01",
+                                  "children": [
+                                    {
+                                      "name": "radiotelephone.n.02",
+                                      "children": [
+                                        {
+                                          "name": "cellular_telephone.n.01",
+                                          "igibson_categories": [
+                                            "cellphone"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "dustyable": {},
+                                            "stainable": {},
+                                            "timeSetable": {},
+                                            "toggleable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "dustyable": {},
+                                        "stainable": {},
+                                        "timeSetable": {},
+                                        "toggleable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "handset.n.01",
+                                      "igibson_categories": [
+                                        "handset"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "toggleable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [
+                                    "phone",
+                                    "telephone"
+                                  ],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "audio_system.n.01",
+                                  "children": [
+                                    {
+                                      "name": "reproducer.n.01",
+                                      "children": [
+                                        {
+                                          "name": "stereo.n.01",
+                                          "children": [
+                                            {
+                                              "name": "ipod.n.01",
+                                              "igibson_categories": [
+                                                "ipod"
+                                              ],
+                                              "abilities": {
+                                                "breakable": {},
+                                                "dustyable": {},
+                                                "timeSetable": {},
+                                                "toggleable": {}
+                                              }
+                                            }
+                                          ],
+                                          "igibson_categories": [
+                                            "stereo"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "dustyable": {},
+                                            "timeSetable": {},
+                                            "toggleable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "dustyable": {},
+                                        "timeSetable": {},
+                                        "toggleable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "dustyable": {},
+                                    "timeSetable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "television_equipment.n.01",
+                                  "children": [
+                                    {
+                                      "name": "television_camera.n.01",
+                                      "children": [
+                                        {
+                                          "name": "camcorder.n.01",
+                                          "igibson_categories": [
+                                            "camcorder"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "dustyable": {},
+                                            "timeSetable": {},
+                                            "toggleable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "dustyable": {},
+                                        "timeSetable": {},
+                                        "toggleable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "dustyable": {},
+                                    "timeSetable": {},
+                                    "toggleable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "dustyable": {}
+                              }
+                            },
+                            {
+                              "name": "apparatus.n.01",
+                              "children": [
+                                {
+                                  "name": "duplicator.n.01",
+                                  "children": [
+                                    {
+                                      "name": "facsimile.n.02",
+                                      "igibson_categories": [
+                                        "facsimile",
+                                        "fax"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 232.77777777777777
+                                        },
+                                        "dustyable": {},
+                                        "openable": {},
+                                        "stainable": {},
+                                        "toggleable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [
+                                    "copier"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 232.77777777777777
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "pendulum.n.01",
+                                  "igibson_categories": [
+                                    "pendulum"
+                                  ],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "stainable": {},
+                                    "timeSetable": {},
+                                    "toggleable": {}
+                                  }
+                                },
+                                {
+                                  "name": "purifier.n.01",
+                                  "igibson_categories": [
+                                    "purifier"
+                                  ],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "stainable": {},
+                                    "toggleable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "dustyable": {},
+                                "stainable": {},
+                                "toggleable": {}
+                              }
+                            },
+                            {
+                              "name": "gear.n.04",
+                              "children": [
+                                {
+                                  "name": "kit.n.02",
+                                  "igibson_categories": [
+                                    "kit"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 96.11111111111111
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "burnable": {
+                                  "burn_temperature": 96.11111111111111
+                                },
+                                "dustyable": {},
+                                "openable": {},
+                                "stainable": {}
+                              }
+                            },
+                            {
+                              "name": "material.n.04",
+                              "children": [
+                                {
+                                  "name": "packaging.n.03",
+                                  "igibson_categories": [
+                                    "packaging"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 204.44444444444446
+                                    },
+                                    "dustyable": {},
+                                    "openable": {},
+                                    "stainable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "breakable": {},
+                                "burnable": {
+                                  "burn_temperature": 204.44444444444446
+                                },
+                                "dustyable": {},
+                                "openable": {},
+                                "stainable": {}
+                              }
+                            },
+                            {
+                              "name": "sports_equipment.n.01",
+                              "children": [
+                                {
+                                  "name": "golf_equipment.n.01",
+                                  "children": [
+                                    {
+                                      "name": "golf_club.n.02",
+                                      "children": [
+                                        {
+                                          "name": "iron.n.02",
+                                          "children": [
+                                            {
+                                              "name": "putter.n.02",
+                                              "igibson_categories": [
+                                                "putter"
+                                              ],
+                                              "abilities": {
+                                                "dustyable": {},
+                                                "stainable": {}
+                                              }
+                                            }
+                                          ],
+                                          "igibson_categories": [],
+                                          "abilities": {
+                                            "dustyable": {},
+                                            "stainable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [
+                                        "club"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "baseball_equipment.n.01",
+                                  "children": [
+                                    {
+                                      "name": "baseball.n.02",
+                                      "igibson_categories": [
+                                        "baseball"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 211.66666666666666
+                                        },
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 211.66666666666666
+                                    },
+                                    "dustyable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "basketball_equipment.n.01",
+                                  "children": [
+                                    {
+                                      "name": "basketball.n.02",
+                                      "igibson_categories": [
+                                        "basketball"
+                                      ],
+                                      "abilities": {
+                                        "burnable": {
+                                          "burn_temperature": 211.66666666666666
+                                        },
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 211.66666666666666
+                                    },
+                                    "dustyable": {},
+                                    "stainable": {}
+                                  }
+                                },
+                                {
+                                  "name": "weight.n.02",
+                                  "children": [
+                                    {
+                                      "name": "barbell.n.01",
+                                      "igibson_categories": [
+                                        "barbell"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    },
+                                    {
+                                      "name": "dumbbell.n.01",
+                                      "igibson_categories": [
+                                        "dumbbell"
+                                      ],
+                                      "abilities": {
+                                        "dustyable": {},
+                                        "stainable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [],
+                                  "abilities": {
+                                    "dustyable": {},
+                                    "stainable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "dustyable": {},
+                                "stainable": {}
+                              }
+                            },
+                            {
+                              "name": "photographic_equipment.n.01",
+                              "children": [
+                                {
+                                  "name": "camera.n.01",
+                                  "children": [
+                                    {
+                                      "name": "digital_camera.n.01",
+                                      "children": [
+                                        {
+                                          "name": "webcam.n.01",
+                                          "igibson_categories": [
+                                            "webcam"
+                                          ],
+                                          "abilities": {
+                                            "breakable": {},
+                                            "burnable": {
+                                              "burn_temperature": 450.0
+                                            },
+                                            "dustyable": {},
+                                            "toggleable": {}
+                                          }
+                                        }
+                                      ],
+                                      "igibson_categories": [],
+                                      "abilities": {
+                                        "breakable": {},
+                                        "burnable": {
+                                          "burn_temperature": 450.0
+                                        },
+                                        "dustyable": {},
+                                        "toggleable": {}
+                                      }
+                                    }
+                                  ],
+                                  "igibson_categories": [
+                                    "camera"
+                                  ],
+                                  "abilities": {
+                                    "breakable": {},
+                                    "burnable": {
+                                      "burn_temperature": 450.0
+                                    },
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "breakable": {},
+                                "burnable": {
+                                  "burn_temperature": 450.0
+                                },
+                                "dustyable": {},
+                                "toggleable": {}
                               }
                             }
                           ],
@@ -17237,6 +17228,120 @@
               "name": "part.n.02",
               "children": [
                 {
+                  "name": "component.n.03",
+                  "children": [
+                    {
+                      "name": "heating_element.n.01",
+                      "children": [
+                        {
+                          "name": "burner.n.02",
+                          "igibson_categories": [
+                            "burner"
+                          ],
+                          "abilities": {
+                            "dustyable": {},
+                            "heatSource": {},
+                            "toggleable": {}
+                          }
+                        }
+                      ],
+                      "igibson_categories": [],
+                      "abilities": {
+                        "dustyable": {},
+                        "heatSource": {},
+                        "toggleable": {}
+                      }
+                    },
+                    {
+                      "name": "module.n.04",
+                      "children": [
+                        {
+                          "name": "cartridge.n.03",
+                          "children": [
+                            {
+                              "name": "ink_cartridge.n.01",
+                              "igibson_categories": [
+                                "ink_cartridge"
+                              ],
+                              "abilities": {
+                                "dustyable": {},
+                                "stainable": {}
+                              }
+                            }
+                          ],
+                          "igibson_categories": [],
+                          "abilities": {
+                            "dustyable": {},
+                            "stainable": {}
+                          }
+                        }
+                      ],
+                      "igibson_categories": [],
+                      "abilities": {
+                        "dustyable": {},
+                        "stainable": {}
+                      }
+                    },
+                    {
+                      "name": "accessory.n.02",
+                      "children": [
+                        {
+                          "name": "fitting.n.02",
+                          "children": [
+                            {
+                              "name": "receptacle.n.03",
+                              "children": [
+                                {
+                                  "name": "wall_socket.n.01",
+                                  "igibson_categories": [
+                                    "outlet",
+                                    "wall_socket"
+                                  ],
+                                  "abilities": {
+                                    "burnable": {
+                                      "burn_temperature": 255.0
+                                    },
+                                    "dustyable": {},
+                                    "toggleable": {}
+                                  }
+                                }
+                              ],
+                              "igibson_categories": [],
+                              "abilities": {
+                                "burnable": {
+                                  "burn_temperature": 255.0
+                                },
+                                "dustyable": {},
+                                "toggleable": {}
+                              }
+                            }
+                          ],
+                          "igibson_categories": [],
+                          "abilities": {
+                            "burnable": {
+                              "burn_temperature": 255.0
+                            },
+                            "dustyable": {},
+                            "toggleable": {}
+                          }
+                        }
+                      ],
+                      "igibson_categories": [],
+                      "abilities": {
+                        "burnable": {
+                          "burn_temperature": 255.0
+                        },
+                        "dustyable": {},
+                        "toggleable": {}
+                      }
+                    }
+                  ],
+                  "igibson_categories": [],
+                  "abilities": {
+                    "dustyable": {}
+                  }
+                },
+                {
                   "name": "piece.n.01",
                   "children": [
                     {
@@ -17422,120 +17527,6 @@
                   "igibson_categories": [],
                   "abilities": {
                     "burnable": {}
-                  }
-                },
-                {
-                  "name": "component.n.03",
-                  "children": [
-                    {
-                      "name": "module.n.04",
-                      "children": [
-                        {
-                          "name": "cartridge.n.03",
-                          "children": [
-                            {
-                              "name": "ink_cartridge.n.01",
-                              "igibson_categories": [
-                                "ink_cartridge"
-                              ],
-                              "abilities": {
-                                "dustyable": {},
-                                "stainable": {}
-                              }
-                            }
-                          ],
-                          "igibson_categories": [],
-                          "abilities": {
-                            "dustyable": {},
-                            "stainable": {}
-                          }
-                        }
-                      ],
-                      "igibson_categories": [],
-                      "abilities": {
-                        "dustyable": {},
-                        "stainable": {}
-                      }
-                    },
-                    {
-                      "name": "accessory.n.02",
-                      "children": [
-                        {
-                          "name": "fitting.n.02",
-                          "children": [
-                            {
-                              "name": "receptacle.n.03",
-                              "children": [
-                                {
-                                  "name": "wall_socket.n.01",
-                                  "igibson_categories": [
-                                    "outlet",
-                                    "wall_socket"
-                                  ],
-                                  "abilities": {
-                                    "burnable": {
-                                      "burn_temperature": 255.0
-                                    },
-                                    "dustyable": {},
-                                    "toggleable": {}
-                                  }
-                                }
-                              ],
-                              "igibson_categories": [],
-                              "abilities": {
-                                "burnable": {
-                                  "burn_temperature": 255.0
-                                },
-                                "dustyable": {},
-                                "toggleable": {}
-                              }
-                            }
-                          ],
-                          "igibson_categories": [],
-                          "abilities": {
-                            "burnable": {
-                              "burn_temperature": 255.0
-                            },
-                            "dustyable": {},
-                            "toggleable": {}
-                          }
-                        }
-                      ],
-                      "igibson_categories": [],
-                      "abilities": {
-                        "burnable": {
-                          "burn_temperature": 255.0
-                        },
-                        "dustyable": {},
-                        "toggleable": {}
-                      }
-                    },
-                    {
-                      "name": "heating_element.n.01",
-                      "children": [
-                        {
-                          "name": "burner.n.02",
-                          "igibson_categories": [
-                            "burner"
-                          ],
-                          "abilities": {
-                            "dustyable": {},
-                            "heatSource": {},
-                            "toggleable": {}
-                          }
-                        }
-                      ],
-                      "igibson_categories": [],
-                      "abilities": {
-                        "dustyable": {},
-                        "heatSource": {},
-                        "toggleable": {}
-                      }
-                    }
-                  ],
-                  "igibson_categories": [],
-                  "abilities": {
-                    "dustyable": {}
                   }
                 },
                 {
