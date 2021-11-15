@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projects using Gibson/iGibson" href="projects.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/issues.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>## Trouble Shooting</p>
+<p>### Unable to initialize EGL</p>
+<ol class="arabic simple">
+<li><p>Is nvidia driver properly installed? Nvidia drivers prior to 460.80 and 465.27 have a bug with cgroups that prevent utilize all but GPU 0 on a node. You can check your driver version by running nvidia-smi and update if necessary.</p></li>
+<li><p>Is libegl1 installed? You can determine this by <cite>apt list –installed | grep libegl1</cite></p></li>
+</ol>
+<p>3. Are openGL libraries visible? You can do so by
+<cite>export LD_LIBRARY_PATH=/usr/lib/nvidia-&lt;vvv&gt;:$LD_LIBRARY_PATH</cite>
+4. There are two ways of setting up openGL library, if the current installation doesn’t work, you can try to install with USE_GLAD set to FALSE in [here](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/render/CMakeLists.txt">https://github.com/StanfordVL/iGibson/blob/master/igibson/render/CMakeLists.txt</a>)
+5. If you want to render in headless mode, make sure <cite>$DISPLAY</cite> environment variable is unset, otherwise you might have error <cite>Failed to EGL with glad</cite>, because EGL is sensitive to <cite>$DISPLAY</cite> environment variable.</p>
+<p>It is a good idea to run <cite>ldconfig -p | grep EGL</cite> and you should be able to see <cite>libEGL_nvidia</cite> installed.</p>
+<dl class="simple">
+<dt><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a></dt><dd><p>libEGL_nvidia.so.0 (libc6,x86-64) =&gt; /usr/lib/x86_64-linux-gnu/libEGL_nvidia.so.0
+libEGL_nvidia.so.0 (libc6) =&gt; /usr/lib/i386-linux-gnu/libEGL_nvidia.so.0
+libEGL_mesa.so.0 (libc6,x86-64) =&gt; /usr/lib/x86_64-linux-gnu/libEGL_mesa.so.0
+libEGL.so.1 (libc6,x86-64) =&gt; /usr/lib/x86_64-linux-gnu/libEGL.so.1
+libEGL.so.1 (libc6) =&gt; /usr/lib/i386-linux-gnu/libEGL.so.1
+libEGL.so (libc6,x86-64) =&gt; /usr/lib/x86_64-linux-gnu/libEGL.so
+libEGL.so (libc6) =&gt; /usr/lib/i386-linux-gnu/libEGL.so</p>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p>Make sure EGL is not linked to mesa, because in order for gibson to work, linking to Nvidia’s EGL is required. For example, this will cause problems: <cite>/usr/lib/x86_64-linux-gnu/libEGL.so -&gt; mesa-egl/libEGL.so</cite></p>
+<p>The EGL setup part is borrowed from Erwin Coumans [egl_example](<a class="reference external" href="https://github.com/erwincoumans/egl_example">https://github.com/erwincoumans/egl_example</a>). It would be informative to see if that repository can run on your machine.</p>
+<p>### Other issues
+For other issues, please submit an issue in our [github repository](<a class="reference external" href="https://github.com/StanfordVL/iGibson/issues">https://github.com/StanfordVL/iGibson/issues</a>).</p>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tests.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="projects.html" class="btn btn-neutral float-right" title="Projects using Gibson/iGibson" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

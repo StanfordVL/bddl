@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROS Integration &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="tests.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="learning_framework.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ROS Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-setup">Environment Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running">Running</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topics">Topics</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ROS Integration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ros_integration.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ros-integration">
+<h1>ROS Integration<a class="headerlink" href="#ros-integration" title="Permalink to this headline"></a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>[ROS](<a class="reference external" href="http://www.ros.org">http://www.ros.org</a>) is a set of well-engineered software libraries for building robotics applications. It includes a wide variety of packages, from low level drivers to efficient implementations of state of the art algorithms. As we strive to build intelligent agents and transfer them to real-world (on a real robot), we need to take advantage of ROS packages to complete the robot application pipeline.</p>
+<p>There are three key applications of integrating iGibson with ROS.</p>
+<ul class="simple">
+<li><p>Benchmark existing algorithms in a controlled realistic simulation environment. This allows for comparing learning-based methods with classical methods in simulation environments.</p></li>
+<li><p>Comparing robots in simulation with robots in the real world. In simulation, iGibson can simulate sensors of a robot and publish as messages. In the real world, a real robot publish sensor messages from onboard sensors. Therefore, it is possible to only change the message subscribed and benchmark the performance of downstream applications. This helps locate domain gap and debug algorithms.</p></li>
+<li><p>Using ROS functions in simulation, such as many motion planning implementations.</p></li>
+</ul>
+<p>The possibility of using iGibson with ROS is unlimited. As a starter, we provide an example of integrating iGibson with ROS for navigation. This is a ROS package integrates iGibson Env with ROS navigation stack. It follows the same node topology and topics as <cite>turtlebot_navigation</cite> package. As shown below, so after a policy is trained in iGibson, it requires minimal changes to deploy onto a real turtlebot.</p>
+<p>![](images/node_topo.jpg)</p>
+</div>
+<div class="section" id="environment-setup">
+<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline"></a></h2>
+<p>## Preparation</p>
+<ol class="arabic simple">
+<li><p>Install ROS: in this package, we use navigation stack from ROS kinetic. Please follow the [instructions](<a class="reference external" href="http://wiki.ros.org/kinetic/Installation/Ubuntu">http://wiki.ros.org/kinetic/Installation/Ubuntu</a>).</p></li>
+</ol>
+<p>2. Install iGibson <strong>from source</strong> following [installation guide](installation.md) in <strong>python2.7</strong>. Note that ROS only supports <cite>python2.7</cite> at the moment, so you need to create python2.7 virtual environment to install iGibson instead of python3.x.
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash
+git clone <a class="reference external" href="https://github.com/StanfordVL/iGibson">https://github.com/StanfordVL/iGibson</a> –recursive
+cd iGibson</p>
+<p>conda create -n py2-igibson python=2.7 anaconda # we support python 2.7, 3.5, 3.6, 3.7, 3.8
+source activate py2-igibson
+pip install -e . # This step takes about 4 minutes
+source deactivate # This step is important because we will NOT use &lt;anaconda installation root&gt;/envs/py2-igibson/bin/python
+<a href="#id5"><span class="problematic" id="id6">``</span></a>`
+3. If you use anaconda for setting up python environment, some tweaks of <cite>PATH</cite> and <cite>PYTHONPATH</cite> variable are required to avoid conflict. In particular:</p>
+<blockquote>
+<div><p>1. For <cite>PATH</cite>: conda related needs to be removed from <cite>PATH</cite>
+<code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">echo</span> <span class="pre">$PATH</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-oP</span> <span class="pre">&quot;[^:;]+&quot;</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">conda</span>&#160;&#160;&#160;&#160; <span class="pre">##</span> <span class="pre">Remove</span> <span class="pre">these</span> <span class="pre">paths</span> <span class="pre">from</span> <span class="pre">$PATH</span>
+<span class="pre">`</span></code>
+2. For <cite>PYTHONPATH</cite>: <cite>/usr/lib/python2.7/dist-packages/</cite>, <cite>/opt/ros/kinetic/lib/python2.7/dist-packages`(ROS python libraries), `&lt;anaconda installation root&gt;/envs/py2-igibson/lib/python2.7/site-packages`(iGibson dependencies) and `&lt;iGibson root&gt;</cite> need to be in <cite>PYTHONPATH</cite> <strong>in this exact order</strong>.</p>
+</div></blockquote>
+<p>4. Create <cite>catkin_ws</cite> folder
+<code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">mkdir</span> <span class="pre">-p</span> <span class="pre">~/catkin_ws</span>
+<span class="pre">`</span></code>
+5. Soft-link <cite>igibson-ros</cite> folder to your <cite>catkin_ws/src</cite> and run <cite>catkin_make</cite> to index <cite>igibson-ros</cite> package.
+<code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">cd</span> <span class="pre">&lt;iGibson</span> <span class="pre">root&gt;/igibson</span>
+<span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">$PWD/examples/ros/igibson-ros/</span> <span class="pre">~/catkin_ws/src/</span>
+<span class="pre">cd</span> <span class="pre">~/catkin_ws</span> <span class="pre">&amp;&amp;</span> <span class="pre">catkin_make</span>
+<span class="pre">`</span></code>
+5. Install <cite>igibson-ros</cite> dependencies:
+<code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">cd</span> <span class="pre">~/catkin_ws</span>
+<span class="pre">rosdep</span> <span class="pre">install</span> <span class="pre">--from-paths</span> <span class="pre">src</span> <span class="pre">--ignore-src</span> <span class="pre">-r</span> <span class="pre">-y</span>
+<span class="pre">`</span></code></p>
+<p>## Sanity check</p>
+<p><code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">which</span> <span class="pre">python</span> <span class="pre">#</span> <span class="pre">Should</span> <span class="pre">give</span> <span class="pre">/usr/bin/python,</span> <span class="pre">NOT</span> <span class="pre">&lt;anaconda</span> <span class="pre">installation</span> <span class="pre">root&gt;/envs/py2-igibson/bin/python</span>
+<span class="pre">python</span> <span class="pre">-c</span> <span class="pre">'import</span> <span class="pre">igibson,</span> <span class="pre">rospy,</span> <span class="pre">rospkg'</span> <span class="pre">#</span> <span class="pre">Should</span> <span class="pre">run</span> <span class="pre">without</span> <span class="pre">errors</span>
+<span class="pre">`</span></code></p>
+</div>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline"></a></h2>
+<p>In order to run iGibson+ROS examples, you will need to perform the following steps:</p>
+<p>1. Prepare ROS environment
+<code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">source</span> <span class="pre">/opt/ros/kinetic/setup.bash</span>
+<span class="pre">source</span> <span class="pre">~/catkin_ws/devel/setup.bash</span>
+<span class="pre">`</span></code>
+2. Repeat Step 3 from Preparation: sanitize <cite>PATH</cite> and <cite>PYTHONPATH</cite>
+3. Here are some of the examples that you can run, including gmapping, hector mapping and navigation.
+<code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">roslaunch</span> <span class="pre">igibson-ros</span> <span class="pre">turtlebot_rgbd.launch</span> <span class="pre">#</span> <span class="pre">Bare</span> <span class="pre">minimal</span> <span class="pre">bringup</span> <span class="pre">example</span>
+<span class="pre">roslaunch</span> <span class="pre">igibson-ros</span> <span class="pre">turtlebot_gmapping.launch</span> <span class="pre">#</span> <span class="pre">Run</span> <span class="pre">gmapping</span>
+<span class="pre">roslaunch</span> <span class="pre">igibson-ros</span> <span class="pre">turtlebot_hector_mapping.launch</span> <span class="pre">#</span> <span class="pre">Run</span> <span class="pre">hector</span> <span class="pre">mapping</span>
+<span class="pre">roslaunch</span> <span class="pre">igibson-ros</span> <span class="pre">turtlebot_navigation.launch</span> <span class="pre">#</span> <span class="pre">Run</span> <span class="pre">the</span> <span class="pre">navigation</span> <span class="pre">stack,</span> <span class="pre">we</span> <span class="pre">have</span> <span class="pre">provided</span> <span class="pre">the</span> <span class="pre">map</span>
+<span class="pre">roslaunch</span> <span class="pre">igibson-ros</span> <span class="pre">turtlebot_gt_navigation.launch</span> <span class="pre">#</span> <span class="pre">Run</span> <span class="pre">the</span> <span class="pre">navigation</span> <span class="pre">stack</span> <span class="pre">with</span> <span class="pre">ground</span> <span class="pre">truth</span> <span class="pre">localization</span>
+<span class="pre">`</span></code></p>
+<p>The following screenshot is captured when running the bare minimal bringup example.</p>
+<p>![](images/sensing.png)</p>
+<p>The following screenshot is captured when running the gmapping example.</p>
+<p>![](images/slam.png)</p>
+</div>
+<div class="section" id="topics">
+<h2>Topics<a class="headerlink" href="#topics" title="Permalink to this headline"></a></h2>
+<p>Here are all the topics that <cite>turtlebot_rgbd.py</cite> publishes and subscribes.</p>
+<p>Publishes:</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=”center”&gt;Topic name&lt;/th&gt;
+&lt;th align=”center”&gt;Type&lt;/th&gt;
+&lt;th align=”center”&gt;Usage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/gibson_ros/camera/depth/camera_info&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;sensor_msgs/CameraInfo&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;Camera parameters used in iGibson, same for depth and rgb&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/gibson_ros/camera/rgb/image&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;sensor_msgs/Image&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;RGB image captured in iGibson&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/gibson_ros/camera/rgb/depth&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;sensor_msgs/Image&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;Depth image captured in iGibson, in meters, with dtype being float32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/gibson_ros/camera/rgb/depth_raw&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;sensor_msgs/Image&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;Depth image captured in iGibson, mimic raw depth data captured with OpenNI cameras, with dtype being uint16, see more &lt;a href=”<a class="reference external" href="http://www.ros.org/reps/rep-0118.html">http://www.ros.org/reps/rep-0118.html</a>”&gt;here&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/gibson_ros/lidar/points&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;sensor_msgs/PointCloud2&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;1-beam LiDAR scan captured in iGibson, in meters, with dtype being float32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/odom&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;nav_msgs/Odometry&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;The pose of &lt;code&gt;base_footprint&lt;/code&gt; in &lt;code&gt;odom&lt;/code&gt; frame, generated with groudtruth pose in iGibson&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/ground_truth_odom&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;nav_msgs/Odometry&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;The pose of &lt;code&gt;base_footprint&lt;/code&gt; in &lt;code&gt;world&lt;/code&gt; frame, generated with groudtruth pose in iGibson&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p>Subscribes:</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=”center”&gt;Topic name&lt;/th&gt;
+&lt;th align=”center”&gt;Type&lt;/th&gt;
+&lt;th align=”center”&gt;Usage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/mobile_base/commands/velocity&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;geometry_msgs/Twist&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;Velocity command for turtlebot, &lt;code&gt;msg.linear.x&lt;/code&gt; is the forward velocity, &lt;code&gt;msg.angular.z&lt;/code&gt; is the angular velocity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;&lt;code&gt;/reset_pose&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;code&gt;geometry_msgs/PoseStamped&lt;/code&gt;&lt;/td&gt;
+&lt;td align=”center”&gt;Direct reset turtlebot’s pose (i.e. teleportation)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p>### References</p>
+<ul class="simple">
+<li><p>[Turtlebot Navigation stack](<a class="reference external" href="http://wiki.ros.org/turtlebot_navigation/Tutorials/Setup%20the%20Navigation%20Stack%20for%20TurtleBot">http://wiki.ros.org/turtlebot_navigation/Tutorials/Setup%20the%20Navigation%20Stack%20for%20TurtleBot</a>)</p></li>
+<li><p>[<cite>Move_base</cite> package](<a class="reference external" href="http://wiki.ros.org/move_base">http://wiki.ros.org/move_base</a>)</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="learning_framework.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tests.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

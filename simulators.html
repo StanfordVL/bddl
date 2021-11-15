@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="viewer.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="robots.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/simulators.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># Simulators</p>
+<p>### Overview</p>
+<p><strong>Simulator</strong> maintains an instance of <strong>Renderer</strong> and <strong>PhysicsEngine</strong> and provides APIs to import <strong>Scene</strong>, <strong>Object</strong> and <strong>Robot</strong> into both of them and keep them synchronized at all time.</p>
+<p>Some key functions are the following:
+- <cite>load</cite>: initialize PyBullet physics engine and MeshRenderer
+- <cite>import_{scene, ig_scene}</cite>: import the scene into PyBullet by calling <cite>scene.load</cite>, and then import it into MeshRenderer by calling <cite>self.renderer.add_instance</cite>. If <cite>InteractiveIndoorScene</cite> is imported using <cite>import_ig_scene</cite>, all objects in the scene are also imported.
+- <cite>import_{object, articulated_object, robot}</cite>: import the object, articulated object and robot into the simulator in a similar manner
+- <cite>sync</cite>: synchronize the poses of the dynamic objects (including the robots) between PyBullet and MeshRenderer. Specifically, it calls <cite>update_position</cite> for each object, in which it retrieve the object’s pose in PyBullet, and then update its pose accordingly in MeshRenderer.</p>
+<p>If <cite>Simulator</cite> uses <cite>gui</cite> mode, by default it will also maintain a <cite>Viewer</cite>, which essentially is a virtual camera in the scene that can render images. More info about the <cite>Viewer</cite> can be found here: [igibson/render/viewer.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/render/viewer.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/render/viewer.py</a>). Notably, you can press <cite>h</cite> in the <cite>ExternalView</cite> window to show the help menu for mouse/keyboard control.</p>
+<p>Most of the code can be found here: [igibson/simulator.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/simulator.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/simulator.py</a>).</p>
+<p>### Examples
+In this example, we import a <cite>StaticIndoorScene</cite>, a <cite>Turtlebot</cite>, and ten <cite>YCBObject</cite> into the simulator. The code can be found here: [igibson/examples/demo/simulator_example.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/simulator_example.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/simulator_example.py</a>)</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+from igibson.robots.turtlebot_robot import Turtlebot
+from igibson.simulator import Simulator
+from igibson.scenes.gibson_indoor_scene import StaticIndoorScene
+from igibson.objects.ycb_object import YCBObject
+from igibson.utils.utils import parse_config
+from igibson.render.mesh_renderer.mesh_renderer_settings import MeshRendererSettings
+import numpy as np
+from igibson.render.profiler import Profiler
+from IPython import embed</p>
+<dl>
+<dt>def main():</dt><dd><p>config = parse_config(‘../configs/turtlebot_demo.yaml’)
+settings = MeshRendererSettings(enable_shadow=False, msaa=False)
+s = Simulator(mode=’gui’, image_width=256,</p>
+<blockquote>
+<div><p>image_height=256, rendering_settings=settings)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>scene = StaticIndoorScene(‘Rs’,</dt><dd><p>build_graph=True,
+pybullet_load_texture=True)</p>
+</dd>
+</dl>
+<p>s.import_scene(scene)
+turtlebot = Turtlebot(config)
+s.import_robot(turtlebot)</p>
+<dl>
+<dt>for _ in range(10):</dt><dd><p>obj = YCBObject(‘003_cracker_box’)
+s.import_object(obj)
+obj.set_position_orientation(np.random.uniform(</p>
+<blockquote>
+<div><p>low=0, high=2, size=3), [0, 0, 0, 1])</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>print(s.renderer.instances)</p>
+<dl class="simple">
+<dt>for i in range(10000):</dt><dd><dl class="simple">
+<dt>with Profiler(‘Simulator step’):</dt><dd><p>turtlebot.apply_action([0.1, 0.1])
+s.step()
+rgb = s.renderer.render_robot_cameras(modes=(‘rgb’))</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>s.disconnect()</p>
+</dd>
+<dt>if __name__ == ‘__main__’:</dt><dd><p>main()</p>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="robots.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="viewer.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

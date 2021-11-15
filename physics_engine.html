@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="scenes.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="renderer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/physics_engine.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># Physics Engine</p>
+<p>### Overview
+We use the open-sourced [PyBullet](<a class="reference external" href="http://www.pybullet.org/">http://www.pybullet.org/</a>) as our underlying physics engine. It can simulate rigid body collision and joint actuation for robots and articulated objects in an accurate and efficient manner. Since we are using MeshRenderer for rendering and PyBullet for physics simulation, we need to keep them synchronized at all time. Our code have already handled this for you.</p>
+<p>Typically, we use <cite>p.createMultiBody</cite> and <cite>p.loadURDF</cite> to load scenes, objects and robots into PyBullet, use <cite>p.resetBasePositionAndOrientation</cite> to set the base pose of robots and objects, <cite>p.resetJointState</cite> to set joint position of robots and articulated objects, and <cite>p.setJointMotorControl2</cite> to control the robots and articulated objects.</p>
+<p>More info can be found in here: [PyBullet documentation](<a class="reference external" href="https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA">https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA</a>).</p>
+<p>### Examples
+In this example, we import a scene, a robot and an object into PyBullet and step through a few seconds of simulation. The code can be found here:[igibson/examples/demo/physics_engine_example.py](https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/physics_engine_example.py).</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+import pybullet as p
+from igibson.utils.assets_utils import get_scene_path, get_texture_file
+import igibson</p>
+<p>import os
+import sys
+import time</p>
+<dl>
+<dt>def main():</dt><dd><dl class="simple">
+<dt>if len(sys.argv) &gt; 1:</dt><dd><p>model_path = sys.argv[1]</p>
+</dd>
+<dt>else:</dt><dd><p>model_path = os.path.join(get_scene_path(‘Rs’), ‘mesh_z_up.obj’)</p>
+</dd>
+</dl>
+<p>p.connect(p.GUI)
+p.setGravity(0,0,-9.8)
+p.setTimeStep(1./240.)</p>
+<p># Load scenes
+collision_id = p.createCollisionShape(p.GEOM_MESH,</p>
+<blockquote>
+<div><p>fileName=model_path,
+meshScale=1.0,
+flags=p.GEOM_FORCE_CONCAVE_TRIMESH)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>visual_id = p.createVisualShape(p.GEOM_MESH,</dt><dd><p>fileName=model_path,
+meshScale=1.0)</p>
+</dd>
+</dl>
+<p>texture_filename = get_texture_file(model_path)
+texture_id = p.loadTexture(texture_filename)</p>
+<dl class="simple">
+<dt>mesh_id = p.createMultiBody(baseCollisionShapeIndex=collision_id,</dt><dd><p>baseVisualShapeIndex=visual_id)</p>
+</dd>
+</dl>
+<p># Load robots
+turtlebot_urdf = os.path.join(igibson.assets_path, ‘models/turtlebot/turtlebot.urdf’)
+robot_id = p.loadURDF(turtlebot_urdf, flags=p.URDF_USE_MATERIAL_COLORS_FROM_MTL)</p>
+<p># Load objects
+obj_visual_filename = os.path.join(igibson.assets_path, ‘models/ycb/002_master_chef_can/textured_simple.obj’)
+obj_collision_filename = os.path.join(igibson.assets_path, ‘models/ycb/002_master_chef_can/textured_simple_vhacd.obj’)
+collision_id = p.createCollisionShape(p.GEOM_MESH,</p>
+<blockquote>
+<div><p>fileName=obj_collision_filename,
+meshScale=1.0)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>visual_id = p.createVisualShape(p.GEOM_MESH,</dt><dd><p>fileName=obj_visual_filename,
+meshScale=1.0)</p>
+</dd>
+<dt>object_id = p.createMultiBody(baseCollisionShapeIndex=collision_id,</dt><dd><p>baseVisualShapeIndex=visual_id,
+basePosition=[1.0, 0.0, 1.0],
+baseMass=0.1)</p>
+</dd>
+<dt>for _ in range(10000):</dt><dd><p>p.stepSimulation()</p>
+</dd>
+</dl>
+<p>p.disconnect()</p>
+</dd>
+<dt>if __name__ == ‘__main__’:</dt><dd><p>main()</p>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p>You will see the PyBullet interface like this. In the scene, there is a Turtlebot, together with a blue food can next to the robot.
+![physics_engine.png](images/physics_engine.png)</p>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="renderer.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="scenes.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

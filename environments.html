@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="learning_framework.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="viewer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/environments.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># Environments</p>
+<p>### Overview</p>
+<p>We provide <strong>Environments</strong> that follow the [OpenAI gym](<a class="reference external" href="https://github.com/openai/gym">https://github.com/openai/gym</a>) interface for applications such as reinforcement learning algorithms. Generally speaking, an <strong>Environment</strong> instantiates <strong>Scene</strong>, <strong>Object</strong> and <strong>Robot</strong> and import them into its <strong>Simulator</strong>. An <strong>Environment</strong> also instantiates a list of <strong>Sensors</strong> (usually as part of the observation space) and a <strong>Task</strong>, which further includes a list of <strong>Reward Functions</strong> and <strong>Termination Conditions</strong>.</p>
+<p>Most of the code can be found here: [igibson/envs/igibson_env.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/envs/igibson_env.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/envs/igibson_env.py</a>).</p>
+<p>#### Sensors</p>
+<p>We provide different types of sensors as lightweight wrappers around the renderer. Currently we support RGB, surface normal, segmentation, 3D point cloud, depth map, optical flow, and scene flow, and also 1-beam and 16-beam LiDAR signals. Additionally, we provide a sensor noise model with random dropout (currently only for depth map and 1-beam LiDAR) to simulate real-world sensor noise. The amount of noise can be controlled by <cite>depth_noise_rate</cite> and <cite>scan_noise_rate</cite> in the config files. Contribution of more noise models is most welcome.</p>
+<p>Most of the code can be found in [igibson/sensors](<a class="reference external" href="https://github.com/StanfordVL/iGibson/tree/master/igibson/sensors">https://github.com/StanfordVL/iGibson/tree/master/igibson/sensors</a>).</p>
+<p>#### Tasks</p>
+<p>Each <strong>Task</strong> should implement <cite>reset_scene</cite>, <cite>reset_agent</cite>, <cite>step</cite> and <cite>get_task_obs</cite>.
+- <cite>reset_scene</cite> and <cite>reset_agent</cite> will be called during <cite>env.reset</cite> and should include task-specific details to reset the scene and the agent, respectively.
+- <cite>step</cite> will be called during <cite>env.step</cite> and should include task-specific details of what needs to be done at every timestep.
+- <cite>get_task_obs</cite> returns task-specific observation (non-sensory observation) as a numpy array. For instance, typical goal-oriented robotics tasks should include goal information and proprioceptive states in <cite>get_task_obs</cite>.
+Each <strong>Task</strong> should also include a list of <strong>Reward Functions</strong> and <strong>Termination Conditions</strong> defined below.
+We provide a few Embodied AI tasks.
+- PointGoalFixedTask
+- PointGoalRandomTask
+- InteractiveNavRandomTask
+- DynamicNavRandomTask
+- ReachingRandomTask
+- RoomRearrangementTask</p>
+<p>Most of the code can be found in [igibson/tasks](<a class="reference external" href="https://github.com/StanfordVL/iGibson/tree/master/igibson/tasks">https://github.com/StanfordVL/iGibson/tree/master/igibson/tasks</a>).</p>
+<p>#### Reward Functions</p>
+<p>At each timestep, <cite>env.step</cite> will call <cite>task.get_reward</cite>, which in turn sums up all the reward terms.
+We provide a few common reward functions for robotics tasks.
+- PointGoalReward
+- ReachingGoalReward
+- PotentialReward
+- CollisionReward</p>
+<p>Most of the code can be found in [igibson/reward_functions](<a class="reference external" href="https://github.com/StanfordVL/iGibson/tree/master/igibson/reward_functions">https://github.com/StanfordVL/iGibson/tree/master/igibson/reward_functions</a>).</p>
+<p>#### Termination Conditions</p>
+<p>At each timestep, <cite>env.step</cite> will call <cite>task.get_termination</cite>, which in turn checks each of the termination condition to see if the episode is done and/or successful.
+We provide a few common termination conditions for robotics tasks.
+- PointGoal
+- ReachingGoal
+- MaxCollision
+- Timeout
+- OutOfBound
+Most of the code can be found in [igibson/termination_conditions](<a class="reference external" href="https://github.com/StanfordVL/iGibson/tree/master/igibson/termination_conditions">https://github.com/StanfordVL/iGibson/tree/master/igibson/termination_conditions</a>).</p>
+<p>#### Configs
+To instantiate an <strong>Environment</strong>, we first need to create a YAML config file. It will specify parameters for the <strong>Environment</strong> (e.g. robot type, action frequency, etc), the <strong>Sensors</strong> (e.g. sensor types, image resolution, noise rate, etc), the <strong>Task</strong> (e.g. task type, goal distance range, etc), the <strong>Reward Functions</strong> (e.g. reward types, reward scale, etc) and the <strong>Termination Conditions</strong> (e.g. goal convergence threshold, time limit, etc). Exapmles of config files can be found here: [examples/configs](<a class="reference external" href="https://github.com/StanfordVL/iGibson/tree/master/examples/configs">https://github.com/StanfordVL/iGibson/tree/master/examples/configs</a>).</p>
+<p>Here is one example: [examples/configs/turtlebot_point_nav.yaml](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/examples/configs/turtlebot_point_nav.yaml">https://github.com/StanfordVL/iGibson/blob/master/examples/configs/turtlebot_point_nav.yaml</a>)</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>yaml
+# scene
+scene: igibson
+scene_id: Rs_int
+build_graph: true
+load_texture: true
+pybullet_load_texture: true
+trav_map_type: no_obj
+trav_map_resolution: 0.1
+trav_map_erosion: 2
+should_open_all_doors: true</p>
+<p># domain randomization
+texture_randomization_freq: null
+object_randomization_freq: null</p>
+<p># robot
+robot: Turtlebot
+is_discrete: false
+velocity: 1.0</p>
+<p># task
+task: point_nav_random
+target_dist_min: 1.0
+target_dist_max: 10.0
+goal_format: polar
+task_obs_dim: 4</p>
+<p># reward
+reward_type: geodesic
+success_reward: 10.0
+potential_reward_weight: 1.0
+collision_reward_weight: -0.1</p>
+<p># discount factor
+discount_factor: 0.99</p>
+<p># termination condition
+dist_tol: 0.36  # body width
+max_step: 500
+max_collisions_allowed: 500</p>
+<p># misc config
+initial_pos_z_offset: 0.1
+collision_ignore_link_a_ids: [1, 2, 3, 4]  # ignore collisions with these robot links</p>
+<p># sensor spec
+output: [task_obs, rgb, depth, scan]
+# image
+# ASUS Xtion PRO LIVE
+# <a class="reference external" href="https://www.asus.com/us/3D-Sensor/Xtion_PRO_LIVE">https://www.asus.com/us/3D-Sensor/Xtion_PRO_LIVE</a>
+fisheye: false
+image_width: 160
+image_height: 120
+vertical_fov: 45
+# depth
+depth_low: 0.8
+depth_high: 3.5
+# scan
+# Hokuyo URG-04LX-UG01
+# <a class="reference external" href="https://www.hokuyo-aut.jp/search/single.php?serial=166">https://www.hokuyo-aut.jp/search/single.php?serial=166</a>
+# n_horizontal_rays is originally 683, sub-sampled 1/3
+n_horizontal_rays: 228
+n_vertical_beams: 1
+laser_linear_range: 5.6
+laser_angular_range: 240.0
+min_laser_dist: 0.05
+laser_link_name: scan_link</p>
+<p># sensor noise
+depth_noise_rate: 0.0
+scan_noise_rate: 0.0</p>
+<p># visual objects
+visual_object_at_initial_target_pos: true
+target_visual_object_visible_to_agent: false</p>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p>Parameters of this config file are explained below:</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Example Value&lt;/th&gt;
+&lt;th&gt;Expalanation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;scene&lt;/td&gt;
+&lt;td&gt;igibson&lt;/td&gt;
+&lt;td&gt;which type of scene: [empty, stadium, gibson, igibson]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scene_id&lt;/td&gt;
+&lt;td&gt;Rs_int&lt;/td&gt;
+&lt;td&gt;scene_id for the gibson or igibson scene&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;build_graph&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;whether to build traversability graph for the building scene&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;load_texture&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;whether to load texture into MeshRenderer. Can be set to false if RGB is not needed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pybullet_load_texture&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;whether to load texture into PyBullet, for debugging purpose only&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;trav_map_resolution&lt;/td&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;resolution of the traversability map. 0.1 means each pixel represents 0.1 meter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;trav_map_erosion&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;number of pixels to erode the traversability map. trav_map_resolution * trav_map_erosion should be almost equal to the radius of the robot base&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;should_open_all_doors&lt;/td&gt;
+&lt;td&gt;True&lt;/td&gt;
+&lt;td&gt;whether to open all doors in the scene during episode reset (e.g. useful for cross-room navigation tasks)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;texture_randomization_freq&lt;/td&gt;
+&lt;td&gt;null&lt;/td&gt;
+&lt;td&gt;whether to perform material/texture randomization (null means no randomization, 10 means randomize every 10 episodes)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;object_randomization_freq&lt;/td&gt;
+&lt;td&gt;null&lt;/td&gt;
+&lt;td&gt;whether to perform object randomization (null means no randomization, 10 means randomize every 10 episodes)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;robot&lt;/td&gt;
+&lt;td&gt;Turtlebot&lt;/td&gt;
+&lt;td&gt;which type of robot, e.g. Turtlebot, Fetch, Locobot, etc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;is_discrete&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;whether to use discrete action space for the robot&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;velocity&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;maximum normalized joint velocity. 0.5 means maximum robot action will actuate half of maximum joint velocities that are allowed in the robot URDF file&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task&lt;/td&gt;
+&lt;td&gt;point_nav_random&lt;/td&gt;
+&lt;td&gt;which type of task, e.g. point_nav_random, room_rearrangement, etc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;target_dist_min&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;minimum distance (in meters) between the initial and target positions for the navigation task&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;target_dist_max&lt;/td&gt;
+&lt;td&gt;10.0&lt;/td&gt;
+&lt;td&gt;maximum distance (in meters) between the initial and target positions for the navigation task&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;goal_format&lt;/td&gt;
+&lt;td&gt;polar&lt;/td&gt;
+&lt;td&gt;which format to represent the navigation goals: [polar, cartesian]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;task_obs_dim&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;the dimension of task-specific observation returned by task.get_task_obs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;reward_type&lt;/td&gt;
+&lt;td&gt;geodesic&lt;/td&gt;
+&lt;td&gt;which type of reward: [geodesic, l2, sparse], or define your own&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;success_reward&lt;/td&gt;
+&lt;td&gt;10.0&lt;/td&gt;
+&lt;td&gt;scaling factor of the success reward&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;slack_reward&lt;/td&gt;
+&lt;td&gt;-0.01&lt;/td&gt;
+&lt;td&gt;scaling factor of the slack reward (negative because it should be a penalty)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;potential_reward_weight&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;scaling factor of the potential reward&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;collision_reward_weight&lt;/td&gt;
+&lt;td&gt;-0.1&lt;/td&gt;
+&lt;td&gt;scaling factor of the collision reward (negative because it should be a penalty)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;discount_factor&lt;/td&gt;
+&lt;td&gt;0.99&lt;/td&gt;
+&lt;td&gt;discount factor for the MDP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dist_tol&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;the distance tolerance for converging to the navigation goal. This is usually equal to the diameter of the robot base&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;max_step&lt;/td&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;td&gt;maximum number of timesteps allowed in an episode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;max_collisions_allowed&lt;/td&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;td&gt;maximum number of timesteps with robot collision allowed in an episode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;initial_pos_z_offset&lt;/td&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;z-offset (in meters) when placing the robots and the objects to accommodate uneven floor surface&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;collision_ignore_link_a_ids&lt;/td&gt;
+&lt;td&gt;[1, 2, 3, 4]&lt;/td&gt;
+&lt;td&gt;collision with these robot links will not result in collision penalty. These usually are links of wheels&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;output&lt;/td&gt;
+&lt;td&gt;[task_obs, rgb, depth, scan]&lt;/td&gt;
+&lt;td&gt;what observation space is. sensor means task-specific, non-sensory information (e.g. goal info, proprioceptive state), rgb and depth mean RGBD camera sensing, scan means LiDAR sensing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fisheye&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;whether to use fisheye camera&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;image_width&lt;/td&gt;
+&lt;td&gt;640&lt;/td&gt;
+&lt;td&gt;image width for the camera&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;image_height&lt;/td&gt;
+&lt;td&gt;480&lt;/td&gt;
+&lt;td&gt;image height for the camera&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vertical_fov&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;td&gt;camera vertial field of view (in degrees)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;depth_low&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;lower bound of the valid range of the depth camera&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;depth_high&lt;/td&gt;
+&lt;td&gt;3.5&lt;/td&gt;
+&lt;td&gt;upper bound of the valid range of the depth camera&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;n_horizontal_rays&lt;/td&gt;
+&lt;td&gt;228&lt;/td&gt;
+&lt;td&gt;number of horizontal rays to simulate for the LiDAR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;n_vertical_beams&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;number of vertical beams to simulate for the LiDAR. Currently iGibson only supports n_vertical_beams == 1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;laser_linear_range&lt;/td&gt;
+&lt;td&gt;5.6&lt;/td&gt;
+&lt;td&gt;upper bound of the valid range of the LiDAR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;laser_angular_range&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;angular range of the LiDAR (in degrees)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;min_laser_dist&lt;/td&gt;
+&lt;td&gt;0.05&lt;/td&gt;
+&lt;td&gt;lower bound of the valid range of the LiDAR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;laser_link_name&lt;/td&gt;
+&lt;td&gt;scan_link&lt;/td&gt;
+&lt;td&gt;the link name of the LiDAR sensor in the robot URDF file&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;depth_noise_rate&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;noise rate for the depth camera. 0.1 means 10% of the pixels will be corrupted (set to 0.0)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scan_noise_rate&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;noise rate for the LiDAR. 0.1 means 10% of the rays will be corrupted (set to laser_linear_range)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;visual_object_at_initial_target_pos&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;whether to show visual markers for the initial and target positions&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;target_visual_object_visible_to_agent&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;whether these visual markers are visible to the agents&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p>### Examples</p>
+<p>#### Static Environments
+In this example, we show how to instantiate <cite>iGibsonEnv</cite> and how to step through the environment. At the beginning of each episode, we need to call <cite>env.reset()</cite>. Then we need to call <cite>env.step(action)</cite> to step through the environment and retrieve <cite>(state, reward, done, info)</cite>.
+- <cite>state</cite>: a python dictionary of observations, e.g. <cite>state[‘rgb’]</cite> will be a H x W x 3 numpy array that represents the current image
+- <cite>reward</cite>: a scalar that represents the current reward
+- <cite>done</cite>: a boolean that indicates whether the episode should terminate
+- <cite>info</cite>: a python dictionary for bookkeeping purpose
+The code can be found here: [igibson/examples/demo/env_example.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/env_example.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/env_example.py</a>).</p>
+<p><a href="#id9"><span class="problematic" id="id10">``</span></a><a href="#id11"><span class="problematic" id="id12">`</span></a>python
+from igibson.envs.igibson_env import iGibsonEnv
+from time import time
+import igibson
+import os
+from igibson.render.profiler import Profiler
+import logging</p>
+<dl>
+<dt>def main():</dt><dd><p>config_filename = os.path.join(igibson.example_config_path, ‘turtlebot_demo.yaml’)
+env = iGibsonEnv(config_file=config_filename, mode=’gui’)
+for j in range(10):</p>
+<blockquote>
+<div><p>env.reset()
+for i in range(100):</p>
+<blockquote>
+<div><dl>
+<dt>with Profiler(‘Environment action step’):</dt><dd><p>action = env.action_space.sample()
+state, reward, done, info = env.step(action)
+if done:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>logging.info(</dt><dd><p>“Episode finished after {} timesteps”.format(i + 1))</p>
+</dd>
+</dl>
+<p>break</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<p>env.close()</p>
+</dd>
+<dt>if __name__ == “__main__”:</dt><dd><p>main()</p>
+</dd>
+</dl>
+<p><a href="#id13"><span class="problematic" id="id14">``</span></a><a href="#id15"><span class="problematic" id="id16">`</span></a></p>
+<p>#### Interactive Environments
+In this example, we show how to instantiate <cite>iGibsobEnv</cite> with a fully interactive scene <cite>Rs_int</cite>. In this scene, the robot can interact with all the objects in the scene (chairs, tables, couches, etc). The code can be found here: [igibson/examples/demo/env_interactive_example.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/env_interactive_example.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/env_interactive_example.py</a>).</p>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="viewer.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="learning_framework.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

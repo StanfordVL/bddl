@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="simulators.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="objects.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/robots.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># Robots</p>
+<p>### Overview
+We provide a wide variety of <strong>Robots</strong> that can be imported into the <strong>Simulator</strong>.</p>
+<p>&lt;table border=”1” class=”docutils”&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=”center”&gt;Agent Name&lt;/th&gt;
+&lt;th align=”center”&gt;DOF&lt;/th&gt;
+&lt;th align=”center”&gt;Information&lt;/th&gt;
+&lt;th align=”left”&gt;Controller&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Mujoco Ant&lt;/td&gt;
+&lt;td align=”center”&gt;8&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="https://blog.openai.com/roboschool/">https://blog.openai.com/roboschool/</a>”&gt;OpenAI Link&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Mujoco Humanoid&lt;/td&gt;
+&lt;td align=”center”&gt;17&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="https://blog.openai.com/roboschool/">https://blog.openai.com/roboschool/</a>”&gt;OpenAI Link&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Husky Robot&lt;/td&gt;
+&lt;td align=”center”&gt;4&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="http://wiki.ros.org/Robots/Husky">http://wiki.ros.org/Robots/Husky</a>”&gt;ROS&lt;/a&gt;, &lt;a href=”<a class="reference external" href="https://www.clearpathrobotics.com/">https://www.clearpathrobotics.com/</a>”&gt;Manufacturer&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque, Velocity, Position&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Minitaur Robot&lt;/td&gt;
+&lt;td align=”center”&gt;8&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="https://www.ghostrobotics.io/copy-of-robots">https://www.ghostrobotics.io/copy-of-robots</a>”&gt;Robot Page&lt;/a&gt;, &lt;a href=”<a class="reference external" href="https://www.ghostrobotics.io/">https://www.ghostrobotics.io/</a>”&gt;Manufacturer&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Sine Controller&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Quadrotor&lt;/td&gt;
+&lt;td align=”center”&gt;6&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="https://repository.upenn.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&amp;amp;httpsredir=1&amp;amp;article=1705&amp;amp;context=edissertations">https://repository.upenn.edu/cgi/viewcontent.cgi?referer=https://www.google.com/&amp;amp;httpsredir=1&amp;amp;article=1705&amp;amp;context=edissertations</a>”&gt;Paper&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;TurtleBot&lt;/td&gt;
+&lt;td align=”center”&gt;2&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="http://wiki.ros.org/Robots/TurtleBot">http://wiki.ros.org/Robots/TurtleBot</a>”&gt;ROS&lt;/a&gt;, &lt;a href=”<a class="reference external" href="https://www.turtlebot.com/">https://www.turtlebot.com/</a>”&gt;Manufacturer&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque, Velocity, Position, Differential Drive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Freight&lt;/td&gt;
+&lt;td align=”center”&gt;2&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="https://fetchrobotics.com/robotics-platforms/freight-base/">https://fetchrobotics.com/robotics-platforms/freight-base/</a>”&gt;Fetch Robotics Link&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque, Velocity, Position, Differential Drive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;Fetch&lt;/td&gt;
+&lt;td align=”center”&gt;10&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="https://fetchrobotics.com/robotics-platforms/freight-base/">https://fetchrobotics.com/robotics-platforms/freight-base/</a>”&gt;Fetch Robotics Link&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque, Velocity, Position, Differential Drive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;JackRabbot&lt;/td&gt;
+&lt;td align=”center”&gt;2 &amp;amp; 7&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="http://cvgl.stanford.edu/projects/jackrabbot/">http://cvgl.stanford.edu/projects/jackrabbot/</a>”&gt;Stanford Project Link&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque, Velocity, Position, Differential Drive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=”center”&gt;LocoBot&lt;/td&gt;
+&lt;td align=”center”&gt;2&lt;/td&gt;
+&lt;td align=”center”&gt;&lt;a href=”<a class="reference external" href="http://wiki.ros.org/locobot">http://wiki.ros.org/locobot</a>”&gt;ROS&lt;/a&gt;, &lt;a href=”<a class="reference external" href="https://www.trossenrobotics.com/locobot-pyrobot-ros-rover.aspx">https://www.trossenrobotics.com/locobot-pyrobot-ros-rover.aspx</a>”&gt;Manufacturer&lt;/a&gt;&lt;/td&gt;
+&lt;td align=”left”&gt;Torque, Velocity, Position, Differential Drive&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</p>
+<p>Typically, these robot classes take in the URDF file or MuJoCo XML file of an robot (in <cite>igibson.assets_path</cite>) and provide a <cite>load</cite> function that be invoked externally (usually by <cite>import_robot</cite> of <cite>Simulator</cite>). The <cite>load</cite> function imports the robot into PyBullet.</p>
+<p>All robot clases inherit <cite>LocomotorRobot</cite>. Some useful functions are worth pointing out:
+- <cite>{get/set}_{position/orientation/rpy/linear_velocity/angular_velocity}</cite>: get and set the physical states of the robot base
+- <cite>apply_robot_action</cite>: set motor control for each of the controllable joints. It currently supports four modes of control: joint torque, velocity, position, and differential drive for two-wheeled robots
+- <cite>calc_state</cite>: compute robot states that might be useful for external applications
+- <cite>robot_specific_reset</cite>: reset the robot joint states to their default value, particularly useful for mobile manipulators. For instance, <cite>Fetch.robot_specific_reset()</cite> will reset the robot to be something like this:</p>
+<p>![fetch.png](images/fetch.png)</p>
+<p>Here are some details about how we perform motor control for robots:
+- Say the robot uses joint velocity control <cite>self.control == ‘velocity’</cite>
+- We assume the external user (say an RL agent) will call <cite>apply_action</cite> with <cite>policy_action</cite> that is always between <cite>-1</cite> and <cite>1</cite>.
+- <cite>policy_action</cite> will be scaled to <cite>robot_action</cite> by <cite>policy_action_to_robot_action</cite> based on the action space. The action space is set by <cite>config[‘velocity’]</cite> in the YAML config file
+- <cite>robot_action</cite> will be applied by <cite>apply_robot_action</cite>, which internally executes the following:
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+def apply_robot_action(action):</p>
+<blockquote>
+<div><dl class="simple">
+<dt>for n, j in enumerate(self.ordered_joints):</dt><dd><p>j.set_motor_velocity(self.velocity_coef * j.max_velocity * float(np.clip(action[n], -1, +1)))</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a>`
+Note that <cite>robot_action</cite> is a normalized joint velocity, i.e. <cite>robot_action[n] == 1.0</cite> means executing the maximum joint velocity for the nth joint. The limits of joint position, velocity and torque are extracted from the URDF file of the robot.</p>
+<p>Most of the code can be found here: [igibson/robots](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/robots">https://github.com/StanfordVL/iGibson/blob/master/igibson/robots</a>).</p>
+<p>### BehaviorRobot
+The BehaviorRobot can be used in VR as an avatar, or as an autonomous agent to participate in the BEHAVIOR100 challenge. The embodiment is composed of two hands, a torso, and a head link. It largely follows the convention of previous “URDF” based robots, but contains multiple URDFs connected by floating joints(constraints).</p>
+<p>The BehaviorRobot has an action space of 26 DoF listed below.
+- Torso: 6 DoF delta pose - relative to torso frame from the previous frame
+- Head: 6 DoF delta pose - relative to torso frame (where the torso will be after applying this frame’s action)
+- Left hand, right hand (in this order): 6 DoF delta pose - relative to torso frame (where the torso will be after applying this frame’s action)
+- Grasping left hand, Grasping right hand (in this order): delta of change in the fraction of the grasping action (between 0=hand fully open, and 1=hand fully closed)</p>
+<p>The reference frame of each body part is shown below.</p>
+<p>![brobot](images/behavior_robot.jpg)</p>
+<p>### Examples
+In this example, we import four different robots into PyBullet. We keep them still for around 10 seconds and then move them with small random actions for another 10 seconds. The code can be found here: [igibson/examples/demo/robot_example.py](<a class="reference external" href="https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/robot_example.py">https://github.com/StanfordVL/iGibson/blob/master/igibson/examples/demo/robot_example.py</a>).</p>
+<p><a href="#id7"><span class="problematic" id="id8">``</span></a><a href="#id9"><span class="problematic" id="id10">`</span></a>python
+from igibson.robots.locobot_robot import Locobot
+from igibson.robots.turtlebot_robot import Turtlebot
+from igibson.robots.jr2_kinova_robot import JR2_Kinova
+from igibson.robots.fetch_robot import Fetch
+from igibson.utils.utils import parse_config
+import os
+import time
+import numpy as np
+import pybullet as p
+import pybullet_data
+import igibson</p>
+<dl>
+<dt>def main():</dt><dd><p>p.connect(p.GUI)
+p.setGravity(0, 0, -9.8)
+p.setTimeStep(1./240.)</p>
+<p>floor = os.path.join(pybullet_data.getDataPath(), “mjcf/ground_plane.xml”)
+p.loadMJCF(floor)</p>
+<p>robots = []
+config = parse_config(os.path.join(igibson.example_config_path, ‘fetch_reaching.yaml’))
+fetch = Fetch(config)
+robots.append(fetch)</p>
+<p>config = parse_config(os.path.join(igibson.example_config_path,’jr_reaching.yaml’))
+jr = JR2_Kinova(config)
+robots.append(jr)</p>
+<p>config = parse_config(os.path.join(igibson.example_config_path, ‘locobot_point_nav.yaml’))
+locobot = Locobot(config)
+robots.append(locobot)</p>
+<p>config = parse_config(os.path.join(igibson.example_config_path, ‘turtlebot_point_nav.yaml’))
+turtlebot = Turtlebot(config)
+robots.append(turtlebot)</p>
+<dl class="simple">
+<dt>positions = [</dt><dd><p>[0, 0, 0],
+[1, 0, 0],
+[0, 1, 0],
+[1, 1, 0]</p>
+</dd>
+</dl>
+<p>]</p>
+<dl>
+<dt>for robot, position in zip(robots, positions):</dt><dd><p>robot.load()
+robot.set_position(position)
+robot.robot_specific_reset()
+robot.keep_still()</p>
+</dd>
+<dt>for _ in range(2400):  # keep still for 10 seconds</dt><dd><p>p.stepSimulation()
+time.sleep(1./240.)</p>
+</dd>
+<dt>for _ in range(2400):  # move with small random actions for 10 seconds</dt><dd><dl class="simple">
+<dt>for robot, position in zip(robots, positions):</dt><dd><p>action = np.random.uniform(-1, 1, robot.action_dim)
+robot.apply_action(action)</p>
+</dd>
+</dl>
+<p>p.stepSimulation()
+time.sleep(1./240.0)</p>
+</dd>
+</dl>
+<p>p.disconnect()</p>
+</dd>
+<dt>if __name__ == ‘__main__’:</dt><dd><p>main()</p>
+</dd>
+</dl>
+<p><a href="#id11"><span class="problematic" id="id12">``</span></a>`
+The four robots will have a fun cocktail party like this:
+![robot](images/robot.png)</p>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="objects.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="simulators.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
