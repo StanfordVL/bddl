@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>) &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -15,7 +15,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Dataset" href="dataset.html" />
+    <link rel="next" title="&lt;no title&gt;" href="assets.html" />
     <link rel="prev" title="&lt;no title&gt;" href="quickstart.html" /> 
 </head>
 
@@ -35,13 +35,12 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Introduction</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html#id6">}</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="dataset.html">Dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
@@ -64,7 +63,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+      <li>)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/overview.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -75,21 +74,73 @@
            <div itemprop="articleBody">
              
   <p># Overview</p>
-<p>Next, we will give an overview of iGibson and briefly explain the different modules in our system.
-![quickstart.png](images/overview.png)</p>
-<p>First of all, we have <strong>Dataset</strong> and <strong>Assets</strong>. <strong>Dataset</strong> contain 3D reconstructed real-world environments. <strong>Assets</strong> contain models of robots and objects. Download guide can be found [here](installation.html#downloading-the-assets). More info can be found here: [Dataset](dataset.md) and [Assets](assets.md).</p>
-<p>Next, we have <strong>Renderer</strong> and <strong>PhysicsEngine</strong>. These are the two pillars that ensure the visual and physics fidelity of iGibson. We developed our own MeshRenderer that supports customizable camera configuration, physics-based rendering (PBR) and various image modalities, and renders at a lightening speed. We use the open-sourced [PyBullet](<a class="reference external" href="http://www.pybullet.org/">http://www.pybullet.org/</a>) as our underlying physics engine. It can simulate rigid body collision and joint actuation for robots and articulated objects in an accurate and efficient manner. Since we are using MeshRenderer for rendering and PyBullet for physics simulation, we need to keep them synchronized at all time. Our code have already handled this for you. More info can be found here: [Renderer](renderer.md) and [PhysicsEngine](physics_engine.md).</p>
-<p>Furthermore, we have <strong>Scene</strong>, <strong>Object</strong>, <strong>Robot</strong>, and <strong>Simulator</strong>. <strong>Scene</strong> loads 3D scene meshes from <cite>igibson.g_dataset_path, igibson.ig_dataset_path</cite>. <strong>Object</strong> loads interactable objects from <cite>igibson.assets_path</cite>. <strong>Robot</strong> loads robots from <cite>igibson.assets_path</cite>. <strong>Simulator</strong> maintains an instance of <strong>Renderer</strong> and <strong>PhysicsEngine</strong> and provides APIs to import <strong>Scene</strong>, <strong>Object</strong> and <strong>Robot</strong> into both of them and keep them synchronized at all time. More info can be found here: [Scene](./scenes.md), [Object](./objects.md), [Robot](./robots.md), and [Simulator](simulators.md).</p>
-<p>Moreover, we have <strong>Task</strong>, <strong>Sensor</strong> and <strong>Environment</strong>. <strong>Task</strong> defines the task setup and includes a list of <strong>Reward Function</strong> and <strong>Termination Condition</strong>. It also provides task-specific reset functions and task-relevant observation definition. <strong>Sensor</strong> provides a light wrapper around <strong>Render</strong> to retrieve sensory observation. <strong>Environment</strong> follows the [OpenAI gym](<a class="reference external" href="https://github.com/openai/gym">https://github.com/openai/gym</a>) convention and provides an API interface for external applications. More info can be found here: [Environment](environments.md).</p>
-<p>Finally, any learning framework (e.g. RL, IL) or planning and control framework (e.g. ROS) can be used with <strong>Environment</strong> as long as they accommodate OpenAI gym interface. We provide tight integration with <strong>ROS</strong> that allows for evaluation and visualization of, say, ROS Navigation Stack, in iGibson. More info can be found here: [Learning Framework](learning_framework.md) and [ROS](ros_integration.md).</p>
-<p>We highly recommend you go through each of the Modules below for more details and code examples.</p>
+<p>The BDDL codebase has two primary sections: activity definition and interface with the simulator. Given a simulator and an agent deployed in it, BDDL is typically used to instantiate a BEHAVIOR activity definition in the simulator, then check the agent’s progress/success at every step.</p>
+<p>## Activity definition</p>
+<p>### Summary</p>
+<p>BDDL activities are defined by a set of <strong>objects</strong> in a scene, a ground <strong>initial condition</strong> that the scene configuration satisfies when the agent starts the activity, and a <strong>goal condition</strong> logical expression that the scene configuration must satisfy for the agent to reach success. The following example demonstrates this:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+(define</p>
+<blockquote>
+<div><p>(problem cleaning_the_pool_simplified)
+(:domain igibson)</p>
+<dl class="simple">
+<dt>(:objects</dt><dd><p>pool.n.01_1 - pool.n.01
+floor.n.01_1 - floor.n.01
+scrub_brush.n.01_1 - scrub_brush.n.01
+sink.n.01_1 - sink.n.01
+agent.n.01_1 - agent.n.01</p>
+</dd>
+</dl>
+<p>)</p>
+<dl class="simple">
+<dt>(:init</dt><dd><p>(onfloor pool.n.01_1 floor.n.01_1)
+(stained pool.n.01_1)
+(onfloor scrub_brush.n.01_1 floor.n.01_1)
+(inroom floor.n.01_1 garage)
+(inroom sink.n.01_1 storage_room)
+(onfloor agent.n.01_1 floor.n.01_1)</p>
+</dd>
+</dl>
+<p>)</p>
+<dl>
+<dt>(:goal</dt><dd><dl>
+<dt>(and</dt><dd><p>(onfloor ?pool.n.01_1 ?floor.n.01_1)
+(not</p>
+<blockquote>
+<div><p>(stained ?pool.n.01_1)</p>
+</div></blockquote>
+<p>)
+(ontop ?scrub_brush.n.01_1 ?shelf.n.01_1)</p>
+</dd>
+</dl>
+<p>)</p>
+</dd>
+</dl>
+<p>)</p>
+</div></blockquote>
+<div class="section" id="id3">
+<h1>)<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h1>
+<p>The <cite>:objects</cite> and <cite>:init</cite> sections specify the initial state as a set of objects and a set of initial atomic formulae the objects must satisfy at the start of the task. The <cite>:goal</cite> section specifies the expression that the objects must satisfy for the task to be considered successfully completed, i.e. what the agent needs to achieve.</p>
+<p>### BDDL language</p>
+<p>BDDL includes two types of files: the <strong>domain</strong> file and the <strong>problem</strong> file. There is one domain file per simulator, and one problem file per activity definition (in this sense, “problem” and “activity definition” are interchangeable).</p>
+<p>The domain contains three sections: domain name (<cite>(domain &lt;domain_name&gt;)</cite>); requirements (<cite>(:requirements :strips :adl)</cite> as BDDL relies on these); and predicates, a list of predicates with fields indicating their arity. See the example created for iGibson 2.0 [here](<a class="reference external" href="https://github.com/StanfordVL/bddl/blob/master/bddl/activity_definitions/domain_igibson.bddl">https://github.com/StanfordVL/bddl/blob/master/bddl/activity_definitions/domain_igibson.bddl</a>).</p>
+<p>The problem, i.e. an activity definition, is more complex. It consists of a problem name, a domain, objects, initial condition, and goal condition. See examples in subdirectories [here](<a class="reference external" href="https://github.com/StanfordVL/bddl/tree/master/bddl/activity_definitions">https://github.com/StanfordVL/bddl/tree/master/bddl/activity_definitions</a>).</p>
+<p>By convention, the problem (<cite>problem</cite>) section should take the form of <cite>(problem &lt;behavior_activity&gt;_&lt;activity_instance&gt;)</cite>, where <cite>activity_instance</cite> is some identifying number that distinguishes this definition of <cite>behavior_activity</cite> from other definitions of the same activity, since a BEHAVIOR activity (e.g. “packing lunches” or “cleaning bathtub”) can be defined multiple times to make multiple versions.</p>
+<p>The domain (<cite>:domain</cite>) section should take the form of <cite>(:domain &lt;domain_name&gt;)</cite>, where <cite>domain_name</cite> matches to the domain <a href="#id4"><span class="problematic" id="id5">`</span></a>define`d in some domain file.</p>
+<p>The objects (<cite>:objects</cite>) section should contain all object instances involved in the activity definition, categorized. For example, for an activity definition with three instances of some category <cite>mycat</cite>, <cite>:objects</cite> should include the following line: <cite>mycat_1 mycat_2 mycat_3 - mycat</cite>. BDDL requires that object instances be written as <cite>&lt;category&gt;_&lt;unique_id_number&gt;</cite> where <cite>category</cite> is a WordNet synset (see the next section for details on the role of WordNet in BDDL). <cite>:objects</cite> should list and categorize every object instance used in the definition.</p>
+<p>The initial condition (<cite>:init</cite>) should consist of a list of ground atomic formulae. This means that <cite>:init</cite> cannot contain logical operators such as <cite>and</cite>, <cite>forall</cite>, or <cite>forpairs</cite>, and all objects involved in it must be instances - concrete object instances like <cite>mycat_1</cite> - and not variables that may indicate multiple possible instances (e.g. just <cite>mycat</cite>, which could be any instance with category <cite>mycat</cite>). <cite>:init</cite> can contain certain types of negated atomic formulae (using the <cite>not</cite> logical operator) - specifically, when the atomic formula is <strong>not</strong> involved in location of objects. So, a BDDL activity definition <strong>can</strong> have <cite>(not (cooked mycat_1))</cite> but it <strong>cannot</strong> have <cite>(not (ontop mycat_1 othercat_1))</cite>. This is for the sampler - it is difficult to sample “anywhere-but” efficiently and ecologically.</p>
+<p>Finally, the goal condition (<cite>:goal</cite>) should consist of one logical expression, likely a conjunction of clauses. This expression can use any of the standard logical operators used in the [Planning Domain Definition Language (PDDL)](<a class="reference external" href="https://planning.wiki/ref/pddl/problem">https://planning.wiki/ref/pddl/problem</a>), namely <cite>and</cite>, <cite>or</cite>, <cite>not</cite>, <cite>imply</cite>, <cite>forall</cite>, and <cite>exists</cite>. It can also use our custom operators: <cite>forn</cite>, <cite>forpairs</cite>, and <cite>fornpairs</cite>. Note that</p>
+<p>### Annotations for activity definition</p>
+<p>### Creating your own activity definition</p>
+<p>## Interface with a simulator</p>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="quickstart.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="dataset.html" class="btn btn-neutral float-right" title="Dataset" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="assets.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

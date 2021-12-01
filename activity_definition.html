@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>) &mdash; BEHAVIOR Domain Definition Language  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BEHAVIOR Domain Definition Language
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ros_integration.html">ROS Integration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projects.html">Projects using Gibson/iGibson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BEHAVIOR Domain Definition Language</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/activity_definition.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p># Activity definition</p>
+<p>## Summary</p>
+<p>BDDL activities are defined by a set of <strong>objects</strong> in a scene, a ground <strong>initial condition</strong> that the scene configuration satisfies when the agent starts the activity, and a <strong>goal condition</strong> logical expression that the scene configuration must satisfy for the agent to reach success. The following example demonstrates this:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+(define</p>
+<blockquote>
+<div><p>(problem cleaning_the_pool_simplified)
+(:domain igibson)</p>
+<dl class="simple">
+<dt>(:objects</dt><dd><p>pool.n.01_1 - pool.n.01
+floor.n.01_1 - floor.n.01
+scrub_brush.n.01_1 - scrub_brush.n.01
+sink.n.01_1 - sink.n.01
+agent.n.01_1 - agent.n.01</p>
+</dd>
+</dl>
+<p>)</p>
+<dl class="simple">
+<dt>(:init</dt><dd><p>(onfloor pool.n.01_1 floor.n.01_1)
+(stained pool.n.01_1)
+(onfloor scrub_brush.n.01_1 floor.n.01_1)
+(inroom floor.n.01_1 garage)
+(inroom sink.n.01_1 storage_room)
+(onfloor agent.n.01_1 floor.n.01_1)</p>
+</dd>
+</dl>
+<p>)</p>
+<dl>
+<dt>(:goal</dt><dd><dl>
+<dt>(and</dt><dd><p>(onfloor ?pool.n.01_1 ?floor.n.01_1)
+(not</p>
+<blockquote>
+<div><p>(stained ?pool.n.01_1)</p>
+</div></blockquote>
+<p>)
+(ontop ?scrub_brush.n.01_1 ?shelf.n.01_1)</p>
+</dd>
+</dl>
+<p>)</p>
+</dd>
+</dl>
+<p>)</p>
+</div></blockquote>
+<div class="section" id="id3">
+<h1>)<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h1>
+<p>The <cite>:objects</cite> and <cite>:init</cite> sections specify the initial state as a set of objects and a set of initial atomic formulae the objects must satisfy at the start of the task. The <cite>:goal</cite> section specifies the expression that the objects must satisfy for the task to be considered successfully completed, i.e. what the agent needs to achieve.</p>
+<p>## BDDL language</p>
+<p>BDDL includes two types of files: the <strong>domain</strong> file and the <strong>problem</strong> file. There is one domain file per simulator, and one problem file per activity definition. We use “problem” only to keep consistent with the Planning Domain Definition Language (PDDL), and from hereon will use only “activity definition”. In general, BDDL activity definitions are logical expressions using standard logical operators, some custom operators, objects instances as ground terms, object categories as variables, and object properties as predicates.</p>
+<p>### Domain file</p>
+<p>The domain contains three sections: domain name (<cite>(domain &lt;domain_name&gt;)</cite>); requirements (<cite>(:requirements :strips :adl)</cite> as BDDL relies on these); and predicates, a list of predicates with fields indicating their arity. See the example created for iGibson 2.0 [here](<a class="reference external" href="https://github.com/StanfordVL/bddl/blob/master/bddl/activity_definitions/domain_igibson.bddl">https://github.com/StanfordVL/bddl/blob/master/bddl/activity_definitions/domain_igibson.bddl</a>).</p>
+<p>### Activity definition file header</p>
+<p>The pactivity definition is more complex. It consists of an activity definition name, a domain, objects, initial condition, and goal condition. See examples in subdirectories [here](<a class="reference external" href="https://github.com/StanfordVL/bddl/tree/master/bddl/activity_definitions">https://github.com/StanfordVL/bddl/tree/master/bddl/activity_definitions</a>).</p>
+<p>By convention, the problem (<cite>problem</cite>) section should take the form of <cite>(problem &lt;behavior_activity&gt;_&lt;activity_instance&gt;)</cite>, where <cite>activity_instance</cite> is some identifying number that distinguishes this definition of <cite>behavior_activity</cite> from other definitions of the same activity, since a BEHAVIOR activity (e.g. “packing lunches” or “cleaning bathtub”) can be defined multiple times to make multiple versions.</p>
+<p>### Activity definition file domain</p>
+<p>The domain (<cite>:domain</cite>) section should take the form of <cite>(:domain &lt;domain_name&gt;)</cite>, where <cite>domain_name</cite> matches to the domain <a href="#id4"><span class="problematic" id="id5">`</span></a>define`d in some domain file.</p>
+<p>### Activity definition file <cite>:objects</cite> section</p>
+<p>The objects (<cite>:objects</cite>) section should contain all object instances involved in the activity definition, categorized. For example, for an activity definition with three instances of some category <cite>mycat</cite>, <cite>:objects</cite> should include the following line: <cite>mycat_1 mycat_2 mycat_3 - mycat</cite>. BDDL requires that object instances be written as <cite>&lt;category&gt;_&lt;unique_id_number&gt;</cite> where <cite>category</cite> is a WordNet synset (see the <strong>Annotations for activity definition</strong> section for details on the role of WordNet in BDDL). <cite>:objects</cite> should list and categorize every object instance used in the definition.</p>
+<p>### Activity definition file <cite>:init</cite> section</p>
+<p>The initial condition (<cite>:init</cite>) should consist of a list of ground atomic formulae. This means that <cite>:init</cite> cannot contain logical operators such as <cite>and</cite>, <cite>forall</cite>, or <cite>forpairs</cite>, and all objects involved in it must be instances - concrete object instances like <cite>mycat_1</cite> - and not variables that may indicate multiple possible instances (e.g. just <cite>mycat</cite>, which could be any instance with category <cite>mycat</cite>). <cite>:init</cite> can contain certain types of negated atomic formulae (using the <cite>not</cite> logical operator) - specifically, when the atomic formula is <strong>not</strong> involved in location of objects. So, a BDDL activity definition <strong>can</strong> have <cite>(not (cooked mycat_1))</cite> but it <strong>cannot</strong> have <cite>(not (ontop mycat_1 othercat_1))</cite>. This is for the sampler - it is difficult to sample “anywhere-but” efficiently and ecologically.</p>
+<p>The <cite>:init</cite> section has some additional requirements. For this, we note that all objects in BDDL are either <strong>scene objects</strong> or <strong>additional objects</strong>. <strong>Scene objects</strong> are those that are already available by default in the simulator scene that you are instantiating an activity definition in. <strong>Additional objects</strong> are those that will be added to the scene by the sampler. To make sure that the <cite>:init</cite> that a sampler needs to handle is not underspecfied, BDDL requires the following:
+- Every scene object involved in the activity definition must appear in exactly one <cite>inroom</cite> atomic formula specifying the room it’s in, e.g. <cite>(inroom myscenecat_1 kitchen)</cite>. Note that you do not need to list all of the scene’s default objects in your activity definition, you only need to list the ones that are relevant to you.
+- Every additional object must appear in a binary atomic formula that specifies its position relative to a scene object either directly or transitively. So, the following is acceptable, because it has a direct positioning:
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">(ontop</span> <span class="pre">myaddcat_1</span> <span class="pre">myscenecat_1)</span>
+<span class="pre">`</span></code>
+And this is also acceptable, because it has indirect positioning for some additional objects but they are all ultimately positioned relative to a scene object:
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">(ontop</span> <span class="pre">myaddcat_1</span> <span class="pre">myaddcat_2)</span>
+<span class="pre">(ontop</span> <span class="pre">myaddcat_2</span> <span class="pre">myscenecat_1)</span>
+<span class="pre">(ontop</span> <span class="pre">myaddcat_3</span> <span class="pre">myaddcat_1)</span>
+<span class="pre">`</span></code>
+The following is not acceptable because even though all additional objects appear as arguments to a positional predicate, they are not all placed relative to scene objects:
+<code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">(ontop</span> <span class="pre">myaddcat_1</span> <span class="pre">myscenecat_1)</span>
+<span class="pre">(ontop</span> <span class="pre">myaddcat_2</span> <span class="pre">myaddcat_3)</span>
+<span class="pre">`</span></code></p>
+<p>### Activity definition file <cite>:goal</cite> section</p>
+<p>Finally, the goal condition (<cite>:goal</cite>) should consist of one logical expression, likely a conjunction of clauses. This expression can use any of the standard logical operators used in the [Planning Domain Definition Language (PDDL)](<a class="reference external" href="https://planning.wiki/ref/pddl/problem">https://planning.wiki/ref/pddl/problem</a>), namely <cite>and</cite>, <cite>or</cite>, <cite>not</cite>, <cite>imply</cite>, <cite>forall</cite>, and <cite>exists</cite>. It can also use our custom operators: <cite>forn</cite>, <cite>forpairs</cite>, and <cite>fornpairs</cite>. These custom operators are defined as follows:
+- <cite>forn</cite>: for some non-negative integer <cite>n</cite> and some object category <cite>mycat</cite>, the child condition must hold true for at least <cite>n</cite> instances of category <cite>mycat</cite>
+- <cite>forpairs</cite>: for two object categories <cite>mycat</cite> and <cite>othercat</cite>, the child conditiono must hold true for some one-to-one mapping of object instances of <cite>mycat</cite> to object instances of <cite>othercat</cite> that covers all instances of at least one of the two categories
+- <cite>fornpairs</cite>: for some non-negative integer <cite>n</cite> and two object categories <cite>mycat</cite> and <cite>othercat</cite>, the child condition must hold true for at least <cite>n</cite> pairs of instances of <cite>mycat</cite> and instances of <cite>othercat</cite> that follow a one-to-one mapping.</p>
+<p>Unlike the <cite>:init</cite> section, where object instances can be used as terms but object categories cannot, <cite>:goal</cite> can use object categories as <em>bound variables</em>. A variable must be bound in a quantifier to be concrete and not ambiguous, and in <cite>:goal</cite> we have several quantifiers available: <cite>forall</cite>, <cite>exists</cite>, <cite>forn</cite>, <cite>forpairs</cite>, and <cite>fornpairs</cite>. In the <cite>:goal</cite>, BDDL allows any of these quantifiers to be used to bind categories, to make goal conditions that are more flexible and concise than those that specify object instances everywhere.</p>
+<p>## Annotations for activity definition</p>
+<p>Using BDDL to make activity definition content requires two types of annotations:
+1. Annotations of object categories as [WordNet](<a class="reference external" href="https://wordnet.princeton.edu/">https://wordnet.princeton.edu/</a>) <em>synsets</em> (terms for distinct concepts) that follow the WordNet hierarchy.
+2. Annotations mapping object categories to properties they exhibit.</p>
+<p>### Hierarchical object category annotations
+The object categories in BDDL are all WordNet synsets. WordNet synsets are single terms for groups of cognitive synonyms, removing the ambiguity coming from multiple words meaning the same thing or one word having multiple senses. In BDDL, each category means exactly what its synset refers to.</p>
+<p>BDDL object categories (such as <cite>mycat</cite> and <cite>othercat</cite> above) have the following syntax: <cite>&lt;word/phrase&gt;.n.&lt;ID number&gt;</cite>. This is a subset of WordNet’s synset syntax - the <cite>n</cite> in the middle of the BDDL category syntax indicates “noun”. In WordNet, there are a few other options for other parts of speech that are not relevant to BDDL.</p>
+<p>The list of BDDL object categories is found in [<cite>objectmodeling.csv</cite>](<a class="reference external" href="https://github.com/StanfordVL/bddl/blob/master/utils/objectmodeling.csv">https://github.com/StanfordVL/bddl/blob/master/utils/objectmodeling.csv</a>). Note that these are specifically categories that also have at least one 3D model in the BEHAVIOR Object Dataset.</p>
+<p>The synset formulation allows BDDL objects to follow the WordNet hierarchy, meaning that an object will not only be seen as an instance of its own category, but also all parent categories.</p>
+<p>The hierarchy is specified in <cite>hierarchy*.json</cite> files. These are generated by running [<cite>hierarchy_generator.py</cite>](<a class="reference external" href="https://github.com/StanfordVL/bddl/blob/master/utils/hierarchy_generator.py">https://github.com/StanfordVL/bddl/blob/master/utils/hierarchy_generator.py</a>); see the script for more details on the format of the various hierarchies generated.</p>
+<p>### Object-to-property mapping
+As stated above, objects are terms in BDDL and their properties are predicates. BDDL currently requires support for the set of properties specified in [<cite>domain_igibson.bddl</cite>](<a class="reference external" href="https://github.com/StanfordVL/bddl/blob/master/bddl/activity_definitions/domain_igibson.bddl">https://github.com/StanfordVL/bddl/blob/master/bddl/activity_definitions/domain_igibson.bddl</a>) - all the unary predicates are states of individual objects.</p>
+<p>Of course, not every property applies to every object. Therefore, BDDL requires a mapping of every object to the properties it has. For BDDL’s original supported objects, these mappings come from crowdsourced annotations. These annotations are found in [<cite>synsets_to_filtered_properties.json</cite>](<a class="reference external" href="https://github.com/StanfordVL/bddl/blob/master/utils/synsets_to_filtered_properties.json">https://github.com/StanfordVL/bddl/blob/master/utils/synsets_to_filtered_properties.json</a>). Furthermore, simply mapping is not always enough - some properties require additional parameters. For example, different items may all be cookable and burnable, but cook and burn at different temperatures, so they not only need to be annotated as <cite>cookable</cite> or <cite>burnable</cite>, but also with a <cite>cook_temperature</cite> and <cite>burn_temperature</cite>. <cite>synsets_to_filtered_properties.json</cite> shows the correct syntax for the annotations.</p>
+<p>Finally, these properties are filtered to be inherited through the hierarchy. More concretely, the hierarchy generation script enforces that in <cite>hierarchy*.json</cite>, the properties of any non-leaf category will be the intersection of the properties of all its descendant categories; only the leaf categories’ properties are determined by their crowdsourced annotation. Note that <cite>synsets_to_filtered_properties.json</cite> does <strong>not</strong> obey this rule, so you cannot use it directly to determine properties, only to enter and store original annotations. You must use <cite>hierarchy*.json</cite> for determining properties that actually apply in the activity definition.</p>
+<p>### Adding your own object to BDDL</p>
+<p>Adding your own object to BDDL requires providing the above annotations. Do not do so unless you support an appropriate 3D object model in your simulator for the category you are adding. For instructions on how to add an object model to iGibson 2.0, click [here]().</p>
+<p>Once you have a usable object model, do the following:
+1. Find the most suitable synset for your object category in WordNet.
+2. Add your object’s synset, as well as a non-synset label if you want, to <cite>bddl/utils/objectmodeling.csv</cite>. <strong>Note:</strong> if the synset you chose is already in <cite>objectmodeling.csv</cite>, you can stop here!
+3. Decide which of the properties in <cite>bddl/bddl/activity_definitions/domain_igibson.bddl</cite> apply to your object and annotate them in <cite>bddl/utils/synsets_to_filtered_properties.json</cite>, using the correct syntax and providing any necessary paramaters.
+4. <em>Only if your simulator definitely supports each property for this object</em>, edit <cite>bddl/utils/prune_object_property.py</cite> to include your object and all its supported properties, and specify an outfile for your purposes; if you are using iGibson, keep the default value <cite>synsets_to_filtered_properties_pruned_igibson.json</cite>.
+5. Run <cite>bddl/utils/hierarchy_generator.py</cite> to generate the various hierarchy JSONs, wihch will now contain your synset associated with its properties.</p>
+<p>## Creating your own activity definition
+Use the following steps to create your own BDDL activity.
+1. <strong>Choose an activity you want to define,</strong> like “putting away groceries” or “washing dishes”. You can choose from the [list of BEHAVIOR activities](<a class="reference external" href="https://behavior.stanford.edu/activity-annotation">https://behavior.stanford.edu/activity-annotation</a>) or you can make your own.
+2. <strong>Choose a method of making your definition.</strong> There are multiple ways to do so:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Using our visual-BDDL annotator [here](<a class="reference external" href="https://behavior.stanford.edu/activity-annotation">https://behavior.stanford.edu/activity-annotation</a>). This requires no setup and offers helpful constraints, but your definition is not guaranteed to fit in a scene even if it is syntactically correct.</p></li>
+<li><p>Using a local version of our annotation system (download the [code](<a class="reference external" href="https://github.com/StanfordVL/behavior-activity-annotator">https://github.com/StanfordVL/behavior-activity-annotator</a>)). This requires more setup, offers helpful constraints, and if you attach a simulator to test sampling (example implementation in iGibson 2.0 [here](TODO)), you can edit your definition until it fits.</p></li>
+<li><p>Writing your own BDDL file directly. This requires no setup, and has neither helpful constraints nor limiting constraints. Your definition is not guaranteed to be syntactically correct or fit in a scene.</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><dl class="simple">
+<dt><strong>Define the activity in BDDL.</strong></dt><dd><p>a/b. If you are using our annotation interface, whether locally or online, you will find instructions at the [landing page](<a class="reference external" href="https://behavior.stanford.edu/activity-annotation">https://behavior.stanford.edu/activity-annotation</a>) and more detailed instructions in the interface itself.
+c. If you are writing BDDL directly, refer to the earlier section of this page as well as [existing definitions](<a class="reference external" href="https://github.com/StanfordVL/bddl/tree/master/bddl/activity_definitions">https://github.com/StanfordVL/bddl/tree/master/bddl/activity_definitions</a>) for guidance.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Stanford University 2018-2021.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
