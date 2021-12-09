@@ -5,6 +5,7 @@ import numpy as np
 
 import bddl
 from bddl.logic_base import Expression
+from bddl.enum_obj_states import NodeTypeEnum, EdgeTypeEnum, JunctionTypeEnum, get_feature
 from bddl.utils import (
     UnsupportedPredicateError,
     truncated_permutations,
@@ -223,6 +224,19 @@ class ForPairs(Expression):
                     unpacked_choice_options.append(list(itertools.chain(*choice_option)))
                 self.flattened_condition_options.extend(unpacked_choice_options)
 
+    def to_graph(self, G):
+        nodename = str(self)
+        G.add_node(nodename, node_type=NodeTypeEnum.Junction.value, node_feature=get_feature(JunctionTypeEnum.Disjunction))
+        for i, child in enumerate(self.children):
+            childnodename = str(self) + "-option" + str(i)
+            G.add_node(childnodename, node_type=NodeTypeEnum.Junction.value, node_feature=get_feature(JunctionTypeEnum.Conjunction))
+            G.add_edge(nodename, childnodename, edge_type=EdgeTypeEnum.Child.value)
+            for subchild in child:
+                subchildnodename = subchild.to_graph(G)
+                G.add_edge(childnodename, subchildnodename, edge_type=EdgeTypeEnum.Child.value)
+
+        return nodename
+
 
 class ForNPairs(Expression):
     def __init__(self, scope, backend, body, object_map):
@@ -275,6 +289,19 @@ class ForNPairs(Expression):
                     unpacked_choice_options.append(list(itertools.chain(*choice_option)))
                 self.flattened_condition_options.extend(unpacked_choice_options)
 
+    def to_graph(self, G):
+        # TODO: Add N
+        nodename = str(self)
+        G.add_node(nodename, node_type=NodeTypeEnum.Junction.value, node_feature=get_feature(JunctionTypeEnum.Disjunction))
+        for i, child in enumerate(self.children):
+            childnodename = str(self) + "-option" + str(i)
+            G.add_node(childnodename, node_type=NodeTypeEnum.Junction.value, node_feature=get_feature(JunctionTypeEnum.Conjunction))
+            G.add_edge(nodename, childnodename, edge_type=EdgeTypeEnum.Child.value)
+            for subchild in child:
+                subchildnodename = subchild.to_graph(G)
+                G.add_edge(childnodename, subchildnodename, edge_type=EdgeTypeEnum.Child.value)
+
+        return nodename
 
 # NEGATION
 class Negation(Expression):
@@ -389,6 +416,11 @@ class HEAD(Expression):
 
     def get_ground_options(self):
         self.flattened_condition_options = self.children[0].flattened_condition_options
+
+    def to_graph(self, G):
+        # Pass through for this one.
+        assert len(self.children) == 1
+        return self.children[0].to_graph(G)
 
 
 #################### CHECKING ####################
