@@ -13,9 +13,12 @@ from bddl.config import get_domain_filename, get_definition_filename, READABLE_P
 
 def scan_tokens(filename=None, string=None):
     if filename is not None:
-        with open(filename, 'r') as f:
-            # Remove single line comments
-            raw_str = f.read()
+        try:
+            with open(filename, 'r') as f:
+                # Remove single line comments
+                raw_str = f.read()
+        except FileNotFoundError:
+            raise ValueError(f"Either your behavior_activity doesn't exist or your behavior_activity does not have the activity_definition you provided.")
     elif string is not None:
         raw_str = string
     else:
