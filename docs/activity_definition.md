@@ -1,4 +1,4 @@
-# Activity definitions in BDDL
+# Activity definition
 
 ## Summary
 
