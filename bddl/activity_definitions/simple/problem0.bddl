@@ -1,0 +1,18 @@
+(define (problem simple_task_0)
+    (:domain igibson)
+
+    (:objects
+     	swivel_chair.n.01_1 - swivel_chair.n.01
+    	fridge.n.01_1 - fridge.n.01
+    )
+    
+    (:init 
+        (nextto fridge.n.01_1 fridge.n.01_1) 
+    )
+    
+    (:goal 
+        (and 
+            (nextto ?swivel_chair.n.01_1 ?fridge.n.01_1) 
+        )
+    )
+)

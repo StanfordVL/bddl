@@ -98,3 +98,5 @@ washing_floor
 washing_pots_and_pans
 watering_houseplants
 waxing_cars_or_other_vehicles
+simple
+re-shelving_library_books_simple
