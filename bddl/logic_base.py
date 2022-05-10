@@ -32,7 +32,7 @@ class AtomicFormula(Expression):
         self.get_ground_options()
     
     @abstractmethod 
-    def _evalute(self, *args):         # TODO figure out how to handle variable-arities
+    def _evaluate(self, *args):         # TODO figure out how to handle variable-arities
         pass 
 
     def evaluate(self):
