@@ -15,6 +15,7 @@ cleaning_cupboards
 cleaning_floors
 cleaning_freezer
 cleaning_garage
+cleaning_gates
 cleaning_high_chair
 cleaning_kitchen_cupboard
 cleaning_microwave_oven

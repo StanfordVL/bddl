@@ -1,4 +1,7 @@
 {
+    "cleaning_gates": [
+        "gates_apartment"
+    ],
     "defrosting_freezer": [
         "Beechwood_0_int",
         "Benevolence_1_int",
