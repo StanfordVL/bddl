@@ -19,8 +19,8 @@
     
     (:goal 
         (and
-            (not 
-                (stained ?breakfast_table.n.02_1)
+            (not
+                (stained ?table.n.02_1)
             )
         )
     )
