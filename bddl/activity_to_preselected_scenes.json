@@ -1,4 +1,7 @@
 {
+    "cleaning_restaurant_table": [
+        "restaurant_hotel"
+    ],
     "cleaning_gates": [
         "gates_apartment"
     ],

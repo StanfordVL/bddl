@@ -21,6 +21,7 @@ cleaning_kitchen_cupboard
 cleaning_microwave_oven
 cleaning_out_drawers
 cleaning_oven
+cleaning_restaurant_table
 cleaning_shoes
 cleaning_sneakers
 cleaning_stove
