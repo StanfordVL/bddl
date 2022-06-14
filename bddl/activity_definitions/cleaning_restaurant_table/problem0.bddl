@@ -10,10 +10,10 @@
     )
     
     (:init
-        (stained table.n.02_1)
         (inroom table.n.02_1 dining_room)
         (inroom table.n.02_2 dining_room)
         (inroom sink.n.01_1 bathroom)
+        (stained table.n.02_1)
         (ontop dishtowel.n.01_1 table.n.02_2)
         (inroom floor.n.01_1 dining_room)
         (onfloor agent.n.01_1 floor.n.01_1)
@@ -22,7 +22,7 @@
     (:goal 
         (and
             (not
-                (ontop dishtowel.n.01_1 table.n.02_1)
+                (stained ?table.n.02_1)
             )
         )
     )
