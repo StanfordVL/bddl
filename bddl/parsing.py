@@ -38,6 +38,7 @@ def scan_tokens(filename=None, string=None):
         else:
             tokens.append(t)
     if stack:
+        print(stack)
         raise Exception('Missing close parenthesis')
     if len(tokens) != 1:
         raise Exception('Malformed expression')
@@ -360,7 +361,6 @@ def add_bddl_whitespace(bddl_file="activity_conditions/parsing_tests/test_app_ou
             raw_bddl = f.read()
     else:
         raise ValueError("No BDDL given")
-
     total_characters = len(raw_bddl)
 
     nest_level = 0
@@ -392,7 +392,6 @@ def add_bddl_whitespace(bddl_file="activity_conditions/parsing_tests/test_app_ou
     if save:
         with open('activity_definitions/parsing_tests/test_app_output_whitespace.bddl', 'w') as f:
             f.write(refined_bddl)
-
     return refined_bddl
 
 
@@ -427,18 +426,19 @@ def construct_full_bddl(behavior_activity, activity_definition, object_list, ini
     :param init_state (string): initial state (assumed whitespace not added)
     :param goal_state (string): goal state (assumed whitespace not added)
     """
-    object_list = "    ".join(object_list.split("\t"))
-    init_state = "    \n".join(add_bddl_whitespace(
-        bddl_file=None, string=init_state, save=False).split("\n"))
-    goal_state = "    \n".join(add_bddl_whitespace(
-        bddl_file=None, string=goal_state, save=False).split("\n"))
+    object_list_ws = "    ".join(object_list.split("\t"))
+    object_list = "\n".join(["    " + line for line in object_list_ws.split("\n")])
+    init_state_ws = add_bddl_whitespace(bddl_file=None, string=init_state, save=False)
+    init_state = "\n".join(["    " + line for line in init_state_ws.split("\n")])
+    goal_state_ws = add_bddl_whitespace(bddl_file=None, string=goal_state, save=False)
+    goal_state = "\n".join(["    " + line for line in goal_state_ws.split("\n")])
     bddl = f"""(define\n
-                   (problem {behavior_activity}_{activity_definition})\n
-                   (:domain igibson)\n
-                {object_list}\n
-                {init_state}\n
-                {goal_state}\n
-               )"""
+    (problem {behavior_activity}_{activity_definition})\n
+    (:domain igibson)\n
+{object_list}\n
+    {init_state}\n
+    {goal_state}
+)"""
     return bddl
 
 
