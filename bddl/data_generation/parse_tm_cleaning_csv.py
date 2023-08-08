@@ -172,7 +172,7 @@ def parse_tm_cleaning_csv():
                     assert name in PARTICLE_APPLIER_MAPPING
                     applier_conditions = [(ParticleModifyCondition.TOGGLEDON, True)]
                     if "needsOrientation" in ohp_root["abilities"]:
-                        conditions.append((ParticleModifyCondition.GRAVITY, True))
+                        applier_conditions.append((ParticleModifyCondition.GRAVITY, True))
                     ohp_root["abilities"]["particleApplier"] = {
                         "conditions": {PARTICLE_APPLIER_MAPPING[name]: applier_conditions},
                         "method": ParticleModifyMethod.PROJECTION,
