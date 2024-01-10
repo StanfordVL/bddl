@@ -464,17 +464,6 @@
         },
         "moldyable": {},
         "nonSubstance": {},
-        "particleApplier": {
-            "method": "projection",
-            "conditions": {
-                "air_freshener": [
-                    [
-                        "toggled_on",
-                        true
-                    ]
-                ]
-            }
-        },
         "rigidBody": {},
         "rustable": {},
         "scratchable": {},
@@ -35878,17 +35867,6 @@
         },
         "moldyable": {},
         "nonSubstance": {},
-        "particleApplier": {
-            "method": "projection",
-            "conditions": {
-                "deodorant": [
-                    [
-                        "toggled_on",
-                        true
-                    ]
-                ]
-            }
-        },
         "rigidBody": {},
         "rustable": {},
         "scratchable": {},
@@ -98726,42 +98704,6 @@
     "sausage.n.01": {
         "freezable": {},
         "heatable": {}
-    },
-    "savory_spice__shaker.n.01": {
-        "disinfectable": {},
-        "dustyable": {},
-        "freezable": {},
-        "grassyable": {},
-        "heatable": {
-            "heat_temperature": 40.0
-        },
-        "moldyable": {},
-        "needsOrientation": {},
-        "nonSubstance": {},
-        "particleApplier": {
-            "method": "projection",
-            "conditions": {
-                "savory_spice": [
-                    [
-                        "toggled_on",
-                        true
-                    ],
-                    [
-                        "gravity",
-                        true
-                    ]
-                ]
-            }
-        },
-        "rigidBody": {},
-        "rustable": {},
-        "scratchable": {},
-        "stainable": {},
-        "stickyable": {},
-        "tarnishable": {},
-        "toggleable": {},
-        "wetable": {},
-        "wrinkleable": {}
     },
     "saw.n.02": {
         "disinfectable": {},
