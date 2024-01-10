@@ -115,6 +115,12 @@ class TrivialSimulator(object):
     def set_state(self, literals): 
         """
         Given a set of non-contradictory parsed ground literals, set this backend to them. 
+        Also set implied predicates:
+            filled => contains
+            not contains => not filled 
+            ontop => nextto
+            not nextto => not ontop
+            TODO under? others? draped?
         """
         for literal in literals: 
             is_predicate = not(literal[0] == "not")
@@ -123,13 +129,22 @@ class TrivialSimulator(object):
                 print(f"Skipping inroom literal {literal}")
                 continue
             self.predicate_to_setters[predicate](tuple(objects), is_predicate)
+            # Entailed predicates 
+            if is_predicate and (predicate == "filled"):
+                self.predicate_to_setters["contains"](tuple(objects), True)
+            if (not is_predicate) and (predicate == "contains"):
+                self.predicate_to_setters["filled"](tuple(objects), False)
+            if is_predicate and (predicate == "ontop"):
+                self.predicate_to_setters["nextto"](tuple(objects), True)
+            if (not is_predicate) and (predicate == "nextto"):
+                self.predicate_to_setters["ontop"](tuple(objects), False)
 
     def set_cooked(self, objs, is_cooked):
         assert len(objs) == 1, f"`objs` has len other than 1: {objs}"
         if is_cooked: 
-            self.cooked.add(obj.name)
+            self.cooked.add(objs)
         else: 
-            self.cooked.discard(obj.name)
+            self.cooked.discard(objs)
     
     def get_cooked(self, objs):
         return tuple(obj.name for obj in objs) in self.cooked
