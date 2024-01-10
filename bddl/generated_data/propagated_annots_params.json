@@ -102,11 +102,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "acetone": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -465,11 +465,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "air_freshener": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -638,15 +638,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "allspice": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -769,11 +769,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "ammonia_water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -6799,7 +6799,7 @@
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -8087,7 +8087,7 @@
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -9389,7 +9389,7 @@
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -10371,11 +10371,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "bleaching_agent": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -20777,15 +20777,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "cayenne": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -23196,15 +23196,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "cinnamon": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -25498,11 +25498,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "conditioner": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -25529,11 +25529,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "conditioner": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -30671,15 +30671,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "coriander": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -32968,15 +32968,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "cream_of_tartar": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -33954,15 +33954,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "cumin": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -34154,15 +34154,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "curry_powder": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -35320,11 +35320,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "deodorant": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -35528,11 +35528,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "detergent": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -43897,11 +43897,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -46965,11 +46965,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "fertilizer": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -49764,15 +49764,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "ginger": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -62473,11 +62473,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "insectifuge": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -62635,11 +62635,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "isopropanol": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -63367,11 +63367,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "jam": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -68498,15 +68498,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "lemon_pepper_seasoning": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -74536,15 +74536,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "marjoram": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -78840,15 +78840,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "mustard_seed": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -80598,15 +80598,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "nutmeg": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -80895,15 +80895,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "onion_powder": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -84296,15 +84296,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "paprika": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -84427,15 +84427,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "parmesan": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -84488,15 +84488,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "parsley": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -85866,15 +85866,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "black_pepper": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -85901,11 +85901,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "black_pepper": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -86147,11 +86147,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "pesticide": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -95991,15 +95991,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "rosemary": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -96210,11 +96210,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "rubbing_alcohol": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -97087,15 +97087,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "saffron": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -97136,15 +97136,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "sage": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -97350,15 +97350,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "salt": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -98180,15 +98180,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "savory_spice": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -100467,11 +100467,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "sealant": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -100793,15 +100793,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "sesame_seed": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -100947,11 +100947,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "shampoo": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -104263,7 +104263,7 @@
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -106278,7 +106278,7 @@
             "conditions": {
                 "liquid_soap": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -109016,11 +109016,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "spray_paint": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -109185,7 +109185,7 @@
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -117130,15 +117130,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "thyme": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -122491,11 +122491,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "vinegar": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -123226,11 +123226,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -123257,11 +123257,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "water": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -123392,7 +123392,7 @@
             "conditions": {
                 "water": [
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -123711,15 +123711,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "whipped_cream": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]
@@ -123746,11 +123746,11 @@
         "moldyable": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "whipped_cream": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ]
                 ]
@@ -126655,15 +126655,15 @@
         "needsOrientation": {},
         "nonSubstance": {},
         "particleApplier": {
-            "method": 1,
+            "method": "projection",
             "conditions": {
                 "yeast": [
                     [
-                        2,
+                        "toggled_on",
                         true
                     ],
                     [
-                        3,
+                        "gravity",
                         true
                     ]
                 ]

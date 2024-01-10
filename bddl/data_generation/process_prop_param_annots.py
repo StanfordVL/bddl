@@ -180,9 +180,11 @@ def create_get_save_propagated_annots_params(syns_to_props):
                             formatted_conditions = []
                             for condition in conditions: 
                                 if condition == "gravity:True":
-                                    formatted_conditions.append((ParticleModifyCondition.GRAVITY, True))
+                                    # formatted_conditions.append((ParticleModifyCondition.GRAVITY, True))
+                                    formatted_conditions.append(("gravity", True))
                                 elif condition == "toggled_on:True":
-                                    formatted_conditions.append((ParticleModifyCondition.TOGGLEDON, True))
+                                    # formatted_conditions.append((ParticleModifyCondition.TOGGLEDON, True))
+                                    formatted_conditions.append(("toggled_on", True))
                                 else:
                                     raise ValueError(f"Synset {param_record['synset']} prop {prop} has unhandled condition {condition}")
                             formatted_param_value = {
@@ -198,7 +200,8 @@ def create_get_save_propagated_annots_params(syns_to_props):
                     # `method` values
                     elif param_name == "method": 
                         if (prop == "particleApplier") or (prop == "particleSource"):
-                            formatted_param_value = ParticleModifyMethod.PROJECTION
+                            # formatted_param_value = ParticleModifyMethod.PROJECTION
+                            formatted_param_value = "projection"
                         else:
                             raise ValueError(f"prop {prop} not handled for parameter name `method`")
                     
