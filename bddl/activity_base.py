@@ -100,19 +100,17 @@ class BEHAVIORActivityInstance(object):
             self.initial_conditions = compile_state(
                 [cond for cond in self.parsed_initial_conditions if cond[0]
                     not in ["inroom"]],
-                self,
                 scope=self.object_scope,
                 object_map=self.objects)
 
     def gen_goal_conditions(self):
         if bool(self.parsed_goal_conditions[0]):
             self.goal_conditions = compile_state(
-                self.parsed_goal_conditions, self, scope=self.object_scope, object_map=self.objects)
+                self.parsed_goal_conditions, scope=self.object_scope, object_map=self.objects)
 
     def gen_ground_goal_conditions(self):
         self.ground_goal_state_options = get_ground_state_options(
             self.goal_conditions,
-            self,
             scope=self.object_scope,
             object_map=self.objects)
         assert len(self.ground_goal_state_options) > 0
