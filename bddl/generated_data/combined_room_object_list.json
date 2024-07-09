@@ -33,7 +33,6 @@
                 "cup-fyrkzs": 4,
                 "tray-zcmnji": 1,
                 "fairy_light-waitum": 1,
-                "lantern-engbrg": 1,
                 "window-ulnafj": 12,
                 "window-ithrgo": 1,
                 "floors-umakgq": 1,
@@ -54,7 +53,8 @@
                 "fence-akeroe": 1,
                 "fence-qksssk": 1,
                 "fence-eoeeeo": 1,
-                "lawn-djekse": 1
+                "lawn-djekse": 1,
+                "lantern-engbrg": 1
             },
             "living_room_1": {
                 "door-lvncak": 1,
@@ -3156,7 +3156,8 @@
                 "walls-hcdfmx": 2,
                 "walls-jothjy": 2,
                 "walls-ztyvde": 2,
-                "ceilings-iyouhu": 2
+                "ceilings-iyouhu": 2,
+                "walls-urfnch": 2
             }
         },
         "grocery_store_half_stocked": {
@@ -3299,7 +3300,8 @@
                 "walls-hcdfmx": 2,
                 "walls-jothjy": 2,
                 "walls-ztyvde": 2,
-                "ceilings-iyouhu": 2
+                "ceilings-iyouhu": 2,
+                "walls-urfnch": 2
             }
         },
         "hall_arch_wood": {
@@ -3341,7 +3343,8 @@
                 "walls-hcdfmx": 2,
                 "walls-jothjy": 2,
                 "walls-ztyvde": 2,
-                "ceilings-iyouhu": 2
+                "ceilings-iyouhu": 2,
+                "walls-urfnch": 2
             }
         },
         "hall_conference_large": {
@@ -5177,7 +5180,12 @@
                 "door-gfrgkk": 1,
                 "door-xqxiyb": 1,
                 "door-ggcyib": 7,
-                "door-pwoerr": 10
+                "door-pwoerr": 10,
+                "floors-ojzcvk": 2,
+                "floors-glpnus": 2,
+                "floors-aruzuz": 1,
+                "floors-zegxds": 2,
+                "floors-besanj": 2
             },
             "shared_office_0": {
                 "projection_screen-dyhmgd": 7,
@@ -6591,7 +6599,8 @@
                 "walls-hcdfmx": 2,
                 "walls-jothjy": 2,
                 "walls-ztyvde": 2,
-                "ceilings-iyouhu": 2
+                "ceilings-iyouhu": 2,
+                "walls-urfnch": 2
             }
         },
         "restaurant_diner": {
@@ -6741,7 +6750,8 @@
                 "walls-hcdfmx": 2,
                 "walls-jothjy": 2,
                 "walls-ztyvde": 2,
-                "ceilings-iyouhu": 2
+                "ceilings-iyouhu": 2,
+                "walls-urfnch": 2
             }
         },
         "restaurant_hotel": {

@@ -7580,11 +7580,15 @@
         "document-uchhwn": "scenes/office_cubicles_left",
         "door-xqxiyb": "scenes/office_cubicles_left",
         "eames_chair-hpwusn": "scenes/office_cubicles_left",
+        "floors-aruzuz": "scenes/office_cubicles_left",
+        "floors-besanj": "scenes/office_cubicles_left",
+        "floors-glpnus": "scenes/office_cubicles_left",
         "floors-hgmnot": "scenes/office_cubicles_left",
         "floors-kraeyl": "scenes/office_cubicles_left",
         "floors-kxglcu": "scenes/office_cubicles_left",
         "floors-muywul": "scenes/office_cubicles_left",
         "floors-nhcbxy": "scenes/office_cubicles_left",
+        "floors-ojzcvk": "scenes/office_cubicles_left",
         "floors-oxwqrw": "scenes/office_cubicles_left",
         "floors-qtumre": "scenes/office_cubicles_left",
         "floors-tsqhlh": "scenes/office_cubicles_left",
@@ -7592,6 +7596,7 @@
         "floors-xmgdee": "scenes/office_cubicles_left",
         "floors-xubdst": "scenes/office_cubicles_left",
         "floors-ydhbul": "scenes/office_cubicles_left",
+        "floors-zegxds": "scenes/office_cubicles_left",
         "floors-znxlvq": "scenes/office_cubicles_left",
         "gooseneck_microphone-uusnbr": "scenes/office_cubicles_left",
         "hardback-hwhsfu": "scenes/office_cubicles_left",
@@ -8225,6 +8230,7 @@
         "walls-hcdfmx": "scenes/public_restroom_marble",
         "walls-jothjy": "scenes/public_restroom_marble",
         "walls-mdbihb": "scenes/public_restroom_marble",
+        "walls-urfnch": "scenes/public_restroom_marble",
         "walls-ztyvde": "scenes/public_restroom_marble",
         "alarm-nidjyp": "scenes/public_restroom_white",
         "ceilings-ggrrst": "scenes/public_restroom_white",
@@ -33130,6 +33136,15 @@
             "scenes/office_cubicles_left",
             "scenes/office_cubicles_right"
         ],
+        "floors-aruzuz": [
+            "scenes/office_cubicles_left"
+        ],
+        "floors-besanj": [
+            "scenes/office_cubicles_left"
+        ],
+        "floors-glpnus": [
+            "scenes/office_cubicles_left"
+        ],
         "floors-hgmnot": [
             "scenes/office_cubicles_left"
         ],
@@ -33143,6 +33158,9 @@
             "scenes/office_cubicles_left"
         ],
         "floors-nhcbxy": [
+            "scenes/office_cubicles_left"
+        ],
+        "floors-ojzcvk": [
             "scenes/office_cubicles_left"
         ],
         "floors-oxwqrw": [
@@ -33164,6 +33182,9 @@
             "scenes/office_cubicles_left"
         ],
         "floors-ydhbul": [
+            "scenes/office_cubicles_left"
+        ],
+        "floors-zegxds": [
             "scenes/office_cubicles_left"
         ],
         "floors-znxlvq": [
@@ -35064,6 +35085,9 @@
             "scenes/public_restroom_marble"
         ],
         "walls-mdbihb": [
+            "scenes/public_restroom_marble"
+        ],
+        "walls-urfnch": [
             "scenes/public_restroom_marble"
         ],
         "walls-ztyvde": [
@@ -45015,6 +45039,7 @@
             "collision"
         ],
         "photocopier-hemqez": [
+            "com",
             "togglebutton"
         ],
         "security_camera-bhsikv": [
@@ -45465,6 +45490,9 @@
         "treadmill-hhpgha": [
             "togglebutton"
         ],
+        "tree-fggodd": [
+            "com"
+        ],
         "vase-cvyops": [
             "fillable"
         ],
@@ -45769,6 +45797,7 @@
         ],
         "table_lamp-uzrovn": [
             "collision",
+            "com",
             "togglebutton"
         ],
         "teapot-jlalfc": [
@@ -47366,12 +47395,14 @@
             "togglebutton"
         ],
         "photocopier-ittctd": [
+            "com",
             "togglebutton"
         ],
         "plate-eixyyn": [
             "fillable"
         ],
         "table_lamp-qsajsm": [
+            "com",
             "togglebutton"
         ],
         "tray-zsddtq": [
@@ -47443,6 +47474,15 @@
         "desk_phone-kpxrpb": [
             "togglebutton"
         ],
+        "floors-aruzuz": [
+            "collision"
+        ],
+        "floors-besanj": [
+            "collision"
+        ],
+        "floors-glpnus": [
+            "collision"
+        ],
         "floors-hgmnot": [
             "collision"
         ],
@@ -47456,6 +47496,9 @@
             "collision"
         ],
         "floors-nhcbxy": [
+            "collision"
+        ],
+        "floors-ojzcvk": [
             "collision"
         ],
         "floors-oxwqrw": [
@@ -47477,6 +47520,9 @@
             "collision"
         ],
         "floors-ydhbul": [
+            "collision"
+        ],
+        "floors-zegxds": [
             "collision"
         ],
         "floors-znxlvq": [
@@ -47510,6 +47556,7 @@
             "togglebutton"
         ],
         "table_lamp-gycqmt": [
+            "com",
             "togglebutton"
         ],
         "walls-apmlgo": [
@@ -47814,6 +47861,7 @@
         ],
         "table_lamp-ehjsdz": [
             "attachment",
+            "com",
             "togglebutton"
         ],
         "wall_mounted_tv-aoqsbu": [
@@ -48124,6 +48172,7 @@
             "togglebutton"
         ],
         "floor_lamp-lnacuc": [
+            "com",
             "togglebutton"
         ],
         "floors-afezwc": [
@@ -48990,6 +49039,9 @@
         "walls-mdbihb": [
             "collision"
         ],
+        "walls-urfnch": [
+            "collision"
+        ],
         "walls-ztyvde": [
             "collision"
         ],
@@ -49740,6 +49792,7 @@
             "togglebutton"
         ],
         "floor_lamp-lcmuvd": [
+            "com",
             "togglebutton"
         ],
         "floors-koiduj": [
@@ -49787,6 +49840,7 @@
             "slicer"
         ],
         "table_lamp-ykhxso": [
+            "com",
             "togglebutton"
         ],
         "tray-hvlfig": [
@@ -50253,6 +50307,7 @@
             "togglebutton"
         ],
         "floor_lamp-hdfnqb": [
+            "com",
             "togglebutton"
         ],
         "floors-bijmgk": [
@@ -50746,6 +50801,9 @@
         ],
         "trash_can-mcukuh": [
             "fillable"
+        ],
+        "volleyball_net-ykiiqr": [
+            "com"
         ],
         "wall_clock-fqvgny": [
             "togglebutton"
