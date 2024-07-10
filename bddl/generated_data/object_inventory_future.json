@@ -1817,6 +1817,9 @@
         "wallet-lagjae": "objects/batch-13",
         "water_filter-bloifm": "objects/batch-13",
         "bottom_cabinet-songes": "objects/custom-aa",
+        "bowl-ycbbwl": "objects/custom-aa",
+        "canned_food-ycbspm": "objects/custom-aa",
+        "mug-ycbmug": "objects/custom-aa",
         "wardrobe-brimns": "objects/custom-aa",
         "apple-agveuv": "objects/legacy_batch-00",
         "apple-omzprq": "objects/legacy_batch-00",
@@ -14924,6 +14927,15 @@
             "objects/batch-13"
         ],
         "bottom_cabinet-songes": [
+            "objects/custom-aa"
+        ],
+        "bowl-ycbbwl": [
+            "objects/custom-aa"
+        ],
+        "canned_food-ycbspm": [
+            "objects/custom-aa"
+        ],
+        "mug-ycbmug": [
             "objects/custom-aa"
         ],
         "wardrobe-brimns": [
@@ -39653,6 +39665,12 @@
         "tuna-xkjged": [
             "subpart"
         ],
+        "bottom_cabinet-songes": [
+            "collision"
+        ],
+        "wardrobe-brimns": [
+            "collision"
+        ],
         "bottom_cabinet-bycegi": [
             "collision"
         ],
@@ -42871,6 +42889,7 @@
             "collision"
         ],
         "floor_lamp-smfygn": [
+            "com",
             "togglebutton"
         ],
         "floors-cdzqdq": [
@@ -43188,8 +43207,33 @@
         "background-zqogsh": [
             "collision"
         ],
+        "bush-jivsft": [
+            "com"
+        ],
+        "bush-jonbyb": [
+            "com"
+        ],
+        "bush-jylruu": [
+            "com"
+        ],
+        "bush-llcsvc": [
+            "com"
+        ],
+        "bush-nhorlu": [
+            "com"
+        ],
+        "bush-rkxgdi": [
+            "com"
+        ],
+        "bush-ujrbvp": [
+            "com"
+        ],
         "bush-waafqw": [
-            "attachment"
+            "attachment",
+            "com"
+        ],
+        "bush-zwhhlc": [
+            "com"
         ],
         "car-supuws": [
             "togglebutton"
@@ -43228,6 +43272,7 @@
             "collision"
         ],
         "floor_lamp-chjeoy": [
+            "com",
             "togglebutton"
         ],
         "floors-atsekq": [
@@ -43845,6 +43890,12 @@
         "background-miopfw": [
             "collision"
         ],
+        "bush-hobkxy": [
+            "com"
+        ],
+        "bush-ysfopl": [
+            "com"
+        ],
         "car-xxsgpq": [
             "attachment"
         ],
@@ -43952,6 +44003,18 @@
         ],
         "floors-yfunln": [
             "collision"
+        ],
+        "garden_plant-dgqylq": [
+            "com"
+        ],
+        "garden_plant-itktex": [
+            "com"
+        ],
+        "garden_plant-kyitvo": [
+            "com"
+        ],
+        "garden_plant-phowza": [
+            "com"
         ],
         "lawn-qaedpx": [
             "collision"
