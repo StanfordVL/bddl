@@ -39994,5 +39994,11 @@
         "rustable": {},
         "wrinkleable": {},
         "disinfectable": {}
+    },
+    "sludge.n.02": {
+        "liquid": {},
+        "boilable": {},
+        "substance": {},
+        "physicalSubstance": {}
     }
 }

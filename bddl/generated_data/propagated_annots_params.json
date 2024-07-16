@@ -96360,6 +96360,12 @@
         "wetable": {},
         "wrinkleable": {}
     },
+    "sludge.n.02": {
+        "boilable": {},
+        "liquid": {},
+        "physicalSubstance": {},
+        "substance": {}
+    },
     "small_boat.n.01": {
         "disinfectable": {},
         "dustyable": {},

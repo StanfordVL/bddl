@@ -30923,6 +30923,13 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "sludge.n.02",
+              "hasModel": true,
+              "substances": [
+                "sludge"
+              ]
             }
           ]
         },
