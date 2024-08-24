@@ -7962,6 +7962,19 @@
                           "hasModel": true,
                           "children": [
                             {
+                              "name": "coat_of_paint.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "flat_coat.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "flat_coat"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
                               "name": "paint.n.01",
                               "hasModel": true,
                               "children": [
@@ -7996,19 +8009,6 @@
                                   ],
                                   "substances": [
                                     "spray_paint"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "coat_of_paint.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "flat_coat.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "flat_coat"
                                   ]
                                 }
                               ]
