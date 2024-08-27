@@ -7962,19 +7962,6 @@
                           "hasModel": true,
                           "children": [
                             {
-                              "name": "coat_of_paint.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "flat_coat.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "flat_coat"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
                               "name": "paint.n.01",
                               "hasModel": true,
                               "children": [
@@ -8009,6 +7996,19 @@
                                   ],
                                   "substances": [
                                     "spray_paint"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "coat_of_paint.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "flat_coat.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "flat_coat"
                                   ]
                                 }
                               ]
@@ -20358,194 +20358,6 @@
                           ]
                         },
                         {
-                          "name": "grain.n.02",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "rice.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "arborio_rice.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "arborio_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "brown_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "brown_rice"
-                                  ],
-                                  "substances": [
-                                    "brown_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__brown_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "cooked__brown_rice"
-                                  ],
-                                  "substances": [
-                                    "cooked__brown_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__white_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "cooked__white_rice"
-                                  ],
-                                  "substances": [
-                                    "cooked__white_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "tomato_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "tomato_rice"
-                                  ],
-                                  "substances": [
-                                    "tomato_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "white_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "white_rice"
-                                  ],
-                                  "substances": [
-                                    "white_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__arborio_rice.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "cooked__arborio_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__tomato_rice.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "cooked__tomato_rice"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "corn.n.03",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "cooked__popcorn.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "cooked__popcorn"
-                                  ],
-                                  "substances": [
-                                    "cooked__popcorn"
-                                  ]
-                                },
-                                {
-                                  "name": "popcorn.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "popcorn"
-                                  ],
-                                  "substances": [
-                                    "popcorn"
-                                  ]
-                                },
-                                {
-                                  "name": "sweet_corn.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "sweet_corn"
-                                  ]
-                                },
-                                {
-                                  "name": "half__sweet_corn.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "half_sweet_corn"
-                                  ]
-                                },
-                                {
-                                  "name": "diced__sweet_corn.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "diced__sweet_corn"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__diced__sweet_corn.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "cooked__diced__sweet_corn"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "cooked__quinoa.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "cooked__quinoa"
-                              ],
-                              "substances": [
-                                "cooked__quinoa"
-                              ]
-                            },
-                            {
-                              "name": "oat.n.02",
-                              "hasModel": true,
-                              "categories": [
-                                "oat"
-                              ],
-                              "substances": [
-                                "oat"
-                              ]
-                            },
-                            {
-                              "name": "quinoa.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "quinoa"
-                              ],
-                              "substances": [
-                                "quinoa"
-                              ]
-                            },
-                            {
-                              "name": "wheat.n.02",
-                              "hasModel": true,
-                              "substances": [
-                                "wheat"
-                              ]
-                            },
-                            {
-                              "name": "cooked__oat.n.01",
-                              "hasModel": true,
-                              "substances": [
-                                "cooked__oat"
-                              ]
-                            },
-                            {
-                              "name": "cooked__wheat.n.01",
-                              "hasModel": true,
-                              "substances": [
-                                "cooked__wheat"
-                              ]
-                            }
-                          ]
-                        },
-                        {
                           "name": "starches.n.01",
                           "hasModel": true,
                           "children": [
@@ -21256,6 +21068,194 @@
                               "hasModel": true,
                               "substances": [
                                 "cooked__mashed_potato"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "grain.n.02",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "rice.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "arborio_rice.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "arborio_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "brown_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "brown_rice"
+                                  ],
+                                  "substances": [
+                                    "brown_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__brown_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooked__brown_rice"
+                                  ],
+                                  "substances": [
+                                    "cooked__brown_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__white_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooked__white_rice"
+                                  ],
+                                  "substances": [
+                                    "cooked__white_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "tomato_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "tomato_rice"
+                                  ],
+                                  "substances": [
+                                    "tomato_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "white_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "white_rice"
+                                  ],
+                                  "substances": [
+                                    "white_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__arborio_rice.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "cooked__arborio_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__tomato_rice.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "cooked__tomato_rice"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "corn.n.03",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "cooked__popcorn.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooked__popcorn"
+                                  ],
+                                  "substances": [
+                                    "cooked__popcorn"
+                                  ]
+                                },
+                                {
+                                  "name": "popcorn.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "popcorn"
+                                  ],
+                                  "substances": [
+                                    "popcorn"
+                                  ]
+                                },
+                                {
+                                  "name": "sweet_corn.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "sweet_corn"
+                                  ]
+                                },
+                                {
+                                  "name": "half__sweet_corn.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "half_sweet_corn"
+                                  ]
+                                },
+                                {
+                                  "name": "diced__sweet_corn.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "diced__sweet_corn"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__diced__sweet_corn.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "cooked__diced__sweet_corn"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "cooked__quinoa.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "cooked__quinoa"
+                              ],
+                              "substances": [
+                                "cooked__quinoa"
+                              ]
+                            },
+                            {
+                              "name": "oat.n.02",
+                              "hasModel": true,
+                              "categories": [
+                                "oat"
+                              ],
+                              "substances": [
+                                "oat"
+                              ]
+                            },
+                            {
+                              "name": "quinoa.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "quinoa"
+                              ],
+                              "substances": [
+                                "quinoa"
+                              ]
+                            },
+                            {
+                              "name": "wheat.n.02",
+                              "hasModel": true,
+                              "substances": [
+                                "wheat"
+                              ]
+                            },
+                            {
+                              "name": "cooked__oat.n.01",
+                              "hasModel": true,
+                              "substances": [
+                                "cooked__oat"
+                              ]
+                            },
+                            {
+                              "name": "cooked__wheat.n.01",
+                              "hasModel": true,
+                              "substances": [
+                                "cooked__wheat"
                               ]
                             }
                           ]
