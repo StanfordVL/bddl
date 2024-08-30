@@ -7080,6 +7080,1043 @@
                       ]
                     },
                     {
+                      "name": "covering.n.02",
+                      "hasModel": true,
+                      "children": [
+                        {
+                          "name": "clothing.n.01",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "protective_garment.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "apron.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "apron"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "headdress.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "cap.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "baseball_cap.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "baseball_cap"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "hat.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "hat"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "handwear.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "glove.n.02",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "batting_glove.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "batting_gloves"
+                                      ]
+                                    },
+                                    {
+                                      "name": "goalkeeper_gloves.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "goalkeeper_gloves"
+                                      ]
+                                    },
+                                    {
+                                      "name": "kid_glove.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "kid_glove"
+                                      ]
+                                    },
+                                    {
+                                      "name": "rubber_glove.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "rubber_glove"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "accessory.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "belt.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "belt"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "garment.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "swimsuit.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "bikini.n.02",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "bikini"
+                                      ]
+                                    },
+                                    {
+                                      "name": "maillot.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "maillot"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "undergarment.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "brassiere.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "bra"
+                                      ]
+                                    },
+                                    {
+                                      "name": "underpants.n.01",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "drawers.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "boxers"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "underwear.n.01",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "lingerie.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "lingerie"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "sweater.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "cardigan.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "cardigan"
+                                      ]
+                                    },
+                                    {
+                                      "name": "crewneck_sweater.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "crewneck_sweater"
+                                      ]
+                                    },
+                                    {
+                                      "name": "pullover.n.01",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "sweatshirt.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "hoodie",
+                                            "sweatshirt"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "diaper.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "diaper"
+                                  ]
+                                },
+                                {
+                                  "name": "shirt.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "dress_shirt.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "dress_shirt"
+                                      ]
+                                    },
+                                    {
+                                      "name": "jersey.n.03",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "jersey",
+                                        "t_shirt"
+                                      ]
+                                    },
+                                    {
+                                      "name": "polo_shirt.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "polo_shirt"
+                                      ]
+                                    },
+                                    {
+                                      "name": "tank_top.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "tank_top"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "overgarment.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "coat.n.01",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "fur_coat.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "fur_coat"
+                                          ]
+                                        },
+                                        {
+                                          "name": "jacket.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "jacket"
+                                          ]
+                                        },
+                                        {
+                                          "name": "raincoat.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "raincoat"
+                                          ]
+                                        },
+                                        {
+                                          "name": "wool_coat.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "wool_coat"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "name": "cloak.n.02",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "shawl.n.01",
+                                          "hasModel": true
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "trouser.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "jean.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "jeans"
+                                      ]
+                                    },
+                                    {
+                                      "name": "long_trousers.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "pants"
+                                      ]
+                                    },
+                                    {
+                                      "name": "short_pants.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "shorts"
+                                      ]
+                                    },
+                                    {
+                                      "name": "slacks.n.01",
+                                      "hasModel": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "jump_suit.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "onesie"
+                                  ]
+                                },
+                                {
+                                  "name": "legging.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "legging"
+                                  ]
+                                },
+                                {
+                                  "name": "leotard.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "leotard"
+                                  ]
+                                },
+                                {
+                                  "name": "neckwear.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "necktie.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "necktie"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "scarf.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "scarf"
+                                  ]
+                                },
+                                {
+                                  "name": "suit.n.01",
+                                  "hasModel": true
+                                },
+                                {
+                                  "name": "sweat_suit.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "sauna_suit"
+                                  ]
+                                },
+                                {
+                                  "name": "vest.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "vest"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "woman's_clothing.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "top.n.10",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "blouse.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "blouse"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "brassiere.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "bra"
+                                  ]
+                                },
+                                {
+                                  "name": "dress.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "dress"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "attire.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "costume.n.01",
+                                  "hasModel": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "outerwear.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "gown.n.05",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "ceremonial_robe"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "apparel.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "workwear.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "jean.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "jeans"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "work-clothing.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "overall.n.01",
+                                  "hasModel": true
+                                }
+                              ]
+                            },
+                            {
+                              "name": "nightwear.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "pajama.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "pajamas"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "footwear.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "hosiery.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "sock.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "sock"
+                                      ]
+                                    },
+                                    {
+                                      "name": "stocking.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "stocking"
+                                      ]
+                                    },
+                                    {
+                                      "name": "tights.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "tights"
+                                      ]
+                                    },
+                                    {
+                                      "name": "christmas_stocking.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "christmas_stocking"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "footwear.n.02",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "shoe.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "baby_shoe.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "baby_shoe"
+                                  ]
+                                },
+                                {
+                                  "name": "gym_shoe.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "gym_shoe"
+                                  ]
+                                },
+                                {
+                                  "name": "sandal.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "sandal"
+                                  ]
+                                },
+                                {
+                                  "name": "slingback.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "slingback"
+                                  ]
+                                },
+                                {
+                                  "name": "walker.n.04",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "walker"
+                                  ]
+                                },
+                                {
+                                  "name": "walking_shoe.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "walking_shoe"
+                                  ]
+                                },
+                                {
+                                  "name": "pump.n.03",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "high_heel"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "boot.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "buskin.n.01",
+                                  "hasModel": true
+                                },
+                                {
+                                  "name": "hiking_boot.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "hiking_boot"
+                                  ]
+                                },
+                                {
+                                  "name": "rubber_boot.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "rubber_boot"
+                                  ]
+                                },
+                                {
+                                  "name": "ski_boot.n.01",
+                                  "hasModel": true
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "cloth_covering.n.01",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "dressing.n.04",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "bandage.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "bandage"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "bedclothes.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "blanket.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "blanket"
+                                  ]
+                                },
+                                {
+                                  "name": "mattress_cover.n.01",
+                                  "hasModel": true
+                                },
+                                {
+                                  "name": "quilt.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "quilt"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "skirt.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "skirt"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "protective_covering.n.01",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "binder.n.03",
+                              "hasModel": true,
+                              "categories": [
+                                "binder"
+                              ]
+                            },
+                            {
+                              "name": "housing.n.02",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "cabinet.n.04",
+                                  "hasModel": true
+                                },
+                                {
+                                  "name": "shell.n.08",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "jacket.n.05",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "pellet"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "cloche.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "cloche"
+                              ]
+                            },
+                            {
+                              "name": "coaster.n.03",
+                              "hasModel": true,
+                              "categories": [
+                                "coaster"
+                              ]
+                            },
+                            {
+                              "name": "blind.n.03",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "curtain.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "curtain"
+                                  ]
+                                },
+                                {
+                                  "name": "shutter.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "shutter"
+                                  ]
+                                },
+                                {
+                                  "name": "window_blind.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "window_blind"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "mask.n.04",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "face_mask.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "face_mask"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "shelter.n.02",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "canopy.n.03",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "garden_umbrella.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "garden_umbrella"
+                                      ]
+                                    },
+                                    {
+                                      "name": "umbrella.n.01",
+                                      "hasModel": true,
+                                      "categories": [
+                                        "umbrella"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "shield.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "plate.n.14",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "armor_plate.n.01",
+                                      "hasModel": true,
+                                      "children": [
+                                        {
+                                          "name": "helmet.n.01",
+                                          "hasModel": true,
+                                          "categories": [
+                                            "work_helmet"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "shade.n.03",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "lampshade.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "lampshade"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "lining.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "paper_liners"
+                              ]
+                            },
+                            {
+                              "name": "screen.n.05",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "lint_screen.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "lint_screen"
+                                  ]
+                                },
+                                {
+                                  "name": "windshield.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "windshield"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "mulch.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "mulch"
+                              ],
+                              "substances": [
+                                "mulch"
+                              ]
+                            },
+                            {
+                              "name": "roof.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "roof"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "top.n.09",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "cap.n.02",
+                              "hasModel": true,
+                              "categories": [
+                                "cap"
+                              ]
+                            },
+                            {
+                              "name": "lid.n.02",
+                              "hasModel": true,
+                              "categories": [
+                                "lid"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "coating.n.01",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "paint.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "coat_of_paint.n.01",
+                                  "hasModel": true,
+                                  "children": [
+                                    {
+                                      "name": "flat_coat.n.01",
+                                      "hasModel": true,
+                                      "substances": [
+                                        "flat_coat"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "house_paint.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "house_paint"
+                                  ],
+                                  "substances": [
+                                    "house_paint"
+                                  ]
+                                },
+                                {
+                                  "name": "spray_paint.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "spray_paint"
+                                  ],
+                                  "substances": [
+                                    "spray_paint"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "coat_of_paint.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "flat_coat.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "flat_coat"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "enamel.n.04",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "nail_polish.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "nail_polish"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "patina.n.01",
+                              "hasModel": true,
+                              "substances": [
+                                "patina"
+                              ]
+                            },
+                            {
+                              "name": "seal.n.07",
+                              "hasModel": true,
+                              "substances": [
+                                "seal"
+                              ]
+                            },
+                            {
+                              "name": "varnish.n.01",
+                              "hasModel": true,
+                              "substances": [
+                                "varnish"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "folder.n.02",
+                          "hasModel": true,
+                          "categories": [
+                            "folder"
+                          ]
+                        },
+                        {
+                          "name": "hood.n.06",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "lab_exhaust_hood.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "lab_exhaust_hood"
+                              ]
+                            },
+                            {
+                              "name": "range_hood.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "range_hood"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "floor_cover.n.01",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "mat.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "floor_mat",
+                                "mat"
+                              ]
+                            },
+                            {
+                              "name": "rug.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "carpet"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "wrapping.n.01",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "plastic_wrap.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "plastic_wrap"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "screen.n.04",
+                          "hasModel": true
+                        }
+                      ]
+                    },
+                    {
                       "name": "commodity.n.01",
                       "hasModel": true,
                       "children": [
@@ -9779,1043 +10816,6 @@
                               ]
                             }
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      "name": "covering.n.02",
-                      "hasModel": true,
-                      "children": [
-                        {
-                          "name": "clothing.n.01",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "protective_garment.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "apron.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "apron"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "headdress.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "cap.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "baseball_cap.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "baseball_cap"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "hat.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "hat"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "handwear.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "glove.n.02",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "batting_glove.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "batting_gloves"
-                                      ]
-                                    },
-                                    {
-                                      "name": "goalkeeper_gloves.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "goalkeeper_gloves"
-                                      ]
-                                    },
-                                    {
-                                      "name": "kid_glove.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "kid_glove"
-                                      ]
-                                    },
-                                    {
-                                      "name": "rubber_glove.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "rubber_glove"
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "accessory.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "belt.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "belt"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "garment.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "swimsuit.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "bikini.n.02",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "bikini"
-                                      ]
-                                    },
-                                    {
-                                      "name": "maillot.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "maillot"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "undergarment.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "brassiere.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "bra"
-                                      ]
-                                    },
-                                    {
-                                      "name": "underpants.n.01",
-                                      "hasModel": true,
-                                      "children": [
-                                        {
-                                          "name": "drawers.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "boxers"
-                                          ]
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "name": "underwear.n.01",
-                                      "hasModel": true,
-                                      "children": [
-                                        {
-                                          "name": "lingerie.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "lingerie"
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "sweater.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "cardigan.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "cardigan"
-                                      ]
-                                    },
-                                    {
-                                      "name": "crewneck_sweater.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "crewneck_sweater"
-                                      ]
-                                    },
-                                    {
-                                      "name": "pullover.n.01",
-                                      "hasModel": true,
-                                      "children": [
-                                        {
-                                          "name": "sweatshirt.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "hoodie",
-                                            "sweatshirt"
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "diaper.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "diaper"
-                                  ]
-                                },
-                                {
-                                  "name": "shirt.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "dress_shirt.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "dress_shirt"
-                                      ]
-                                    },
-                                    {
-                                      "name": "jersey.n.03",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "jersey",
-                                        "t_shirt"
-                                      ]
-                                    },
-                                    {
-                                      "name": "polo_shirt.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "polo_shirt"
-                                      ]
-                                    },
-                                    {
-                                      "name": "tank_top.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "tank_top"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "overgarment.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "coat.n.01",
-                                      "hasModel": true,
-                                      "children": [
-                                        {
-                                          "name": "fur_coat.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "fur_coat"
-                                          ]
-                                        },
-                                        {
-                                          "name": "jacket.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "jacket"
-                                          ]
-                                        },
-                                        {
-                                          "name": "raincoat.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "raincoat"
-                                          ]
-                                        },
-                                        {
-                                          "name": "wool_coat.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "wool_coat"
-                                          ]
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "name": "cloak.n.02",
-                                      "hasModel": true,
-                                      "children": [
-                                        {
-                                          "name": "shawl.n.01",
-                                          "hasModel": true
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "trouser.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "jean.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "jeans"
-                                      ]
-                                    },
-                                    {
-                                      "name": "long_trousers.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "pants"
-                                      ]
-                                    },
-                                    {
-                                      "name": "short_pants.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "shorts"
-                                      ]
-                                    },
-                                    {
-                                      "name": "slacks.n.01",
-                                      "hasModel": true
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "jump_suit.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "onesie"
-                                  ]
-                                },
-                                {
-                                  "name": "legging.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "legging"
-                                  ]
-                                },
-                                {
-                                  "name": "leotard.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "leotard"
-                                  ]
-                                },
-                                {
-                                  "name": "neckwear.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "necktie.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "necktie"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "scarf.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "scarf"
-                                  ]
-                                },
-                                {
-                                  "name": "suit.n.01",
-                                  "hasModel": true
-                                },
-                                {
-                                  "name": "sweat_suit.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "sauna_suit"
-                                  ]
-                                },
-                                {
-                                  "name": "vest.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "vest"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "woman's_clothing.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "top.n.10",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "blouse.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "blouse"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "brassiere.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "bra"
-                                  ]
-                                },
-                                {
-                                  "name": "dress.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "dress"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "attire.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "costume.n.01",
-                                  "hasModel": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "outerwear.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "gown.n.05",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "ceremonial_robe"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "apparel.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "workwear.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "jean.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "jeans"
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "work-clothing.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "overall.n.01",
-                                  "hasModel": true
-                                }
-                              ]
-                            },
-                            {
-                              "name": "nightwear.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "pajama.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "pajamas"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "footwear.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "hosiery.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "sock.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "sock"
-                                      ]
-                                    },
-                                    {
-                                      "name": "stocking.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "stocking"
-                                      ]
-                                    },
-                                    {
-                                      "name": "tights.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "tights"
-                                      ]
-                                    },
-                                    {
-                                      "name": "christmas_stocking.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "christmas_stocking"
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "footwear.n.02",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "shoe.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "baby_shoe.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "baby_shoe"
-                                  ]
-                                },
-                                {
-                                  "name": "gym_shoe.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "gym_shoe"
-                                  ]
-                                },
-                                {
-                                  "name": "sandal.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "sandal"
-                                  ]
-                                },
-                                {
-                                  "name": "slingback.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "slingback"
-                                  ]
-                                },
-                                {
-                                  "name": "walker.n.04",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "walker"
-                                  ]
-                                },
-                                {
-                                  "name": "walking_shoe.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "walking_shoe"
-                                  ]
-                                },
-                                {
-                                  "name": "pump.n.03",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "high_heel"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "boot.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "buskin.n.01",
-                                  "hasModel": true
-                                },
-                                {
-                                  "name": "hiking_boot.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "hiking_boot"
-                                  ]
-                                },
-                                {
-                                  "name": "rubber_boot.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "rubber_boot"
-                                  ]
-                                },
-                                {
-                                  "name": "ski_boot.n.01",
-                                  "hasModel": true
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "cloth_covering.n.01",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "dressing.n.04",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "bandage.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "bandage"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "bedclothes.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "blanket.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "blanket"
-                                  ]
-                                },
-                                {
-                                  "name": "mattress_cover.n.01",
-                                  "hasModel": true
-                                },
-                                {
-                                  "name": "quilt.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "quilt"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "skirt.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "skirt"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "protective_covering.n.01",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "binder.n.03",
-                              "hasModel": true,
-                              "categories": [
-                                "binder"
-                              ]
-                            },
-                            {
-                              "name": "housing.n.02",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "cabinet.n.04",
-                                  "hasModel": true
-                                },
-                                {
-                                  "name": "shell.n.08",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "jacket.n.05",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "pellet"
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "cloche.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "cloche"
-                              ]
-                            },
-                            {
-                              "name": "coaster.n.03",
-                              "hasModel": true,
-                              "categories": [
-                                "coaster"
-                              ]
-                            },
-                            {
-                              "name": "blind.n.03",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "curtain.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "curtain"
-                                  ]
-                                },
-                                {
-                                  "name": "shutter.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "shutter"
-                                  ]
-                                },
-                                {
-                                  "name": "window_blind.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "window_blind"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "mask.n.04",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "face_mask.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "face_mask"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "shelter.n.02",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "canopy.n.03",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "garden_umbrella.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "garden_umbrella"
-                                      ]
-                                    },
-                                    {
-                                      "name": "umbrella.n.01",
-                                      "hasModel": true,
-                                      "categories": [
-                                        "umbrella"
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "shield.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "plate.n.14",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "armor_plate.n.01",
-                                      "hasModel": true,
-                                      "children": [
-                                        {
-                                          "name": "helmet.n.01",
-                                          "hasModel": true,
-                                          "categories": [
-                                            "work_helmet"
-                                          ]
-                                        }
-                                      ]
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "shade.n.03",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "lampshade.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "lampshade"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "lining.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "paper_liners"
-                              ]
-                            },
-                            {
-                              "name": "screen.n.05",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "lint_screen.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "lint_screen"
-                                  ]
-                                },
-                                {
-                                  "name": "windshield.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "windshield"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "mulch.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "mulch"
-                              ],
-                              "substances": [
-                                "mulch"
-                              ]
-                            },
-                            {
-                              "name": "roof.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "roof"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "top.n.09",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "cap.n.02",
-                              "hasModel": true,
-                              "categories": [
-                                "cap"
-                              ]
-                            },
-                            {
-                              "name": "lid.n.02",
-                              "hasModel": true,
-                              "categories": [
-                                "lid"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "coating.n.01",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "paint.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "coat_of_paint.n.01",
-                                  "hasModel": true,
-                                  "children": [
-                                    {
-                                      "name": "flat_coat.n.01",
-                                      "hasModel": true,
-                                      "substances": [
-                                        "flat_coat"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                {
-                                  "name": "house_paint.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "house_paint"
-                                  ],
-                                  "substances": [
-                                    "house_paint"
-                                  ]
-                                },
-                                {
-                                  "name": "spray_paint.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "spray_paint"
-                                  ],
-                                  "substances": [
-                                    "spray_paint"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "coat_of_paint.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "flat_coat.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "flat_coat"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "enamel.n.04",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "nail_polish.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "nail_polish"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "patina.n.01",
-                              "hasModel": true,
-                              "substances": [
-                                "patina"
-                              ]
-                            },
-                            {
-                              "name": "seal.n.07",
-                              "hasModel": true,
-                              "substances": [
-                                "seal"
-                              ]
-                            },
-                            {
-                              "name": "varnish.n.01",
-                              "hasModel": true,
-                              "substances": [
-                                "varnish"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "folder.n.02",
-                          "hasModel": true,
-                          "categories": [
-                            "folder"
-                          ]
-                        },
-                        {
-                          "name": "hood.n.06",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "lab_exhaust_hood.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "lab_exhaust_hood"
-                              ]
-                            },
-                            {
-                              "name": "range_hood.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "range_hood"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "floor_cover.n.01",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "mat.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "floor_mat",
-                                "mat"
-                              ]
-                            },
-                            {
-                              "name": "rug.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "carpet"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "wrapping.n.01",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "plastic_wrap.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "plastic_wrap"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "screen.n.04",
-                          "hasModel": true
                         }
                       ]
                     },
@@ -20358,6 +20358,194 @@
                           ]
                         },
                         {
+                          "name": "grain.n.02",
+                          "hasModel": true,
+                          "children": [
+                            {
+                              "name": "rice.n.01",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "arborio_rice.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "arborio_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "brown_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "brown_rice"
+                                  ],
+                                  "substances": [
+                                    "brown_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__brown_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooked__brown_rice"
+                                  ],
+                                  "substances": [
+                                    "cooked__brown_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__white_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooked__white_rice"
+                                  ],
+                                  "substances": [
+                                    "cooked__white_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "tomato_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "tomato_rice"
+                                  ],
+                                  "substances": [
+                                    "tomato_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "white_rice.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "white_rice"
+                                  ],
+                                  "substances": [
+                                    "white_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__arborio_rice.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "cooked__arborio_rice"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__tomato_rice.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "cooked__tomato_rice"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "corn.n.03",
+                              "hasModel": true,
+                              "children": [
+                                {
+                                  "name": "cooked__popcorn.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "cooked__popcorn"
+                                  ],
+                                  "substances": [
+                                    "cooked__popcorn"
+                                  ]
+                                },
+                                {
+                                  "name": "popcorn.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "popcorn"
+                                  ],
+                                  "substances": [
+                                    "popcorn"
+                                  ]
+                                },
+                                {
+                                  "name": "sweet_corn.n.02",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "sweet_corn"
+                                  ]
+                                },
+                                {
+                                  "name": "half__sweet_corn.n.01",
+                                  "hasModel": true,
+                                  "categories": [
+                                    "half_sweet_corn"
+                                  ]
+                                },
+                                {
+                                  "name": "diced__sweet_corn.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "diced__sweet_corn"
+                                  ]
+                                },
+                                {
+                                  "name": "cooked__diced__sweet_corn.n.01",
+                                  "hasModel": true,
+                                  "substances": [
+                                    "cooked__diced__sweet_corn"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "cooked__quinoa.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "cooked__quinoa"
+                              ],
+                              "substances": [
+                                "cooked__quinoa"
+                              ]
+                            },
+                            {
+                              "name": "oat.n.02",
+                              "hasModel": true,
+                              "categories": [
+                                "oat"
+                              ],
+                              "substances": [
+                                "oat"
+                              ]
+                            },
+                            {
+                              "name": "quinoa.n.01",
+                              "hasModel": true,
+                              "categories": [
+                                "quinoa"
+                              ],
+                              "substances": [
+                                "quinoa"
+                              ]
+                            },
+                            {
+                              "name": "wheat.n.02",
+                              "hasModel": true,
+                              "substances": [
+                                "wheat"
+                              ]
+                            },
+                            {
+                              "name": "cooked__oat.n.01",
+                              "hasModel": true,
+                              "substances": [
+                                "cooked__oat"
+                              ]
+                            },
+                            {
+                              "name": "cooked__wheat.n.01",
+                              "hasModel": true,
+                              "substances": [
+                                "cooked__wheat"
+                              ]
+                            }
+                          ]
+                        },
+                        {
                           "name": "starches.n.01",
                           "hasModel": true,
                           "children": [
@@ -21068,194 +21256,6 @@
                               "hasModel": true,
                               "substances": [
                                 "cooked__mashed_potato"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "name": "grain.n.02",
-                          "hasModel": true,
-                          "children": [
-                            {
-                              "name": "rice.n.01",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "arborio_rice.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "arborio_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "brown_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "brown_rice"
-                                  ],
-                                  "substances": [
-                                    "brown_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__brown_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "cooked__brown_rice"
-                                  ],
-                                  "substances": [
-                                    "cooked__brown_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__white_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "cooked__white_rice"
-                                  ],
-                                  "substances": [
-                                    "cooked__white_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "tomato_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "tomato_rice"
-                                  ],
-                                  "substances": [
-                                    "tomato_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "white_rice.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "white_rice"
-                                  ],
-                                  "substances": [
-                                    "white_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__arborio_rice.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "cooked__arborio_rice"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__tomato_rice.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "cooked__tomato_rice"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "corn.n.03",
-                              "hasModel": true,
-                              "children": [
-                                {
-                                  "name": "cooked__popcorn.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "cooked__popcorn"
-                                  ],
-                                  "substances": [
-                                    "cooked__popcorn"
-                                  ]
-                                },
-                                {
-                                  "name": "popcorn.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "popcorn"
-                                  ],
-                                  "substances": [
-                                    "popcorn"
-                                  ]
-                                },
-                                {
-                                  "name": "sweet_corn.n.02",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "sweet_corn"
-                                  ]
-                                },
-                                {
-                                  "name": "half__sweet_corn.n.01",
-                                  "hasModel": true,
-                                  "categories": [
-                                    "half_sweet_corn"
-                                  ]
-                                },
-                                {
-                                  "name": "diced__sweet_corn.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "diced__sweet_corn"
-                                  ]
-                                },
-                                {
-                                  "name": "cooked__diced__sweet_corn.n.01",
-                                  "hasModel": true,
-                                  "substances": [
-                                    "cooked__diced__sweet_corn"
-                                  ]
-                                }
-                              ]
-                            },
-                            {
-                              "name": "cooked__quinoa.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "cooked__quinoa"
-                              ],
-                              "substances": [
-                                "cooked__quinoa"
-                              ]
-                            },
-                            {
-                              "name": "oat.n.02",
-                              "hasModel": true,
-                              "categories": [
-                                "oat"
-                              ],
-                              "substances": [
-                                "oat"
-                              ]
-                            },
-                            {
-                              "name": "quinoa.n.01",
-                              "hasModel": true,
-                              "categories": [
-                                "quinoa"
-                              ],
-                              "substances": [
-                                "quinoa"
-                              ]
-                            },
-                            {
-                              "name": "wheat.n.02",
-                              "hasModel": true,
-                              "substances": [
-                                "wheat"
-                              ]
-                            },
-                            {
-                              "name": "cooked__oat.n.01",
-                              "hasModel": true,
-                              "substances": [
-                                "cooked__oat"
-                              ]
-                            },
-                            {
-                              "name": "cooked__wheat.n.01",
-                              "hasModel": true,
-                              "substances": [
-                                "cooked__wheat"
                               ]
                             }
                           ]
