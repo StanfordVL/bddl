@@ -1,0 +1,24 @@
+(define (problem test_pen_book-0)
+    (:domain omnigibson)
+
+    (:objects
+        breakfast_table.n.01_1 - breakfast_table.n.01
+        hardback.n.01_1 - hardback.n.01
+        rubber_eraser.n.01_1 - rubber_eraser.n.01
+        floor.n.01_1 - floor.n.01
+        agent.n.01_1 - agent.n.01
+    )
+    (:init
+        (ontop hardback.n.01_1 breakfast_table.n.01_1)
+        (ontop rubber_eraser.n.01_1 breakfast_table.n.01_1)
+        (inroom breakfast_table.n.01_1 living_room)
+        (ontop agent.n.01_1 floor.n.01_1)
+        (inroom floor.n.01_1 living_room)
+    )
+
+    (:goal
+        (and
+            (ontop rubber_eraser.n.01_1 hardback.n.01_1)
+        )
+    )
+)
