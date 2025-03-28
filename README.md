@@ -98,7 +98,7 @@ conds = Conditions(behavior_activity, activity_definition, simulator)
 
 ### With simulator 
 
-To use a BEHAVIOR activity with a simulator, create a subclass of `BDDLBackend` for your simulator. An example for OmniGibson is found [here](https://github.com/StanfordVL/OmniGibson/omnigibson/utils/bddl_utils.py#L169). This will require an implementation of sampling functionality or pre-sampled scenes that satisfy the activity's initial condition and implementation for checking each type of binary kinematic predicate (e.g. `ontop`, `nextto`) and unary nonkinematic predicate (e.g. `cooked`, `saturated`). 
+To use a BEHAVIOR activity with a simulator, create a subclass of `BDDLBackend` for your simulator. An example for OmniGibson is found [here](https://github.com/StanfordVL/OmniGibson/blob/main/omnigibson/utils/bddl_utils.py#L169). This will require an implementation of sampling functionality or pre-sampled scenes that satisfy the activity's initial condition and implementation for checking each type of binary kinematic predicate (e.g. `ontop`, `nextto`) and unary nonkinematic predicate (e.g. `cooked`, `saturated`). 
 
 ## Logic evaluator for goal
 
@@ -120,7 +120,7 @@ Implementing these requires 1) a simulator-specific child class of the `BDDLBack
 
 **1. Child of `BDDLBACKEND`:** This class has one method, `get_predicate_class`. It must take string tokens of predicates from BDDL problems (e.g. `"cooked"`, `"ontop"`) and map them to the simulator's object states.. 
 
-**2. Simulated object states:** For any object in a BEHAVIOR activity, it must be instantiated in certain simulated states and be checked for certain simulated states, as specified by a BDDL problem. `BDDLBackend` expects state implementations that are object agnostic, but the implementation is ultimately up to the user. Assuming object-agnostic states, each one should be able to take an object and instantiate that object with the given state if applicable, and check whether that object is in that state or not. Example: [OmniGibson's object state implementations](https://github.com/StanfordVL/OmniGibson/omnigibson/object_states). 
+**2. Simulated object states:** For any object in a BEHAVIOR activity, it must be instantiated in certain simulated states and be checked for certain simulated states, as specified by a BDDL problem. `BDDLBackend` expects state implementations that are object agnostic, but the implementation is ultimately up to the user. Assuming object-agnostic states, each one should be able to take an object and instantiate that object with the given state if applicable, and check whether that object is in that state or not. Example: [OmniGibson's object state implementations](https://github.com/StanfordVL/OmniGibson/tree/main/omnigibson/object_states). 
 
 *Note on binary predicates:* in BDDL, certain binary predicates are kinematic (`ontop`, `nextto`, `touching`, etc.). Instantiating objects in the associated simulator states is more complex than instantiating objects in unary predicates' states due to potential for failure based on physical constraints of the scene and multiple possibilities for object pairing, especially when implementing scene-agnostic instantiation capable of generating infinite distinct episodes. Please look at the setter methods of kinematic states in OmniGibson for a robust example capable of instantiating BEHAVIOR activities with many objects. 
 
