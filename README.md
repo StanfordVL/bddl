@@ -1,5 +1,7 @@
 # Behavior Domain Definition Language 
 
+**This is the archival copy of BDDL from BEHAVIOR-100 (2021). For the BEHAVIOR-1K version of BDDL, visit the BEHAVIOR-1K repository at https://github.com/StanfordVL/BEHAVIOR-1K**
+
 The Behavior Domain Definition Language (BDDL) is a domain-specific language designed for the Benchmark for Everyday Household Activities in Virtual, Interactive, and ecOlogical enviRonments (BEHAVIOR). 
 
 BDDL is a predicate logic-based language inspired by, but distinct from, the Planning Domain Definition Language [1]. It defines each BEHAVIOR activity definition as a BDDL `problem`, consisting of of a categorized object list (`:objects`), an initial condition that has only ground literals (`:init`), and a goal condition that is a logical expression (`:goal`). 
